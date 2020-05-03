@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="1080.0" maxWidth="1920.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane layoutX="319.0" prefHeight="120.0" prefWidth="883.0" style="-fx-background-color: #dddddd;" AnchorPane.leftAnchor="319.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Text layoutX="137.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ψηφοφορίες">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                </Text>
+                <FontAwesomeIconView glyphName="SIGNAL" layoutX="54.0" layoutY="72.0" style="-glyph-size: 40;" />
+                <Text fill="#3380ca" layoutX="43.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ψηφοφορίες" />
+                <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="118.0" layoutY="102.0" />
+                <Text fill="#3380ca" layoutX="137.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Δημιουργία νέας ψηφοφορίας" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="104.0" layoutY="71.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #5aafff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="881.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane prefHeight="120.0" prefWidth="319.0" style="-fx-background-color: #3380ca;" AnchorPane.bottomAnchor="680.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Text fill="WHITE" layoutX="14.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="κ. Θωμάς Χατζόπουλος" wrappingWidth="207.380859375">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="USER_CIRCLE" layoutX="37.0" layoutY="70.0" style="-glyph-size: 48;" />
+                        <Button layoutX="268.0" layoutY="13.0" mnemonicParsing="false" style="-fx-background-color: #3380ca;" textFill="WHITE">
+                            <graphic>
+                                <FontAwesomeIconView fill="WHITE" glyphName="COG" style="-glyph-size: 24;" />
+                            </graphic>
+                        </Button>
+                    </children>
+                </AnchorPane>
+                <Text fill="WHITE" layoutX="43.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ανακοινώσεις">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="43.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Τμήματα">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="43.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επικοινωνία" wrappingWidth="99.765625">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="43.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ημερολόγιο">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="42.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Προώθηση αποφάσεων">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="47.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ψηφοφορίες">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Text>
+                <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" layoutX="282.0" layoutY="782.0" style="-glyph-size: 24;" />
+            </children>
+        </AnchorPane>
+        <Text layoutX="624.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Δημιουργία νέας ψηφοφορίας">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Text>
+        <Text layoutX="401.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Τίτλος ψηφοφορίας">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Text>
+        <Text layoutX="489.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ζήτημα">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Text>
+        <Text layoutX="479.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επιλογές">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Text>
+        <Text layoutX="352.0" layoutY="655.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Καταληκτική ημερομηνία ψηφοφορίας " textAlignment="RIGHT" wrappingWidth="191.78125">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Text>
+        <TextField layoutX="600.0" layoutY="208.0" prefHeight="25.0" prefWidth="470.0" />
+        <TextArea layoutX="600.0" layoutY="269.0" prefHeight="184.0" prefWidth="470.0" />
+        <RadioButton layoutX="600.0" layoutY="541.0" mnemonicParsing="false" />
+        <Slider layoutX="1060.0" layoutY="266.0" orientation="VERTICAL" prefHeight="190.0" prefWidth="14.0" />
+        <TextField layoutX="628.0" layoutY="537.0" prefHeight="25.0" prefWidth="444.0" text="Επιλογή 1" />
+        <RadioButton layoutX="599.0" layoutY="591.0" mnemonicParsing="false" />
+        <TextField layoutX="627.0" layoutY="587.0" prefHeight="25.0" prefWidth="444.0" text="Επιλογή 2" />
+        <DatePicker layoutX="599.0" layoutY="650.0" />
+        <Button layoutX="598.0" layoutY="485.0" mnemonicParsing="false" text="Προσθήκη επιλογής" />
+        <Button layoutX="991.0" layoutY="716.0" mnemonicParsing="false" text="Δημιουργία" />
+        <FontAwesomeIconView fill="#3380ca" glyphName="QUESTION_CIRCLE" layoutX="1165.0" layoutY="782.0" style="-glyph-size: 24;" />
+    </children>
+</AnchorPane>
