@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane layoutX="280.0" prefHeight="120.0" prefWidth="911.0" style="-fx-background-color: #dddddd;" AnchorPane.bottomAnchor="680.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Text layoutX="137.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Σημειώσεις">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                </Text>
+                <FontAwesomeIconView glyphName="PASTE" layoutX="54.0" layoutY="72.0" style="-glyph-size: 40;" />
+                <Text fill="#3380ca" layoutX="43.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Τμήματα" />
+                <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="101.0" layoutY="102.0" />
+                <Text fill="#3380ca" layoutX="123.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Τα τμήματά μου" />
+            <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="223.0" layoutY="102.0" />
+            <Text fill="#3380ca" layoutX="244.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Γ" />
+            <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="261.0" layoutY="102.0" />
+            <Text fill="#3380ca" layoutX="281.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Σημειώσεις" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="104.0" layoutY="71.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #5aafff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="920.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane prefHeight="120.0" prefWidth="319.0" style="-fx-background-color: #3380ca;" AnchorPane.bottomAnchor="680.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Text fill="WHITE" layoutX="14.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="κ. Θωμάς Χατζόπουλος" wrappingWidth="207.380859375">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                        <FontAwesomeIconView glyphName="USER_CIRCLE" layoutX="37.0" layoutY="70.0" style="-glyph-size: 48;" />
+                        <Button layoutX="243.0" layoutY="4.0" mnemonicParsing="false" style="-fx-background-color: #3380ca;" textFill="WHITE">
+                            <graphic>
+                                <FontAwesomeIconView glyphName="COG" style="-glyph-size: 24;" />
+                            </graphic>
+                        </Button>
+                    </children>
+                </AnchorPane>
+                <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="14.0" layoutY="785.0" style="-glyph-size: 24;" />
+                <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="84.0" layoutY="149.0" mnemonicParsing="false" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Ανακοινώσεις" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="150.0">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="BELL" />
+                    </graphic>
+                </Button>
+                <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="85.0" layoutY="303.0" mnemonicParsing="false" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Επικοινωνία" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="290.0">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="COMMENT" />
+                    </graphic>
+                </Button>
+                <SplitMenuButton alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="85.0" layoutY="375.0" mnemonicParsing="false" popupSide="RIGHT" style="-fx-background-color: #3380ca; -fx-color: #3380ca; -fx-cursor: hand;" text="Ημερολόγιο" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="360.0">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Το ημερολόγιό μου" />
+                        <MenuItem mnemonicParsing="false" text="Ωρολόγιο πρόγραμμα" />
+                    </items>
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CALENDAR_ALT" />
+                    </graphic>
+                </SplitMenuButton>
+                <Button alignment="BASELINE_CENTER" graphicTextGap="10.0" layoutX="85.0" layoutY="440.0" mnemonicParsing="false" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Προώθηση αποφάσεων" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="430.0">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="ENVELOPE" />
+                    </graphic>
+                </Button>
+                <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="85.0" layoutY="506.0" mnemonicParsing="false" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Ψηφοφορίες" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="500.0">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SIGNAL" />
+                    </graphic>
+                </Button>
+                <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="85.0" layoutY="578.0" mnemonicParsing="false" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Βαθμολογίες" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="570.0">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="TROPHY" />
+                    </graphic>
+                </Button>
+                <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="85.0" layoutY="651.0" mnemonicParsing="false" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Δημιουργία εκδρομής" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="640.0">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="PLUS_CIRCLE" />
+                    </graphic>
+                </Button>
+                <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="85.0" layoutY="719.0" mnemonicParsing="false" style="-fx-background-color: #3380ca;" text="Εγκρίσεις" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="710.0">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CHECK" />
+                    </graphic>
+                </Button>
+                <SplitMenuButton alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="86.0" layoutY="214.0" mnemonicParsing="false" popupSide="RIGHT" style="-fx-color: #96e072; -fx-background-color: #96e072; -fx-cursor: hand;" text="Τμήματα" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="220.0">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="BARS" text="" />
+                    </graphic>
+                    <items>
+                        <MenuItem mnemonicParsing="false" style="-fx-background-color: #96e072;" text="Όλα τα τμήματα" />
+                        <Menu mnemonicParsing="false" text="Τα τμήματά μου">
+                            <items>
+                                <Menu mnemonicParsing="false" text="Α">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="Στοιχεία μαθητών">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="ADDRESS_CARD" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Βιβλίο ύλης">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="BOOK" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Ανακοινώσεις">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="BELL" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Εργασίες">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="TASKS" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Σημειώσεις">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="PASTE" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Απουσίες">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="THERMOMETER_FULL" />
+                                            </graphic>
+                                        </MenuItem>
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="B">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="Στοιχεία μαθητών">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="ADDRESS_CARD" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Βιβλίο ύλης">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="BOOK" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Ανακοινώσεις">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="BELL" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Εργασίες">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="TASKS" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Σημειώσεις">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="PASTE" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Απουσίες">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="THERMOMETER_FULL" />
+                                            </graphic>
+                                        </MenuItem>
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Γ">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="Στοιχεία μαθητών">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="ADDRESS_CARD" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Βιβλίο ύλης">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="BOOK" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Ανακοινώσεις">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="BELL" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Εργασίες">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="TASKS" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Σημειώσεις">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="PASTE" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Απουσίες">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="THERMOMETER_FULL" />
+                                            </graphic>
+                                        </MenuItem>
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Δ">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="Στοιχεία μαθητών">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="ADDRESS_CARD" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Βιβλίο ύλης">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="BOOK" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Ανακοινώσεις">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="BELL" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Εργασίες">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="TASKS" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Σημειώσεις">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="PASTE" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Απουσίες">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="THERMOMETER_FULL" />
+                                            </graphic>
+                                        </MenuItem>
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Ε">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="Στοιχεία μαθητών">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="ADDRESS_CARD" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Βιβλίο ύλης">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="BOOK" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Ανακοινώσεις">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="BELL" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Εργασίες">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="TASKS" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Σημειώσεις">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="PASTE" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Απουσίες">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="THERMOMETER_FULL" />
+                                            </graphic>
+                                        </MenuItem>
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="ΣΤ">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="Στοιχεία μαθητών">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="ADDRESS_CARD" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Βιβλίο ύλης">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="BOOK" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Ανακοινώσεις">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="BELL" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Εργασίες">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="TASKS" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Σημειώσεις">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="PASTE" />
+                                            </graphic>
+                                        </MenuItem>
+                                        <MenuItem mnemonicParsing="false" text="Απουσίες">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="THERMOMETER_FULL" />
+                                            </graphic>
+                                        </MenuItem>
+                                    </items>
+                                </Menu>
+                            </items>
+                        </Menu>
+                    </items>
+                </SplitMenuButton>
+                <FontAwesomeIconView glyphName="QUESTION_CIRCLE" layoutX="253.0" layoutY="786.0" selectionFill="BLACK" style="-glyph-size: 24;" />
+            </children>
+        </AnchorPane>
+        <Text layoutX="633.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Σημειώσεις στο τμήμα Γ" AnchorPane.topAnchor="141.0">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Text>
+        <Button layoutX="646.0" layoutY="194.0" mnemonicParsing="false" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Ανέβασμα σημείωσης" AnchorPane.rightAnchor="366.0" AnchorPane.topAnchor="194.0">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font></Button>
+        <TableView layoutX="332.0" layoutY="300.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="270.0">
+            <columns>
+                <TableColumn prefWidth="122.0" />
+                <TableColumn prefWidth="603.0" resizable="false" text="Όνομα" />
+                <TableColumn maxWidth="100.0" minWidth="100.0" prefWidth="100.0" resizable="false" text="Ημερομηνία" />
+            </columns>
+        </TableView>
+      <Button layoutX="320.0" layoutY="231.0" mnemonicParsing="false" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Δημιουργία φακέλου">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>
