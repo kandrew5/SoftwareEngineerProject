@@ -60,7 +60,7 @@
                               <MenuItem mnemonicParsing="false" text="Ανακοινώσεις" />
                               <MenuItem mnemonicParsing="false" text="Εργασίες" />
                               <MenuItem mnemonicParsing="false" text="Σημειώσεις" />
-                            <MenuItem mnemonicParsing="false" text="Απουσίες" />
+                              <MenuItem mnemonicParsing="false" text="Απουσίες" />
                           </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="B2">
