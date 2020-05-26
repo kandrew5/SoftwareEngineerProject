@@ -340,9 +340,9 @@
                 <FontAwesomeIconView glyphName="QUESTION_CIRCLE" layoutX="253.0" layoutY="783.0" selectionFill="BLACK" style="-glyph-size: 24;" />
             </children>
         </AnchorPane>
-        <TableView layoutX="457.0" layoutY="273.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="200.0">
+        <TableView layoutX="457.0" layoutY="273.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="312.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="200.0">
             <columns>
-                <TableColumn prefWidth="72.0" resizable="false" text="Καθηγητής" />
+                <TableColumn prefWidth="84.0" resizable="false" text="Καθηγητής" />
                 <TableColumn prefWidth="153.0" resizable="false" text="Δευτέρα">
                <columns>
                   <TableColumn prefWidth="21.85714" text="1η" />
@@ -395,7 +395,7 @@
                </columns></TableColumn>
             </columns>
         </TableView>
-      <Text layoutX="584.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ωρολόγιο πρόγραμμα όλων των τμημάτων">
+      <Text layoutX="584.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ωρολόγιο πρόγραμμα όλων των τμημάτων">
          <font>
             <Font size="16.0" />
          </font>

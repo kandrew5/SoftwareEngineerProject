@@ -54,7 +54,15 @@ public class Controller {
             else if(username.equals("st13") && password.equals("12345")) {
                 u_type = 2;
                 if(u_type == 2) {
-                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("sample/thomas.fxml"));
+                    System.out.println("Success");
+                    Node node = (Node) actionEvent.getSource();
+                    Stage stage = (Stage) node.getScene().getWindow();
+                    Scene scene = stage.getScene();
+
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("admin/admin_home.fxml"));
+                    Parent root = (Parent) fxmlLoader.load();
+
+                    scene.setRoot(root);
                 }
             }
             else if (username.equals("pt12") && password.equals("12345")) {

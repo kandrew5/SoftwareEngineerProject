@@ -28,6 +28,7 @@
                 </Text>
                 <FontAwesomeIconView glyphName="ENVELOPE" layoutX="54.0" layoutY="72.0" style="-glyph-size: 40;" />
                 <Text fill="#3380ca" layoutX="54.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Προώθηση αποφάσεων" />
+            <Text fill="#3380ca" layoutX="221.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Νέα απόφαση" />
             </children>
         </AnchorPane>
         <AnchorPane layoutX="104.0" layoutY="71.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #5aafff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="920.0" AnchorPane.topAnchor="0.0">
@@ -43,12 +44,12 @@
                         <FontAwesomeIconView glyphName="USER_CIRCLE" layoutX="37.0" layoutY="70.0" style="-glyph-size: 48;" />
                         <Button layoutX="243.0" layoutY="4.0" mnemonicParsing="false" style="-fx-background-color: #3380ca;" textFill="WHITE">
                             <graphic>
-                                <FontAwesomeIconView glyphName="COG" style="-glyph-size: 24;" />
+                                <FontAwesomeIconView glyphName="COG" style="-glyph-size: 24; -fx-cursor: hand;" />
                             </graphic>
                         </Button>
                     </children>
                 </AnchorPane>
-                <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="14.0" layoutY="785.0" style="-glyph-size: 24;" />
+                <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="14.0" layoutY="785.0" style="-glyph-size: 24; -fx-cursor: hand;" />
                 <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="84.0" layoutY="149.0" mnemonicParsing="false" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Ανακοινώσεις" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="150.0">
                     <font>
                         <Font size="16.0" />
@@ -336,36 +337,61 @@
                         </Menu>
                     </items>
                 </SplitMenuButton>
-                <FontAwesomeIconView glyphName="QUESTION_CIRCLE" layoutX="253.0" layoutY="786.0" selectionFill="BLACK" style="-glyph-size: 24;" />
+                <FontAwesomeIconView glyphName="QUESTION_CIRCLE" layoutX="253.0" layoutY="786.0" selectionFill="BLACK" style="-glyph-size: 24; -fx-cursor: hand;" />
             </children>
         </AnchorPane>
-        <Button layoutX="955.0" layoutY="679.0" mnemonicParsing="false" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Νέα απόφαση" AnchorPane.bottomAnchor="120.0" AnchorPane.rightAnchor="115.0">
+        <Button layoutX="648.0" layoutY="634.0" mnemonicParsing="false" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Προώθηση απόφαση" AnchorPane.rightAnchor="368.0" AnchorPane.topAnchor="640.0">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font></Button>
-      <Button layoutX="386.0" layoutY="215.0" mnemonicParsing="false" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Επιλογή αρχείου" AnchorPane.leftAnchor="395.0" AnchorPane.topAnchor="215.0">
+      <Button layoutX="386.0" layoutY="215.0" mnemonicParsing="false" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Επιλογή αρχείου" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="215.0">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font size="16.0" />
          </font>
       </Button>
-      <Text layoutX="395.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επιλέξατε το αρχείο:" AnchorPane.topAnchor="290.0" />
+      <Text layoutX="395.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επιλέξατε το αρχείο:" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="290.0">
+         <font>
+            <Font size="16.0" />
+         </font></Text>
       <Text layoutX="536.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No file selected" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="290.0">
          <font>
-            <Font name="System Italic" size="12.0" />
+            <Font name="System Italic" size="16.0" />
          </font>
       </Text>
-      <Text layoutX="395.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Τίτλος απόφασης" AnchorPane.topAnchor="340.0" />
-      <TextField layoutX="525.0" layoutY="324.0" prefHeight="25.0" prefWidth="574.0" AnchorPane.leftAnchor="520.0" AnchorPane.rightAnchor="115.0" AnchorPane.topAnchor="340.0" />
-      <Text layoutX="395.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Αποδέκτες" AnchorPane.topAnchor="390.0" />
-      <CheckBox layoutX="514.0" layoutY="390.0" mnemonicParsing="false" text="Διδάσκοντες" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="390.0" />
-      <CheckBox layoutX="505.0" layoutY="434.0" mnemonicParsing="false" text="Μαθητές" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="430.0" />
-      <CheckBox layoutX="505.0" layoutY="481.0" mnemonicParsing="false" text="Γονείς" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="470.0" />
-      <Text layoutX="395.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Προτερεότητα" />
-      <SplitMenuButton layoutX="520.0" layoutY="522.0" mnemonicParsing="false" text="                              " AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="520.0">
+      <Text layoutX="395.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Τίτλος απόφασης" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="350.0">
+         <font>
+            <Font size="16.0" />
+         </font></Text>
+      <TextField layoutX="525.0" layoutY="324.0" prefHeight="25.0" prefWidth="574.0" AnchorPane.leftAnchor="520.0" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="350.0" />
+      <Text layoutX="395.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Αποδέκτες" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="410.0">
+         <font>
+            <Font size="16.0" />
+         </font></Text>
+      <CheckBox layoutX="514.0" layoutY="390.0" mnemonicParsing="false" text="Διδάσκοντες" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="410.0">
+         <font>
+            <Font size="16.0" />
+         </font></CheckBox>
+      <CheckBox layoutX="505.0" layoutY="434.0" mnemonicParsing="false" text="Μαθητές" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="450.0">
+         <font>
+            <Font size="16.0" />
+         </font></CheckBox>
+      <CheckBox layoutX="505.0" layoutY="481.0" mnemonicParsing="false" text="Γονείς" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="490.0">
+         <font>
+            <Font size="16.0" />
+         </font></CheckBox>
+      <Text layoutX="395.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Προτερεότητα" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="550.0">
+         <font>
+            <Font size="16.0" />
+         </font></Text>
+      <SplitMenuButton layoutX="520.0" layoutY="522.0" mnemonicParsing="false" text="                              " AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="550.0">
         <items>
           <MenuItem mnemonicParsing="false" text="Υψηλή" />
           <MenuItem mnemonicParsing="false" text="Κανονική" />
         </items>
+         <font>
+            <Font size="14.0" />
+         </font>
       </SplitMenuButton>
+      <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="475.0" layoutY="103.0" />
     </children>
 </AnchorPane>

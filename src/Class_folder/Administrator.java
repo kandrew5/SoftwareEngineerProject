@@ -1,4 +1,4 @@
 package Class_folder;
 
-public class Administrator{
+public class Administrator extends User{
 }

@@ -2,7 +2,7 @@ package Class_folder;
 
 import java.lang.reflect.Array;
 
-public class Teacher {
+public class Teacher extends User{
     private long afm;
     private String class_sv; //class supervisor
 

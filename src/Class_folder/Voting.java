@@ -8,7 +8,11 @@ public class Voting {
     private Date vote_expire_date;      //
     private int vote_options;
 
-    public Voting(){
+    public Voting(    String vote_title, String vote_description, Date vote_expire_date, int vote_options){
+        this.vote_title = vote_title;
+        this.vote_description = vote_description;
+        this.vote_expire_date = vote_expire_date;
+        this.vote_options = vote_options;
     }
 
     public boolean createVoting(){
@@ -27,3 +31,5 @@ public class Voting {
         return true;
     }
 }
+
+

@@ -22,8 +22,8 @@
                 </Text>
                 <FontAwesomeIconView glyphName="BARS" layoutX="54.0" layoutY="72.0" style="-glyph-size: 40;" />
                 <Text fill="#3380ca" layoutX="43.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Τμήματα" />
-                <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="118.0" layoutY="102.0" />
-                <Text fill="#3380ca" layoutX="137.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Όλα τα τμήματα" />
+                <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="107.0" layoutY="102.0" />
+                <Text fill="#3380ca" layoutX="133.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Όλα τα τμήματα" />
             </children>
         </AnchorPane>
         <AnchorPane layoutX="104.0" layoutY="71.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #5aafff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="920.0" AnchorPane.topAnchor="0.0">

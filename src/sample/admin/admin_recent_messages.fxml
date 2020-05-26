@@ -37,12 +37,12 @@
                         <FontAwesomeIconView glyphName="USER_CIRCLE" layoutX="37.0" layoutY="70.0" style="-glyph-size: 48;" />
                         <Button layoutX="243.0" layoutY="4.0" mnemonicParsing="false" style="-fx-background-color: #3380ca;" textFill="WHITE">
                             <graphic>
-                                <FontAwesomeIconView glyphName="COG" style="-glyph-size: 24;" />
+                                <FontAwesomeIconView glyphName="COG" style="-glyph-size: 24; -fx-cursor: hand;" />
                             </graphic>
                         </Button>
                     </children>
                 </AnchorPane>
-                <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="14.0" layoutY="785.0" style="-glyph-size: 24;" />
+                <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="14.0" layoutY="785.0" style="-glyph-size: 24; -fx-cursor: hand;" />
                 <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="84.0" layoutY="149.0" mnemonicParsing="false" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Ανακοινώσεις" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="150.0">
                     <font>
                         <Font size="16.0" />
@@ -330,7 +330,7 @@
                         </Menu>
                     </items>
                 </SplitMenuButton>
-                <FontAwesomeIconView glyphName="QUESTION_CIRCLE" layoutX="253.0" layoutY="786.0" selectionFill="BLACK" style="-glyph-size: 24;" />
+                <FontAwesomeIconView glyphName="QUESTION_CIRCLE" layoutX="253.0" layoutY="786.0" selectionFill="BLACK" style="-glyph-size: 24; -fx-cursor: hand;" />
             </children>
         </AnchorPane>
         <Button layoutX="675.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Νέα συνομιλία" AnchorPane.rightAnchor="395.0" AnchorPane.topAnchor="160.0">
