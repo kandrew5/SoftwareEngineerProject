@@ -45,9 +45,9 @@ public class excursions_Controller implements Initializable {
     }
 
     private final ObservableList<Excursion> list = FXCollections.observableArrayList(
-            new Excursion("Μονοήμερη εκδρομή στην Αθήνα", "Επίσκεψη στο μουσειο της Ακρόπολης και στη Βουλή", "Αθήνα", LocalDate.now(), 30),
-            new Excursion("Τριήμερη εκδρομή στο Βόλο", "Επίσκεψη στο Βόλο και στο Πήλιο", "Βόλος", LocalDate.now(), 60),
-            new Excursion("Πενθήμερη εκδρομή στο Ναύπλιο", "Επίσκεψη στο Ναύπλιο και στο αρχαίο θέατρο της Επιδαύρου", "Ναύπλιο", LocalDate.now(), 90)
+            new Excursion("ΞΞΏΞ½ΞΏΞ®ΞΌΞµΟΞ· ΞµΞΊΞ΄ΟΞΏΞΌΞ® ΟƒΟ„Ξ·Ξ½ Ξ‘ΞΈΞ®Ξ½Ξ±", "Ξ•Ο€Ξ―ΟƒΞΊΞµΟΞ· ΟƒΟ„ΞΏ ΞΌΞΏΟ…ΟƒΞµΞΉΞΏ Ο„Ξ·Ο‚ Ξ‘ΞΊΟΟΟ€ΞΏΞ»Ξ·Ο‚ ΞΊΞ±ΞΉ ΟƒΟ„Ξ· Ξ’ΞΏΟ…Ξ»Ξ®", "Ξ‘ΞΈΞ®Ξ½Ξ±", LocalDate.now(), 30),
+            new Excursion("Ξ¤ΟΞΉΞ®ΞΌΞµΟΞ· ΞµΞΊΞ΄ΟΞΏΞΌΞ® ΟƒΟ„ΞΏ Ξ’ΟΞ»ΞΏ", "Ξ•Ο€Ξ―ΟƒΞΊΞµΟΞ· ΟƒΟ„ΞΏ Ξ’ΟΞ»ΞΏ ΞΊΞ±ΞΉ ΟƒΟ„ΞΏ Ξ Ξ®Ξ»ΞΉΞΏ", "Ξ’ΟΞ»ΞΏΟ‚", LocalDate.now(), 60),
+            new Excursion("Ξ ΞµΞ½ΞΈΞ®ΞΌΞµΟΞ· ΞµΞΊΞ΄ΟΞΏΞΌΞ® ΟƒΟ„ΞΏ ΞΞ±ΟΟ€Ξ»ΞΉΞΏ", "Ξ•Ο€Ξ―ΟƒΞΊΞµΟΞ· ΟƒΟ„ΞΏ ΞΞ±ΟΟ€Ξ»ΞΉΞΏ ΞΊΞ±ΞΉ ΟƒΟ„ΞΏ Ξ±ΟΟ‡Ξ±Ξ―ΞΏ ΞΈΞ­Ξ±Ο„ΟΞΏ Ο„Ξ·Ο‚ Ξ•Ο€ΞΉΞ΄Ξ±ΟΟΞΏΟ…", "ΞΞ±ΟΟ€Ξ»ΞΉΞΏ", LocalDate.now(), 90)
     );
     @Override
     public void initialize(URL location, ResourceBundle resources) {

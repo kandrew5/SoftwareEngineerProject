@@ -49,16 +49,16 @@ public class exCreate_Controller implements Initializable {
         if(loc.getText().equals("") || cost.getText().equals("") || clas.getText().equals("") || desc.getText().equals("") || date == null){ //check for empty fields
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Warning Dialog");
-            alert.setHeaderText("Ìç óõìðëçñùìÝíá ðåäßá");
-            alert.setContentText("Ðáñáêáëþ óõìðëçñþóôå üëá ôá ðåäßá.");
+            alert.setHeaderText("Μη συμπληρωμένα πεδία");
+            alert.setContentText("Παρακαλώ συμπληρώστε όλα τα πεδία.");
 
             alert.showAndWait();
         }
         else{
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Åðéôõ÷ßá");
-            alert.setHeaderText("Åðéôõ÷Þò äçìéïõñãßá");
-            alert.setContentText("Ç åêäñïìÞ äçìéïõñãÞèçêå ìå åðéôõ÷ßá.");
+            alert.setTitle("Επιτυχία");
+            alert.setHeaderText("Επιτυχής δημιουργία");
+            alert.setContentText("Η εκδρομή δημιουργήθηκε με επιτυχία.");
 
             alert.showAndWait();
         }
