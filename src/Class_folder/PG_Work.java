@@ -9,8 +9,11 @@ public class PG_Work {
     private Date work_date;
     private String work_author;
 
-    public PG_Work(){
-
+    public PG_Work(String work_title, String work_content, Date work_date, String work_author) {
+        this.work_title = work_title;
+        this.work_content = work_content;
+        this.work_date = work_date;
+        this.work_author = work_author;
     }
 
     public boolean newPG_Entry(){

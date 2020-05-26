@@ -8,8 +8,10 @@ public class Parent extends User {
     private String pg_role;     //role of member in the PG Association
     private int nu_kids;
 
-    public Parent(){
-
+    public Parent(boolean pg_member, String pg_role, int nu_kids){
+        this.pg_member = pg_member;
+        this.pg_role = pg_role;
+        this.nu_kids = nu_kids;
     }
 
     public Array getChild(){

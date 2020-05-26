@@ -49,16 +49,16 @@ public class exCreate_Controller implements Initializable {
         if(loc.getText().equals("") || cost.getText().equals("") || clas.getText().equals("") || desc.getText().equals("") || date == null){ //check for empty fields
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Warning Dialog");
-            alert.setHeaderText("Μη συμπληρωμένα πεδία");
-            alert.setContentText("Παρακαλώ συμπληρώστε όλα τα πεδία.");
+            alert.setHeaderText("ΓΓ§ Γ³ΓµΓ¬Γ°Γ«Γ§Γ±ΓΉΓ¬ΓΓ­Γ΅ Γ°Γ¥Γ¤ΓΓ΅");
+            alert.setContentText("ΓΓ΅Γ±Γ΅ΓªΓ΅Γ«ΓΎ Γ³ΓµΓ¬Γ°Γ«Γ§Γ±ΓΎΓ³Γ΄Γ¥ ΓΌΓ«Γ΅ Γ΄Γ΅ Γ°Γ¥Γ¤ΓΓ΅.");
 
             alert.showAndWait();
         }
         else{
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Επιτυχία");
-            alert.setHeaderText("Επιτυχής δημιουργία");
-            alert.setContentText("Η εκδρομή δημιουργήθηκε με επιτυχία.");
+            alert.setTitle("Γ…Γ°Γ©Γ΄ΓµΓ·ΓΓ΅");
+            alert.setHeaderText("Γ…Γ°Γ©Γ΄ΓµΓ·ΓΓ² Γ¤Γ§Γ¬Γ©Γ―ΓµΓ±Γ£ΓΓ΅");
+            alert.setContentText("Γ‡ Γ¥ΓªΓ¤Γ±Γ―Γ¬Γ Γ¤Γ§Γ¬Γ©Γ―ΓµΓ±Γ£ΓΓ¨Γ§ΓªΓ¥ Γ¬Γ¥ Γ¥Γ°Γ©Γ΄ΓµΓ·ΓΓ΅.");
 
             alert.showAndWait();
         }
