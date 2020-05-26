@@ -9,8 +9,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class Controller {
@@ -42,7 +40,7 @@ public class Controller {
                 Stage stage = (Stage) node.getScene().getWindow();
                 Scene scene = stage.getScene();
 
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("andrew.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("student/student_home.fxml"));
                 Parent root = (Parent) fxmlLoader.load();
 
                 scene.setRoot(root);
