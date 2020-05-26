@@ -21,7 +21,7 @@ public class exCreate_Controller {
     private TableColumn<Excursion, String> ex_date;
     private Date exc_date = new Date();
     public ObservableList<Excursion> list = FXCollections.observableArrayList(
-            new Excursion("Μονοήμερη εκδρομή στην Αθήνα", "Επίσκεψη στο μουσειο της Ακρόπολης και στη Βουλή", "Αθήνα", exc_date, 30)
+            new Excursion("οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½ οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½ οΏ½οΏ½οΏ½οΏ½ οΏ½οΏ½οΏ½οΏ½οΏ½", "οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½ οΏ½οΏ½οΏ½ οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½ οΏ½οΏ½οΏ½ οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½οΏ½ οΏ½οΏ½οΏ½ οΏ½οΏ½οΏ½ οΏ½οΏ½οΏ½οΏ½οΏ½", "οΏ½οΏ½οΏ½οΏ½οΏ½", exc_date, 30)
     );
     public void initialize(URL location, ResourceBundle resources){
         ex_name.setCellValueFactory(new PropertyValueFactory<>("destination"));

@@ -11,7 +11,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://D:/Downloads/fontawesomefx-fontawesome-4.7.0-11.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../Downloads/fontawesomefx-fontawesome-4.7.0-11.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -20,7 +20,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://D:/Downloads/fontawesomefx-commons-11.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../Downloads/fontawesomefx-commons-11.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -29,7 +29,16 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://D:/Downloads/fontawesomefx-controls-11.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../Downloads/fontawesomefx-controls-11.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../jfxtras-labs-samples-8.0-r6-SNAPSHOT-all.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
