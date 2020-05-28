@@ -66,7 +66,15 @@ public class Controller {
                 }
             }
             else if (username.equals("pt12") && password.equals("12345")) {
-                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("sample/panos.fxml"));
+                System.out.println("Success");
+                Node node = (Node) actionEvent.getSource();
+                Stage stage = (Stage) node.getScene().getWindow();
+                Scene scene = stage.getScene();
+
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("parent/parent_home.fxml"));
+                Parent root = (Parent) fxmlLoader.load();
+
+                scene.setRoot(root);
             }
         }
     }

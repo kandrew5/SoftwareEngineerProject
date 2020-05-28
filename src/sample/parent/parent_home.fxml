@@ -3,14 +3,14 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import jfxtras.scene.control.agenda.Agenda?>
 
-<AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.parent.PHomeController">
     <children>
         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #5aafff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="920.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -58,15 +58,11 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="BELL" selectionEnd="0" text="" />
                     </graphic>
                 </Button>
-                <SplitMenuButton alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="8.0" layoutY="369.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="37.0" prefWidth="238.0" style="-fx-color: #3380ca; -fx-background-color: #3380ca; -fx-cursor: hand;" text="Σύλλογος ΓΚ" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="430.0">
+                <SplitMenuButton fx:id="pg_menu" alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="8.0" layoutY="369.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="37.0" prefWidth="238.0" style="-fx-color: #3380ca; -fx-background-color: #3380ca; -fx-cursor: hand;" text="Σύλλογος ΓΚ" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="430.0">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Μέλη" />
                         <MenuItem mnemonicParsing="false" text="Πρακτικά συνεδριάσεων" />
-                        <Menu mnemonicParsing="false" text="Έργο">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Εγγραφές" />
-                            </items>
-                        </Menu>
+                          <MenuItem fx:id="pg_work" mnemonicParsing="false" onAction="#click_PG_Work" text="Έργο" />
                     </items>
                     <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="USERS" />
@@ -85,9 +81,9 @@
                         <FontAwesomeIconView glyphName="QUESTION_CIRCLE" style="-glyph-size: 16;" />
                     </graphic>
                 </Button>
-                <SplitMenuButton alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="32.0" layoutY="502.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="37.0" prefWidth="220.0" style="-fx-color: #96e072; -fx-background-color: #96e072; -fx-cursor: hand;" text="Εγκρίσεις" textAlignment="CENTER" textFill="WHITE">
+                <SplitMenuButton fx:id="approvalmenu" alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="32.0" layoutY="502.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="37.0" prefWidth="220.0" style="-fx-color: #3380ca; -fx-background-color: #3380ca; -fx-cursor: hand;" text="Εγκρίσεις" textAlignment="CENTER" textFill="WHITE">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Eκκρεμείς εγκρίσεις" />
+                        <MenuItem fx:id="pendingapprovals" mnemonicParsing="false" onAction="#click_PendingApprovals" text="Eκκρεμείς εγκρίσεις" />
                         <MenuItem mnemonicParsing="false" text="Συμπληρωμένες εγκρίσεις" />
                     </items>
                     <graphic>
@@ -102,15 +98,20 @@
         <FontAwesomeIconView glyphName="CHECK" layoutX="269.0" layoutY="-69.0" />
         <AnchorPane layoutX="441.0" prefHeight="110.0" prefWidth="761.0" style="-fx-background-color: #dddddd;" AnchorPane.bottomAnchor="680.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <FontAwesomeIconView glyphName="CHECK" layoutX="20.0" layoutY="55.0" style="-glyph-size: 48;" />
-                <Text layoutX="134.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Αρχική σελίδα" AnchorPane.leftAnchor="134.0">
+                <Text layoutX="118.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Καλώς ήρθατε" AnchorPane.leftAnchor="118.0">
                     <font>
-                        <Font size="28.0" />
+                        <Font name="System Bold Italic" size="28.0" />
                     </font>
                 </Text>
             </children></AnchorPane>
-      <ListView layoutX="590.0" layoutY="410.0" prefHeight="200.0" prefWidth="200.0" />
-      <Text layoutX="621.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ανακοινώσεις">
+      <ListView layoutX="450.0" layoutY="200.0" prefHeight="200.0" prefWidth="455.0" />
+      <Text layoutX="623.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ανακοινώσεις">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Agenda layoutX="374.0" layoutY="461.0" prefHeight="300.0" prefWidth="644.0" />
+      <Text layoutX="615.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Το ημερολόγιο μου">
          <font>
             <Font size="20.0" />
          </font>
