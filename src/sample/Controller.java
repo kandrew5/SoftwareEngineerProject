@@ -48,7 +48,7 @@ public class Controller {
             else if(username.equals("tc12") && password.equals("12345")) {
                 u_type = 1;
                 if(u_type == 1) {
-                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("sample/romanos.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("sample/teacher_home.fxml"));
                 }
             }
             else if(username.equals("st13") && password.equals("12345")) {

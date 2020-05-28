@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class exCreate_Controller implements Initializable {
+public class excursion_create_Controller implements Initializable {
     @FXML
     TextField loc;
     @FXML

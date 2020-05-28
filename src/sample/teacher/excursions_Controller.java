@@ -38,7 +38,7 @@ public class excursions_Controller implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("excursions_create.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("excursion_create.fxml"));
         Parent root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
