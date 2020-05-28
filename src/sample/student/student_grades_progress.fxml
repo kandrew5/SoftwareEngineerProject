@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.student.ProgressController">
     <children>
         <AnchorPane layoutX="1.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #5aafff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="950.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -122,11 +122,11 @@
                 <Font size="16.0" />
             </font>
         </Button>
-      <ChoiceBox layoutX="293.0" layoutY="214.0" prefWidth="150.0" />
-      <TableView layoutX="532.0" layoutY="214.0" prefHeight="470.0" prefWidth="574.0">
+      <ChoiceBox fx:id="course_box_id" layoutX="293.0" layoutY="214.0" prefWidth="150.0" />
+      <TableView fx:id="grade_table_id" layoutX="532.0" layoutY="214.0" prefHeight="470.0" prefWidth="574.0">
         <columns>
-          <TableColumn prefWidth="176.0" text="Βαθμολογία" />
-          <TableColumn prefWidth="397.0" text="Τίτλος" />
+          <TableColumn fx:id="grade_no_id" prefWidth="176.0" text="Βαθμολογία" />
+          <TableColumn fx:id="grade_title_id" prefWidth="397.0" text="Τίτλος" />
         </columns>
       </TableView>
     </children>
