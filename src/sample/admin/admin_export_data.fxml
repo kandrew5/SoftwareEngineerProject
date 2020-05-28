@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.admin.ExportDataController">
     <children>
         <AnchorPane layoutX="280.0" prefHeight="120.0" prefWidth="911.0" style="-fx-background-color: #dddddd;" AnchorPane.bottomAnchor="680.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -357,16 +357,16 @@
             <Font size="16.0" />
          </font>
       </SplitMenuButton>
-      <TableView layoutX="332.0" layoutY="300.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="270.0">
+      <TableView fx:id="studentDatatable" layoutX="332.0" layoutY="300.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="270.0">
         <columns>
           <TableColumn prefWidth="43.0" />
-          <TableColumn prefWidth="180.0" resizable="false" text="Επώνυμο" />
-            <TableColumn prefWidth="134.0" resizable="false" text="Όνομα" />
-            <TableColumn prefWidth="54.0" resizable="false" text="Τμήμα" />
-            <TableColumn prefWidth="110.0" resizable="false" text="Όνομα πατέρα" />
-            <TableColumn prefWidth="112.0" resizable="false" text="Όνομα μητέρας" />
-            <TableColumn prefWidth="104.0" resizable="false" text="Τηλέφωνο" />
-            <TableColumn prefWidth="102.0" resizable="false" text="ΑΜΚΑ" />
+          <TableColumn fx:id="last_name" prefWidth="180.0" resizable="false" text="Επώνυμο" />
+            <TableColumn fx:id="first_name" prefWidth="134.0" resizable="false" text="Όνομα" />
+            <TableColumn fx:id="class_id" prefWidth="54.0" resizable="false" text="Τμήμα" />
+            <TableColumn fx:id="father_name" prefWidth="110.0" resizable="false" text="Όνομα πατέρα" />
+            <TableColumn fx:id="mother_name" prefWidth="112.0" resizable="false" text="Όνομα μητέρας" />
+            <TableColumn fx:id="tel" prefWidth="104.0" resizable="false" text="Τηλέφωνο" />
+            <TableColumn fx:id="AMKA" prefWidth="102.0" resizable="false" text="ΑΜΚΑ" />
         </columns>
       </TableView>
     </children>
