@@ -106,50 +106,27 @@
                   <Font size="28.0" />
                </font>
             </Text>
-            <Text fill="#007bff" layoutX="292.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Έργο" />
+            <Text fill="#007bff" layoutX="134.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Έργο" />
          </children></AnchorPane>
-      <TextArea editable="false" layoutX="311.0" layoutY="285.0" prefHeight="78.0" prefWidth="320.0" text="&#10;&#10;" AnchorPane.leftAnchor="311.0" />
       <Text layoutX="677.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Έργο">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <TextArea editable="false" layoutX="310.0" layoutY="390.0" prefHeight="78.0" prefWidth="320.0" text="&#10;&#10;" AnchorPane.leftAnchor="310.0">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </TextArea>
-      <TextArea editable="false" layoutX="311.0" layoutY="493.0" prefHeight="78.0" prefWidth="320.0" text="&#10;&#10;" AnchorPane.leftAnchor="311.0" />
-      <TextArea editable="false" layoutX="311.0" layoutY="597.0" prefHeight="78.0" prefWidth="320.0" text="&#10;&#10;" AnchorPane.leftAnchor="311.0" />
-      <TextArea fx:id="entryshown" editable="false" layoutX="723.0" layoutY="309.0" prefHeight="322.0" prefWidth="403.0" />
-      <Text fx:id="entry1text" fill="#007bff" layoutX="320.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-cursor: hand;" text="entry1" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="289.0" />
-      <Text fx:id="entry1date" layoutX="320.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date1" AnchorPane.leftAnchor="320.0" />
-      <Text fx:id="entry2text" fill="#007bff" layoutX="319.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-cursor: hand;" text="entry2" AnchorPane.leftAnchor="319.0" />
-      <Text fx:id="entry2date" layoutX="317.0" layoutY="451.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date2">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Text>
-      <Text fx:id="entry3text" fill="#007bff" layoutX="320.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-cursor: hand;" text="entry3" AnchorPane.leftAnchor="320.0" />
-      <Text fx:id="entry4text" fill="#007bff" layoutX="320.0" layoutY="623.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-cursor: hand;" text="entry4" AnchorPane.leftAnchor="320.0" />
-      <Text fx:id="entry3date" layoutX="320.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" text="date3" AnchorPane.leftAnchor="320.0" />
-      <Text fx:id="entry4date" layoutX="320.0" layoutY="664.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12/12/2020" AnchorPane.leftAnchor="320.0" />
-      <Button fx:id="show3" layoutX="642.0" layoutY="520.0" mnemonicParsing="false" onAction="#clickPG_Entry" style="-fx-background-color: #5aafff;" text="show" />
-      <Button fx:id="show1" layoutX="642.0" layoutY="312.0" mnemonicParsing="false" onAction="#clickPG_Entry" style="-fx-background-color: #5aafff;" text="show" />
-      <Button fx:id="show2" layoutX="642.0" layoutY="417.0" mnemonicParsing="false" onAction="#clickPG_Entry" style="-fx-background-color: #5aafff;" text="show" />
-      <Button fx:id="show4" layoutX="642.0" layoutY="624.0" mnemonicParsing="false" onAction="#clickPG_Entry" style="-fx-background-color: #5aafff;" text="show" />
+      <TextArea fx:id="entryshown" editable="false" layoutX="854.0" layoutY="251.0" prefHeight="422.0" prefWidth="320.0" />
       <ChoiceBox fx:id="filters" layoutX="1036.0" layoutY="135.0" onAction="#click_Filter" prefWidth="150.0" />
-      <Text fx:id="entry1auth" layoutX="442.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
-      <Text fx:id="entry2auth" layoutX="510.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
-      <Text fx:id="entry3auth" layoutX="442.0" layoutY="565.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
-      <Text fx:id="entry4auth" layoutX="493.0" layoutY="664.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
-      <TableView fixedCellSize="1.0" layoutX="324.0" layoutY="132.0" prefHeight="139.0" prefWidth="312.0">
+      <TableView fx:id="entriestable" layoutX="288.0" layoutY="212.0" onMouseClicked="#clickPG_Entry" prefHeight="500.0" prefWidth="537.0">
         <columns>
-          <TableColumn editable="false" prefWidth="75.0" text="Τίτλος" />
-          <TableColumn editable="false" prefWidth="122.0" text="Ημερομηνία" />
-            <TableColumn editable="false" prefWidth="114.0" text="Συντάκτης" />
-            <TableColumn prefWidth="103.0" text="Ημερομηνία" />
+          <TableColumn fx:id="wtitle_col" prefWidth="330.0" resizable="false" style="-fx-color: #5aafff;" text="Τίτλος" />
+          <TableColumn fx:id="wauthor_col" prefWidth="118.0" resizable="false" style="-fx-color: #5aafff;" text="Συντάκτης" />
+            <TableColumn fx:id="wdate_col" minWidth="0.0" prefWidth="90.0" resizable="false" style="-fx-color: #5aafff;" text="Ημερομηνία" />
         </columns>
       </TableView>
+      <Text layoutX="329.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επιλέξτε μία εγγραφή">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="949.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Προβολή Εγγραφής" />
     </children>
 </AnchorPane>

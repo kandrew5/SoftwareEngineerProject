@@ -1,18 +1,15 @@
 package sample.parent;
 
+import Class_folder.Decisions_repo;
 import Class_folder.PG_Work;
 import java.time.LocalDate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.text.Text;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.time.Month;
@@ -21,139 +18,70 @@ import java.util.ResourceBundle;
 
 public class PGWorkController implements Initializable {
 
-    ObservableList<String> filtersList = FXCollections.observableArrayList("Πρόσφατα", "Δημοφιλή", "Σχολικά");
-
-    @FXML
-    private Button show1;
-    @FXML
-    private Button show2;
-    @FXML
-    private Button show3;
-    @FXML
-    private Button show4;
     @FXML
     private TextArea entryshown;
     @FXML
     private ChoiceBox filters;
     @FXML
-    private Text entry1date;
+    private TableView entriestable;
     @FXML
-    private Text entry1text;
+    private TableColumn wtitle_col;
     @FXML
-    private Text entry2date;
+    private TableColumn wdate_col;
     @FXML
-    private Text entry2text;
-    @FXML
-    private Text entry3date;
-    @FXML
-    private Text entry3text;
-    @FXML
-    private Text entry4date;
-    @FXML
-    private Text entry4text;
-    @FXML
-    private Text entry1auth;
-    @FXML
-    private Text entry2auth;
-    @FXML
-    private Text entry3auth;
-    @FXML
-    private Text entry4auth;
+    private TableColumn wauthor_col;
 
-    private String title1 = "Ενημέρωση για το νέο κορωνοϊό COVID-19";
-    private String cont1 = "Ο Σύλλογος γονέων και κηδεμόνων στα πλαίσια του νέου κορωνοϊού \n" +
-            "COVID-19 παρέχει ενημέρωση όσον αφορά τα μέτρα που χρειάζεται \n" +
-            "να πάρει ο καθένας για την προστασία από τον ιό αλλά και για τον \n" +
-            "περιορισμό της εξάπλωσης του. Είναι σημαντικό όσοι μπορούν \n" +
-            "να προσέλθουν καθώς ο ιός αυτός απειλεί και τη χώρα μας.\n" +
-            "Η ενημέρωση θα γίνει στις 17-2-2020.";
-    private LocalDate date1 = LocalDate.of(2020, Month.FEBRUARY, 17);
-    private String auth1 = "Παναγιώτης Τριανταφυλλόπουλος";
-    private PG_Work pgwork1 = new PG_Work(title1 , cont1, date1, auth1);
+    ObservableList<String> filtersList = FXCollections.observableArrayList("Πρόσφατα", "Δημοφιλή", "Σχολικά");
 
-    private String title2 = "Κοπή βασιλόπιτας για το σχολικό έτος 2019-2020";
-    private String cont2 = "Με χαρά σας ενημερώνουμε πώς ο Σύλλογος γονέων και κηδεμόνων θα \n" +
-            "πραγματοποιήσει κοπή βασιλόπιτας για το σχολικό έτος 2019-2020. \n" +
-            "Η κοπή θα λάβει χώρα στην αίθουσα εκδηλώσεων του σχολείου τη \n" +
-            "Δευτέρα 20/01/2020 την τελευταία ώρα της σχολικής χρονιάς.";
-    private LocalDate date2 = LocalDate.of( 2020, Month.JANUARY, 17);
-    private String auth2 = "Νίκος Παπαδόπουλος";
-    private PG_Work pgwork2 = new PG_Work(title2 , cont2, date2, auth2);
+    private String cont1 = "Ο Σύλλογος γονέων και κηδεμόνων στα πλαίσια του\n" +
+            "νέου κορωνοϊού COVID-19 παρέχει ενημέρωση όσον \n" +
+            "αφορά τα μέτρα που χρειάζεται να πάρει ο καθένας\n" +
+            "για την προστασία από τον ιό αλλά και για τον \n" +
+            "περιορισμό της εξάπλωσης του. Είναι σημαντικό\n" +
+            "όσοι μπορούν να προσέλθουν καθώς ο ιός αυτός \n" +
+            "απειλεί και τη χώρα μας.Η ενημέρωση θα γίνει\n" +
+            "στις 17-2-2020.";
+    private LocalDate wdate1 = LocalDate.of(2020, Month.FEBRUARY, 17);
 
-    private String title3 = "Γενική συνέλευση του Συλλόγου Γονέων και Κηδεμόνων";
-    private String cont3 = "Στις 14 Ιανουαρίου θα πραγματοποιηθεί γενική συνέλευση του Συλλόγου\n" +
-            "γονέων και κηδεμόνων κατά την οποία θα συζητηθούν θέματα που \n" +
-            "αφορούν το σχολικό περιβάλλον καθώς και αρκετά ζητήματα που \n" +
+    private String cont2 = "Με χαρά σας ενημερώνουμε πώς ο Σύλλογος γονέων \n" +
+            "και κηδεμόνων θα πραγματοποιήσει κοπή \n" +
+            "βασιλόπιτας για το σχολικό έτος 2019-2020. \n" +
+            "Η κοπή θα λάβει χώρα στην αίθουσα εκδηλώσεων\n" +
+            "του σχολείου τη Δευτέρα 20/01/2020 την τελευταία\n" +
+            "ώρα της σχολικής χρονιάς.";
+    private LocalDate wdate2 = LocalDate.of( 2020, Month.JANUARY, 17);
+
+    private String cont3 = "Στις 14 Ιανουαρίου θα πραγματοποιηθεί γενική \n" +
+            "συνέλευση του Συλλόγου γονέων και κηδεμόνων κατά \n" +
+            "την οποία θα συζητηθούν θέματα που αφορούν το \n" +
+            "σχολικό περιβάλλον καθώς και αρκετά ζητήματα που \n" +
             "προέκυψαν κατά την οργάνωση του συλλόγου.";
-    private LocalDate date3 = LocalDate.of(2020, Month.JANUARY, 17);
-    private String auth3 = "Παναγιώτης Τριανταφυλλόπουλος";
-    private PG_Work pgwork3 = new PG_Work(title3, cont3, date3, auth3);
+    private LocalDate wdate3 = LocalDate.of(2020, Month.JANUARY, 17);
 
-    private String title4 = "Πανελλήνιος διαγωνισμός μαθηματικών";
-    private String cont4 = "Στις 12 Δεκεμβρίου 2019 θα πραγματοποιηθεί η πρώτη φάση του\n" +
-            "πανελλήνιου διαγωνισμού μαθηματικών για τους μαθητές \n" +
-            "γυμνασίου και λυκείου. Όποιος μαθητής επιθυμεί να συμμετάσχει\n" +
-            "μπορεί να δηλώσει συμμετοχή στον υπεύθυνο καθηγητή του \n" +
-            "τμήματος του.";
-    private LocalDate date4 = LocalDate.of(2019, Month.DECEMBER, 12);
-    private String auth4 = "Μαρία Αναστασοπούλου";
-    private PG_Work pgwork4 = new PG_Work(title4, cont4, date4, auth4);
+    private String cont4 = "Στις 12 Δεκεμβρίου 2019 θα πραγματοποιηθεί η πρώτη \n" +
+            "φάση του πανελλήνιου διαγωνισμού μαθηματικών για\n" +
+            "μαθητές γυμνασίου και λυκείου. Όποιος μαθητής \n" +
+            "επιθυμεί να συμμετάσχει μπορεί να δηλώσει συμμετοχή \n" +
+            "στον υπεύθυνο καθηγητή του τμήματος του.";
+    private LocalDate wdate4 = LocalDate.of(2019, Month.DECEMBER, 12);
 
-    private final ObservableList<PG_Work> entries =  FXCollections.observableArrayList(pgwork1, pgwork2, pgwork3, pgwork4); //τα δεδομένα θα μπαίνουν εδώ δυναμικά θέλει φτιάξιμο
+    private final ObservableList<PG_Work> entries = FXCollections.observableArrayList(
+            new PG_Work("Ενημέρωση για το νέο κορωνοϊό COVID-19", cont1, wdate1, "Πάνος"),
+            new PG_Work("Κοπή βασιλόπιτας για το σχολικό έτος 2019-2020", cont2, wdate2, "Ανδρέας"),
+            new PG_Work("Γενική συνέλευση του Συλλόγου Γονέων και Κηδεμόνων", cont3, wdate3, "Ρωμανός"),
+            new PG_Work("Πανελλήνιος διαγωνισμός μαθηματικών", cont4, wdate4, "Θωμάς")
+    );
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         filters.setValue("Πρόσφατα");
         filters.setItems(filtersList);
 
-        entry1text.setText(pgwork1.getWork_title());
-        entry1date.setText(pgwork1.getWork_date().toString());
-        entry1auth.setText(pgwork1.getWork_author());
+        wtitle_col.setCellValueFactory(new PropertyValueFactory<PG_Work, String>("work_title"));
+        wauthor_col.setCellValueFactory(new PropertyValueFactory<PG_Work, String>("work_author"));
+        wdate_col.setCellValueFactory(new PropertyValueFactory<PG_Work, LocalDate>("work_date"));
 
-        entry2text.setText(pgwork2.getWork_title());
-        entry2date.setText(pgwork2.getWork_date().toString());
-        entry2auth.setText(pgwork2.getWork_author());
-
-        entry3text.setText(pgwork3.getWork_title());
-        entry3date.setText(pgwork3.getWork_date().toString());
-        entry3auth.setText(pgwork3.getWork_author());
-
-        entry4text.setText(pgwork4.getWork_title());
-        entry4date.setText(pgwork4.getWork_date().toString());
-        entry4auth.setText(pgwork4.getWork_author());
-    }
-
-
-    @FXML
-    private void clickPG_Entry(ActionEvent actionEvent) {
-        Node actionEventSource = (Node) actionEvent.getSource();
-        String id = actionEventSource.getId();
-
-        if(id.equals("show1"))
-        {
-            entryshown.setText(pgwork1.getWork_content());
-        }
-        else if(id.equals("show2"))
-        {
-            entryshown.setText(pgwork2.getWork_content());
-        }
-        else if(id.equals("show3"))
-        {
-            entryshown.setText(pgwork3.getWork_content());
-        }
-        else if(id.equals("show4"))
-        {
-            entryshown.setText(pgwork4.getWork_content());
-        }
-        else //πιθανότατα δε θα φτάνει εδώ
-        {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Warning Dialog");
-            alert.setHeaderText(String.valueOf(id.equals("show1")));
-            alert.setContentText(id);
-            alert.showAndWait();
-        }
-
+        entriestable.setItems(entries);
 
     }
 
@@ -165,4 +93,19 @@ public class PGWorkController implements Initializable {
 
     }
 
+    public void clickPG_Entry(MouseEvent click) {
+        if(click.getClickCount() == 2){ //if doubleclick
+            PG_Work selectedentry = (PG_Work) entriestable.getSelectionModel().getSelectedItem();
+
+            if(selectedentry.getWork_title().equals(entries.get(0).getWork_title())){
+                entryshown.setText(selectedentry.getWork_content());
+            }else if (selectedentry.getWork_title().equals(entries.get(1).getWork_title())){
+                entryshown.setText(selectedentry.getWork_content());
+            }else if (selectedentry.getWork_title().equals(entries.get(2).getWork_title())) {
+                entryshown.setText(selectedentry.getWork_content());
+            }else if (selectedentry.getWork_title().equals(entries.get(3).getWork_title())) {
+                entryshown.setText(selectedentry.getWork_content());
+            }
+        }
+    }
 }

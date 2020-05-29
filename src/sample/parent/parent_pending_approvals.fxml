@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -104,34 +106,16 @@
                 </Text>
                 <Text fill="#007bff" layoutX="134.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Εκκρεμείς Εγκρίσεις" />
             </children></AnchorPane>
-      <Button fx:id="singleday11_5" layoutX="382.0" layoutY="266.0" mnemonicParsing="false" onAction="#click_FileToApprove">
-         <graphic>
-            <FontAwesomeIconView glyphName="FILE_ALT" style="-glyph-size: 80;" />
-         </graphic>
-      </Button>
-      <Button fx:id="fiveday12_2" layoutX="567.0" layoutY="266.0" mnemonicParsing="false" onAction="#click_FileToApprove">
-         <graphic>
-            <FontAwesomeIconView glyphName="FILE_ALT" style="-glyph-size: 80;" />
-         </graphic>
-      </Button>
-      <Button fx:id="educational11_12" layoutX="770.0" layoutY="266.0" mnemonicParsing="false" onAction="#click_FileToApprove">
-         <graphic>
-            <FontAwesomeIconView glyphName="FILE_ALT" style="-glyph-size: 80;" />
-         </graphic>
-      </Button>
-      <Button fx:id="schoolmatches" layoutX="986.0" layoutY="266.0" mnemonicParsing="false" onAction="#click_FileToApprove">
-         <graphic>
-            <FontAwesomeIconView glyphName="FILE_ALT" style="-glyph-size: 80;" text="" />
-         </graphic>
-      </Button>
-      <Text layoutX="385.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Μονοήμερη εκδρομή 11/5" wrappingWidth="78.818359375" />
-      <Text layoutX="570.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Πενθήμερη εκδρομή 12/2" wrappingWidth="78.818359375" />
-      <Text layoutX="773.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Εκπαιδευτική εκδρομή Βουλή 11/12" wrappingWidth="78.818359375" />
-      <Text layoutX="989.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Συμμετοχή στους σχολικούς αγώνες" wrappingWidth="78.818359375" />
-      <Text fx:id="approvaltitle" layoutX="553.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Μονοήμερη Εκδρομή" wrappingWidth="331.654296875">
+      <Text fx:id="approvaltitle" layoutX="600.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Εκκρεμείς Εγκρίσεις" wrappingWidth="331.654296875">
          <font>
             <Font size="28.0" />
          </font>
       </Text>
+      <TableView fx:id="pendingapprovalstable" layoutX="408.0" layoutY="236.0" onMouseClicked="#click_FileToApprove" prefHeight="437.0" prefWidth="658.0">
+        <columns>
+          <TableColumn fx:id="pa_title_col" prefWidth="384.0" resizable="false" style="-fx-color: #5aafff;" text="Τίτλος" />
+          <TableColumn fx:id="pa_date_col" prefWidth="273.0" resizable="false" style="-fx-color: #5aafff;" text="Καταληκτική Ημερομηνία" />
+        </columns>
+      </TableView>
     </children>
 </AnchorPane>

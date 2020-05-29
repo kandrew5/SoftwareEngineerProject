@@ -104,17 +104,17 @@
                     </font>
                 </Text>
             </children></AnchorPane>
-      <ListView layoutX="450.0" layoutY="200.0" prefHeight="200.0" prefWidth="455.0" />
-      <Text layoutX="623.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ανακοινώσεις">
+      <Text layoutX="661.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ανακοινώσεις">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Agenda layoutX="374.0" layoutY="461.0" prefHeight="300.0" prefWidth="644.0" />
-      <Text layoutX="615.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Το ημερολόγιο μου">
+      <Agenda layoutX="365.0" layoutY="461.0" prefHeight="300.0" prefWidth="759.0" />
+      <Text layoutX="670.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ημερολόγιο">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
+      <ListView layoutX="361.0" layoutY="182.0" prefHeight="200.0" prefWidth="759.0" />
     </children>
 </AnchorPane>

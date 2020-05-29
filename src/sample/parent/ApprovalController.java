@@ -36,7 +36,6 @@ public class ApprovalController implements Initializable {
     @FXML
     private Text approvaltitleblue;
 
-    private Paint blank;
     private boolean canvasclear = true;
 
     public void setTitle(String title){
@@ -47,7 +46,8 @@ public class ApprovalController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) throws NullPointerException{
         GraphicsContext g = canvas.getGraphicsContext2D();
-        blank = g.getFill();
+        g.setFill(Color.WHITE);
+        g.fillRect(0,0, canvas.getWidth(), canvas.getHeight());
         canvas.setOnMouseDragged(e -> {
             double size = 3;
             double x = e.getX() - size/2;
@@ -62,9 +62,8 @@ public class ApprovalController implements Initializable {
 
     public void clearCanvas(ActionEvent actionEvent) {
         GraphicsContext g = canvas.getGraphicsContext2D();
-        g.clearRect(0,0, canvas.getWidth(), canvas.getHeight());
-        g.setFill(blank);
-
+        g.setFill(Color.WHITE);
+        g.fillRect(0,0, canvas.getWidth(), canvas.getHeight());
         canvasclear = true;
         clearBox.setSelected(false);
     }

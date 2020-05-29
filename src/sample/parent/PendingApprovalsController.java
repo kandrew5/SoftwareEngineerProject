@@ -1,57 +1,86 @@
 package sample.parent;
 
 import Class_folder.Approval;
-import javafx.event.ActionEvent;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 
+import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 
 import java.io.IOException;
+import java.net.URL;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.ResourceBundle;
 
-public class PendingApprovalsController {
+public class PendingApprovalsController implements Initializable {
 
-    Approval file1 = new Approval("singleday","st12", "pt12" , true , LocalDate.of(2020, Month.MAY, 5));
-    Approval file2 = new Approval("fiveday","st12", "pt12" , true , LocalDate.of(2020, Month.FEBRUARY, 2));
-    Approval file3 = new Approval("educational","st12", "pt12" , true , LocalDate.of(2019, Month.DECEMBER, 11));
-    Approval file4 = new Approval("schoolmatches","st12", "pt12" , true , LocalDate.of(2020, Month.MARCH, 10));
+    private final ObservableList<Approval> pendapprovals = FXCollections.observableArrayList(
+            new Approval("a1","st12", "pt12" , true , LocalDate.of(2020, Month.MAY, 5), "Μονοήμερη εκδρομή στην Αθήνα"),
+            new Approval("a2","st12", "pt12" , true , LocalDate.of(2020, Month.FEBRUARY, 2), "Πενθήμερη εκδρομή στο Ναύπλιο"),
+            new Approval("a3","st12", "pt12" , true , LocalDate.of(2019, Month.DECEMBER, 11), "Εκπαιδευτική εκδρομή στη Βουλή"),
+            new Approval("a4","st12", "pt12" , true , LocalDate.of(2020, Month.MARCH, 10) , "Συμμετοχή στους σχολικούς αγώνες")
+    );
 
 
+    @FXML
+    private TableView pendingapprovalstable;
+    @FXML
+    private TableColumn pa_title_col;
+    @FXML
+    private TableColumn pa_date_col;
 
-    public void click_FileToApprove(ActionEvent actionEvent) throws IOException{
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        pa_title_col.setCellValueFactory(new PropertyValueFactory<Approval, String>("ap_title"));
+        pa_date_col.setCellValueFactory(new PropertyValueFactory<Approval, LocalDate>("ap_expire_date"));
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("parent_approval.fxml"));
-        Node source = (Node) actionEvent.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        Parent root = loader.load();
-        Scene scene = stage.getScene();
+        pendingapprovalstable.setItems(pendapprovals);
+    }
 
-        ApprovalController appcont = loader.getController();
+    public void click_FileToApprove(MouseEvent click) throws IOException{
 
-        String id = source.getId();
-        if(id.equals("singleday11_5")){
-            appcont.setTitle("Μονοήμερη εκδρομή");
-        }else if (id.equals("fiveday12_2")){
-            appcont.setTitle("Πενθήμερη εκδρομή");
-        }else if (id.equals("educational11_12")){
-            appcont.setTitle("Εκπαιδευτική εκδρομή");
-        }else if (id.equals("schoolmatches")){
-            appcont.setTitle("Σχολικοί αγώνες");
-        }else{
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Warning Dialog");
-            alert.setHeaderText(String.valueOf(id.equals("asda")));
-            alert.setContentText(id);
-            alert.showAndWait();
+
+        if(click.getClickCount()==2){
+
+            Approval temp = (Approval) pendingapprovalstable.getSelectionModel().getSelectedItem();
+            String appTitle = (String) temp.getAp_title();
+            Stage stage = (Stage) pendingapprovalstable.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("parent_approval.fxml"));
+
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+
+            ApprovalController appcont = loader.getController();
+
+
+            if(appTitle.equals(pendapprovals.get(0).getAp_title())){
+                appcont.setTitle("Μονοήμερη εκδρομή");
+            }else if(appTitle.equals(pendapprovals.get(1).getAp_title())){
+                appcont.setTitle("Πενθήμερη εκδρομή");
+            }else if (appTitle.equals(pendapprovals.get(2).getAp_title())){
+                appcont.setTitle("Εκπαιδευτική εκδρομή");
+            }else if (appTitle.equals(pendapprovals.get(3).getAp_title())){
+                appcont.setTitle("Συμμετοχή στους σχολικούς αγώνες");
+            }
+            scene.setRoot(root);
+            stage.show();
         }
 
-        scene.setRoot(root);
+
     }
+
+
+
 }
