@@ -42,10 +42,6 @@ public class Decisions_repo {
         return true;
     }
 
-    public boolean editDecision(String dec_id) {
-        return true;
-    }
-
     public boolean saveDecision(String dec_id) {
         return true;
     }
@@ -59,6 +55,50 @@ public class Decisions_repo {
     }
 
     public boolean removeDecision(String dec_id) {
+        return true;
+    }
+
+    public String getDec_id() {
+        return dec_id;
+    }
+
+    public void setDec_id(String dec_id) {
+        this.dec_id = dec_id;
+    }
+
+    public String getDec_file_name() {
+        return dec_file_name;
+    }
+
+    public void setDec_file_name(String dec_file_name) {
+        this.dec_file_name = dec_file_name;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
+    public int getDec_type() {
+        return dec_type;
+    }
+
+    public void setDec_type(int dec_type) {
+        this.dec_type = dec_type;
+    }
+
+    public int getDec_file_size() {
+        return dec_file_size;
+    }
+
+    public void setDec_file_size(int dec_file_size) {
+        this.dec_file_size = dec_file_size;
+    }
+
+    public boolean editDecision(String dec_id) {
         return true;
     }
 }

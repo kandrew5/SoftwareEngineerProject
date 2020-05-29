@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.parent.PGWorkController">
+    <children>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #5aafff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="920.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane maxHeight="156.0" maxWidth="272.0" minHeight="81.0" minWidth="200.0" prefHeight="110.0" prefWidth="259.0" style="-fx-background-color: #3380ca;" AnchorPane.bottomAnchor="680.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Text fill="WHITE" layoutX="8.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Πάνος Τριανταφυλλόπουλος">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <FontAwesomeIconView glyphName="USER_CIRCLE" layoutX="8.0" layoutY="52.0" style="-glyph-size: 48;" />
+                  <Button layoutX="171.0" layoutY="11.0" mnemonicParsing="false" style="-fx-background-color: #3380ca;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="GEAR" selectionEnd="0" style="-glyph-size: 24;" text="" />
+                     </graphic>
+                  </Button>
+                    </children>
+                </AnchorPane>
+            <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="20.0" layoutY="187.0" mnemonicParsing="false" prefHeight="11.0" prefWidth="222.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Επικοινωνία" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="220.0">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="COMMENT" />
+               </graphic>
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="20.0" layoutY="242.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="222.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Βαθμολογίες" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="290.0">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="TROPHY" />
+               </graphic>
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="20.0" layoutY="332.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="222.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Απουσίες" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="360.0">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="THERMOMETER" />
+               </graphic>
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutY="128.0" mnemonicParsing="false" prefHeight="2.0" prefWidth="182.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Ανακοινώσεις" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="150.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="BELL" selectionEnd="0" text="" />
+               </graphic>
+            </Button>
+            <SplitMenuButton alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="8.0" layoutY="369.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="37.0" prefWidth="238.0" style="-fx-color: #96e072; -fx-background-color: #96e072; -fx-cursor: hand;" text="Σύλλογος ΓΚ" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="430.0">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Μέλη" />
+                <MenuItem mnemonicParsing="false" text="Πρακτικά συνεδριάσεων" />
+                  <MenuItem mnemonicParsing="false" text="Έργο" />
+              </items>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USERS" />
+               </graphic>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </SplitMenuButton>
+            <Button layoutX="220.0" layoutY="614.0" mnemonicParsing="false" style="-fx-background-color: #5aafff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+               <graphic>
+                  <FontAwesomeIconView glyphName="SIGN_OUT" style="-glyph-size: 18;" />
+               </graphic>
+            </Button>
+            <Button layoutX="82.0" layoutY="591.0" mnemonicParsing="false" style="-fx-background-color: #5aafff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0">
+               <graphic>
+                  <FontAwesomeIconView glyphName="QUESTION_CIRCLE" style="-glyph-size: 16;" />
+               </graphic>
+            </Button>
+            <SplitMenuButton alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="30.0" layoutY="498.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="37.0" prefWidth="220.0" style="-fx-color: #3380ca; -fx-background-color: #3380ca; -fx-cursor: hand;" text="Εγκρίσεις" textAlignment="CENTER" textFill="WHITE">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Eκκρεμείς εγκρίσεις" />
+                  <MenuItem mnemonicParsing="false" text="Συμπληρωμένες εγκρίσεις" />
+               </items>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="CHECK" />
+               </graphic>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </SplitMenuButton>
+            </children>
+        </AnchorPane>
+      <FontAwesomeIconView layoutX="269.0" layoutY="-69.0" />
+      <AnchorPane layoutX="441.0" prefHeight="110.0" prefWidth="761.0" style="-fx-background-color: #dddddd;" AnchorPane.bottomAnchor="680.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <FontAwesomeIconView glyphName="USERS" layoutX="20.0" layoutY="55.0" style="-glyph-size: 48;" />
+            <Text layoutX="134.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Σύλλογος Γονέων &amp; Κηδεμόνων" AnchorPane.leftAnchor="134.0">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Text>
+            <Text fill="#007bff" layoutX="134.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Έργο" />
+         </children></AnchorPane>
+      <Text layoutX="677.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Έργο">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="entryshown" editable="false" layoutX="854.0" layoutY="251.0" prefHeight="422.0" prefWidth="320.0" />
+      <ChoiceBox fx:id="filters" layoutX="1036.0" layoutY="135.0" onAction="#click_Filter" prefWidth="150.0" />
+      <TableView fx:id="entriestable" layoutX="288.0" layoutY="212.0" onMouseClicked="#clickPG_Entry" prefHeight="500.0" prefWidth="537.0">
+        <columns>
+          <TableColumn fx:id="wtitle_col" prefWidth="330.0" resizable="false" style="-fx-color: #5aafff;" text="Τίτλος" />
+          <TableColumn fx:id="wauthor_col" prefWidth="118.0" resizable="false" style="-fx-color: #5aafff;" text="Συντάκτης" />
+            <TableColumn fx:id="wdate_col" minWidth="0.0" prefWidth="90.0" resizable="false" style="-fx-color: #5aafff;" text="Ημερομηνία" />
+        </columns>
+      </TableView>
+      <Text layoutX="329.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επιλέξτε μία εγγραφή">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="949.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Προβολή Εγγραφής" />
+    </children>
+</AnchorPane>

@@ -4,14 +4,15 @@ import java.lang.reflect.Array;
 
 public class Student extends User{
     private String class_id;
-    private int am;
+    private String  am;
     private String AMKA;
     private String father_name;
     private String mother_name;
     private boolean absence_status;
     private int absence_sum;
 
-    public Student(String first_name, String last_name, String class_id, String father_name, String mother_name, String tel, String AMKA) {
+    public Student(String am, String first_name, String last_name, String class_id, String father_name, String mother_name, String tel, String AMKA) {
+        this.am = am;
         this.first_name = first_name;
         this.last_name = last_name;
         this.class_id = class_id;
@@ -37,11 +38,11 @@ public class Student extends User{
         this.class_id = class_id;
     }
 
-    public int getAm() {
+    public String getAm() {
         return am;
     }
 
-    public void setAm(int am) {
+    public void setAm(String am) {
         this.am = am;
     }
 
