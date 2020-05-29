@@ -30,21 +30,21 @@ public class Gradebook {
             this.gr_id = gr_id;
         }
 
-        public Grade(String gr_class_id, String gr_course, String gr_type, String gr_title, int gr_id) {
+        public Gradebook(String gr_class_id, String gr_course, String gr_type, String gr_title, int gr_id) {
             this.gr_class_id = gr_class_id;
             this.gr_course = gr_course;
             this.gr_type = gr_type;
             this.gr_title = new SimpleStringProperty(gr_title);
             this.gr_id = gr_id;
         }
-        public Grade(String gr_class_id) {
+        public Gradebook(String gr_class_id) {
             this.gr_class_id = gr_class_id;
         }
 
-        public Grade() {
+        public Gradebook() {
         }
 
-        public Grade(int gr_id) {
+        public Gradebook(int gr_id) {
             this.gr_id = gr_id;
         }
 
@@ -75,7 +75,7 @@ public class Gradebook {
         public Map getGrades(int gr_id){
             //αναζήτηση στη βάση δεδομένων
             //εδώ έχουμε dummy data
-            Class_folder.Grade grade1 = new Class_folder.Grade(gr_id);
+           // Class_folder.Grade grade1 = new Class_folder.Grade(gr_id);
             Map<String, Integer>  class_grades = new HashMap<String, Integer>();
             class_grades.put("Αμπατζίδου Ζουμπουλία", 6);
             class_grades.put("Αντωνοπούλου Αμαλία", 19);
