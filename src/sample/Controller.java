@@ -35,46 +35,46 @@ public class Controller {
         }
         else {
             if(username.equals("st12") && password.equals("12345")) {
-                System.out.println("Success");
                 Node node = (Node) actionEvent.getSource();
                 Stage stage = (Stage) node.getScene().getWindow();
-                Scene scene = stage.getScene();
 
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("student/student_home.fxml"));
                 Parent root = (Parent) fxmlLoader.load();
-
-                scene.setRoot(root);
+                stage.setScene(new Scene(root, 1200, 800));
+                stage.show();
             }
             else if(username.equals("tc12") && password.equals("12345")) {
                 u_type = 1;
                 if(u_type == 1) {
-                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("sample/teacher_home.fxml"));
-                }
-            }
-            else if(username.equals("st13") && password.equals("12345")) {
-                u_type = 2;
-                if(u_type == 2) {
-                    System.out.println("Success");
                     Node node = (Node) actionEvent.getSource();
                     Stage stage = (Stage) node.getScene().getWindow();
-                    Scene scene = stage.getScene();
+
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("teacher/teacher_home.fxml"));
+                    Parent root = (Parent) fxmlLoader.load();
+                    stage.setScene(new Scene(root, 1200, 800));
+                    stage.show();
+                }
+            }
+            else if(username.equals("tc13") && password.equals("12345")) {
+                u_type = 2;
+                if(u_type == 2) {
+                    Node node = (Node) actionEvent.getSource();
+                    Stage stage = (Stage) node.getScene().getWindow();
 
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("admin/admin_home.fxml"));
                     Parent root = (Parent) fxmlLoader.load();
-
-                    scene.setRoot(root);
+                    stage.setScene(new Scene(root, 1200, 800));
+                    stage.show();
                 }
             }
             else if (username.equals("pt12") && password.equals("12345")) {
-                System.out.println("Success");
                 Node node = (Node) actionEvent.getSource();
                 Stage stage = (Stage) node.getScene().getWindow();
-                Scene scene = stage.getScene();
 
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("parent/parent_home.fxml"));
                 Parent root = (Parent) fxmlLoader.load();
-
-                scene.setRoot(root);
+                stage.setScene(new Scene(root, 1200, 800));
+                stage.show();
             }
         }
     }

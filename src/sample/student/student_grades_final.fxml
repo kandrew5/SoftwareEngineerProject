@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.student.FinalgController">
     <children>
         <AnchorPane layoutX="1.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #5aafff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="950.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -121,12 +121,12 @@
                 <Font size="16.0" />
             </font>
         </Button>
-      <TableView layoutX="331.0" layoutY="184.0" prefHeight="576.0" prefWidth="764.0" AnchorPane.leftAnchor="331.0" AnchorPane.rightAnchor="105.0">
+      <TableView fx:id="table_gr_id" layoutX="331.0" layoutY="184.0" prefHeight="576.0" prefWidth="764.0" AnchorPane.leftAnchor="331.0" AnchorPane.rightAnchor="105.0">
         <columns>
-          <TableColumn prefWidth="190.0" text="Μάθημα" />
-          <TableColumn prefWidth="145.0" text="1ο" />
-            <TableColumn prefWidth="147.0" text="2ο" />
-            <TableColumn prefWidth="281.0" text="Μ.Ο τμήματος" />
+          <TableColumn fx:id="gr_course_title" prefWidth="190.0" text="Μάθημα" />
+          <TableColumn fx:id="gr_grade_no" prefWidth="145.0" text="1ο" />
+            <TableColumn fx:id="gr_grade_no2" prefWidth="147.0" text="2ο" />
+            <TableColumn fx:id="gr_grade_mean" prefWidth="281.0" text="Μ.Ο τμήματος" />
         </columns>
       </TableView>
     </children>
