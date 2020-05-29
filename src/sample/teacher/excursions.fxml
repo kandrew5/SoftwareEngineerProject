@@ -13,14 +13,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import jfxtras.scene.control.*?>
-<?import java.util.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import java.lang.*?>
+
 <AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.teacher.excursions_Controller">
    <children>
       <AnchorPane layoutY="-7.0" maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #5aafff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="950.0" AnchorPane.topAnchor="0.0">
@@ -104,7 +97,7 @@
                   <Font size="15.0" />
                </font>
                <graphic>
-                  <FontAwesomeIconView caretBias="false" fill="WHITE" glyphName="PLUS_CIRCLE" />
+                  <FontAwesomeIconView caretBias="false" fill="WHITE" glyphName="BUS" />
                </graphic>
             </Button>
             <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="14.0" layoutY="776.0" style="-glyph-size: 24; -fx-cursor: hand;" text="" wrappingWidth="23.4000244140625" />
@@ -118,14 +111,14 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Text>
-            <FontAwesomeIconView glyphName="TROPHY" layoutX="32.0" layoutY="62.0" style="-glyph-size: 24;" />
+            <FontAwesomeIconView glyphName="BUS" layoutX="32.0" layoutY="62.0" style="-glyph-size: 24;" />
          </children>
       </AnchorPane>
-      <TableView fx:id="table" editable="true" layoutX="300.0" layoutY="232.0" prefHeight="180.0" prefWidth="551.0">
+      <TableView fx:id="table" editable="true" layoutX="300.0" layoutY="293.0" prefHeight="180.0" prefWidth="551.0">
          <columns>
-            <TableColumn fx:id="ex_name" prefWidth="318.4000244140625" style="-fx-color: #5aafff;" text="Ονομασία εκδρομής" />
-            <TableColumn fx:id="ex_date" prefWidth="123.199951171875" style="-fx-color: #5aafff;" text="Ημερομηνία" />
-            <TableColumn fx:id="select" prefWidth="107.0" style="-fx-color: #5aafff;" text="select">
+            <TableColumn fx:id="ex_name" prefWidth="318.4000244140625" resizable="false" style="-fx-color: #5aafff;" text="Ονομασία εκδρομής" />
+            <TableColumn fx:id="ex_date" prefWidth="123.199951171875" resizable="false" style="-fx-color: #5aafff;" text="Ημερομηνία" />
+            <TableColumn fx:id="select" prefWidth="107.0" resizable="false" style="-fx-color: #5aafff;" text="select">
                <graphic>
                   <CheckBox mnemonicParsing="false" style="-fx-color: white;" text="Επιλογή όλων" />
                </graphic>
@@ -135,12 +128,12 @@
 
          </columns>
       </TableView>
-      <Label layoutX="300.0" layoutY="190.0" text="Επερχόμενες εκδρομές">
+      <Label layoutX="300.0" layoutY="256.0" text="Επερχόμενες εκδρομές">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button onAction="#click_Excursion" layoutX="731.0" layoutY="175.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Νέα εκδρομή">
+      <Button layoutX="731.0" layoutY="247.0" mnemonicParsing="false" onAction="#click_Excursion" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Νέα εκδρομή">
          <font>
             <Font size="14.0" />
          </font>
@@ -148,7 +141,16 @@
             <FontAwesomeIconView glyphName="PLUS" />
          </graphic>
       </Button>
-      <Text layoutX="300.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επιλέξτε μία (ή περισσότερες) από τις παραπάνω εκδρομές για να δείτε περισσότερες πληροφoρίες ή επιλέξτε &quot;Νέα εκδρομή&quot; για να δημιουργήσετε μια νέα." wrappingWidth="445.0" />
+      <AnchorPane layoutX="300.0" layoutY="163.0" prefHeight="48.0" prefWidth="686.0" style="-fx-background-color: #dddddd;">
+         <children>
+            <FontAwesomeIconView glyphName="MAP_PIN" layoutX="8.0" layoutY="27.0" style="-glyph-size: 20;" />
+            <Text layoutX="33.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επιλέξτε μία (ή περισσότερες) από τις παρακάτω εκδρομές για να δείτε περισσότερες πληροφoρίες ή επιλέξτε &quot;Νέα εκδρομή&quot; για να δημιουργήσετε μια καινούρια." wrappingWidth="652.0000000000002">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
    </children>
 
 </AnchorPane>

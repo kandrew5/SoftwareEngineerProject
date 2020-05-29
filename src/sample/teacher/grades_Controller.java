@@ -27,7 +27,28 @@ public class grades_Controller {
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("send_Gradebook.fxml"));
+        Parent root = (Parent) fxmlLoader.load();
+
+        scene.setRoot(root);
+    }
+    @FXML
+    public void click_Excursion(javafx.event.ActionEvent actionEvent) throws IOException { //create excursion button listener
+        Node node = (Node) actionEvent.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Scene scene = stage.getScene();
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("excursion_create.fxml"));
+        Parent root = (Parent) fxmlLoader.load();
+
+        scene.setRoot(root);
+    }
+    public void click_Grades(javafx.event.ActionEvent actionEvent) throws IOException {
+        Node node = (Node) actionEvent.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Scene scene = stage.getScene();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("gradebooks.fxml"));
         Parent root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);

@@ -159,14 +159,14 @@
       </AnchorPane>
       <AnchorPane layoutX="454.0" layoutY="487.0" prefHeight="268.0" prefWidth="575.0" style="-fx-background-color: #dddddd;">
          <children>
-            <Agenda prefHeight="268.0" prefWidth="364.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Agenda fx:id="myAgenda" prefHeight="268.0" prefWidth="364.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children></AnchorPane>
       <AnchorPane layoutX="762.0" layoutY="165.0" prefHeight="259.0" prefWidth="358.0" style="-fx-background-color: #dddddd;">
          <children>
             <TableView fx:id="forwarded" layoutX="59.0" layoutY="30.0" onMouseClicked="#select_Decision" prefHeight="259.0" prefWidth="339.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <columns>
-                  <TableColumn fx:id="dec_title" prefWidth="239.0" style="-fx-color: #5aafff;" text="Τίτλος" />
-                  <TableColumn fx:id="dec_date" prefWidth="118.0" style="-fx-color: #5aafff;" text="Ημερομηνία" />
+                  <TableColumn fx:id="dec_title" prefWidth="239.0" resizable="false" style="-fx-color: #5aafff;" text="Τίτλος" />
+                  <TableColumn fx:id="dec_date" prefWidth="118.0" resizable="false" style="-fx-color: #5aafff;" text="Ημερομηνία" />
                </columns></TableView>
          </children></AnchorPane>
       <Label layoutX="347.0" layoutY="139.0" text="Εισερχόμενα μηνύματα">
