@@ -9,7 +9,7 @@ public class Decisions_repo {
     private String dec_file_name;   // name of decision file
     private int priority;           // 0: for normal & 1: for high priority
     private int dec_type;           // 0: for ministry decision, 1: for municipal decision, 2: for teachers decision
-    private int dec_file_size;      // file size of decision
+    private long dec_file_size;      // file size of decision
     private LocalDate dec_Date;          // date of publication
 
     public LocalDate getDec_Date() {
@@ -28,7 +28,7 @@ public class Decisions_repo {
         this.dec_title = dec_title;
     }
 
-    public Decisions_repo(String dec_id, String dec_title, String dec_file_name, int priority, int dec_type, int dec_file_size, LocalDate dec_Date){
+    public Decisions_repo(String dec_id, String dec_title, String dec_file_name, int priority, int dec_type, long dec_file_size, LocalDate dec_Date){
         this.dec_id = dec_id;
         this.dec_title = dec_title;
         this.dec_file_name = dec_file_name;
@@ -90,7 +90,7 @@ public class Decisions_repo {
         this.dec_type = dec_type;
     }
 
-    public int getDec_file_size() {
+    public long getDec_file_size() {
         return dec_file_size;
     }
 

@@ -38,7 +38,7 @@ public class grades_Controller {
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("excursion_create.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("excursions.fxml"));
         Parent root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
@@ -48,7 +48,7 @@ public class grades_Controller {
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("gradebooks.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("grades_main.fxml"));
         Parent root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);

@@ -1,6 +1,9 @@
 package Class_folder;
 
-public class Grade {
+import java.util.HashMap;
+import java.util.Map;
+
+public class Grade extends Gradebook{
     private String gr_class_id;
 
     private String gr_course;//!!!!!!!!!
@@ -8,15 +11,39 @@ public class Grade {
     private int grade_no2;//!!!!!!!!!!!!!
     private int grade_mean;//!!!!!!!!!!!!!
     private String grade_title; //!!!!!!!!!!!!
-    private int gr_id;
+    private int gr_id = super.gr_id;
     private String student_am; //!!!!!!!
-
+    private String name;
+    private String surname;
     //=--------------------------------------------------------=
     public Grade(int grade_no, String grade_title) {
         this.grade_title = grade_title;
         this.grade_no = grade_no;
     }
 
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public Grade(String student_am, String surname, String name, int grade_no){
+        this.student_am =student_am;
+        this.name = name;
+        this.surname = surname;
+        this.grade_no = grade_no;
+    }
     public Grade(String gr_course, int grade_no, int grade_no2, int grade_mean) {
         this.gr_course = gr_course;
         this.grade_no = grade_no;
@@ -51,6 +78,10 @@ public class Grade {
         return gr_course;
     }
 
+    public Map getStGrades(int gr_id){ //εδω θα κανει αναζήτηση στη βάση και θα παίρνει τους μαθητές του βαθμολογίου και τους βαθμούς
+        Map<String, Integer>  st_grades = new HashMap<String, Integer>();
+        return st_grades;
+    }
 }
 
 

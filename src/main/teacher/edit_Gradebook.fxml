@@ -160,16 +160,22 @@
                </font>
             </Text>
             <FontAwesomeIconView glyphName="TROPHY" layoutX="32.0" layoutY="62.0" style="-glyph-size: 24;" />
+            <Text fill="#3380ca" layoutX="32.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Βαθμολογίες" />
+            <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="107.0" layoutY="99.0" />
+            <Text fill="#3380ca" layoutX="222.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Τα βαθμολόγιά μου" />
+            <Text fill="#3380ca" layoutX="128.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επεξεργασία" />
+            <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="205.0" layoutY="99.0" />
+            <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="335.0" layoutY="100.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="291.0" layoutY="168.0" prefHeight="566.0" prefWidth="705.0" style="-fx-background-color: #dddddd;">
+      <AnchorPane layoutX="427.0" layoutY="168.0" prefHeight="597.0" prefWidth="597.0" style="-fx-background-color: #dddddd;">
          <children>
             <Label layoutX="17.0" layoutY="8.0" text="Επεξεργασία βαθμολογίου">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Button layoutX="427.0" layoutY="509.0" mnemonicParsing="false" onAction="#selection" prefHeight="30.0" prefWidth="109.0" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Αποθήκευση">
+            <Button layoutX="469.0" layoutY="554.0" mnemonicParsing="false" onAction="#selection" prefHeight="30.0" prefWidth="109.0" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Αποθήκευση">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -186,23 +192,30 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Text>
-            <Text layoutX="397.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Μάθημα :">
+            <Text layoutX="22.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Μάθημα :">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Text>
-            <Button layoutX="344.0" layoutY="509.0" mnemonicParsing="false" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Άκυρο">
+            <Button layoutX="386.0" layoutY="554.0" mnemonicParsing="false" onAction="#click_Cancel" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Άκυρο">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <TextField fx:id="grade_course" layoutX="467.0" layoutY="59.0" prefHeight="25.0" prefWidth="126.0" />
-            <TableView fx:id="gradesTable" layoutX="178.0" layoutY="120.0" prefHeight="347.0" prefWidth="350.0">
+            <TextField fx:id="grade_course" layoutX="83.0" layoutY="98.0" prefHeight="25.0" prefWidth="126.0" />
+            <TableView fx:id="gradesTable" layoutX="87.0" layoutY="152.0" prefHeight="381.0" prefWidth="423.0">
               <columns>
-                <TableColumn fx:id="fullname" prefWidth="226.0" resizable="false" text="Ονοματεπώνυμο" />
-                <TableColumn fx:id="grade" minWidth="0.0" prefWidth="122.0" resizable="false" text="Βαθμολογία" />
+                <TableColumn fx:id="name" prefWidth="137.0" resizable="false" style="-fx-color: #5aafff;" text="Όνομα" />
+                  <TableColumn fx:id="surname" prefWidth="154.0" style="-fx-color: #5aafff;" text="Επώνυμο" />
+                <TableColumn fx:id="grade" minWidth="0.0" prefWidth="132.0" resizable="false" style="-fx-color: #5aafff;" text="Βαθμολογία" />
               </columns>
             </TableView>
+            <TextField fx:id="grade_type" layoutX="325.0" layoutY="98.0" prefHeight="25.0" prefWidth="137.0" />
+            <Text layoutX="270.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Τύπος :">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </children>

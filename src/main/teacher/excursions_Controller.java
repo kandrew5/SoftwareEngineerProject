@@ -36,7 +36,7 @@ public class excursions_Controller implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("excursions.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("excursion_create.fxml"));
         Parent root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
@@ -46,7 +46,7 @@ public class excursions_Controller implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("gradebooks.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("grades_main.fxml"));
         Parent root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
@@ -71,10 +71,8 @@ public class excursions_Controller implements Initializable {
         ex_date.setCellValueFactory(new PropertyValueFactory<>("date"));
         select.setCellValueFactory(new PropertyValueFactory<>("check"));
 
-        //ex_title.setCellValueFactory(new PropertyValueFactory<Excursion, String>("destination"));
-        //ex_name.setCellValueFactory(cellData -> cellData.getValue().getDestination());
         table.setItems(list);
-        //table.getColumns().addAll(ex_name);
+
 
     }
 

@@ -149,16 +149,19 @@
                </font>
             </Text>
             <FontAwesomeIconView glyphName="BUS" layoutX="32.0" layoutY="62.0" style="-glyph-size: 24;" />
+            <Text fill="#3380ca" layoutX="37.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Εκδρομές" />
+            <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="97.0" layoutY="97.0" />
+            <Text fill="#3380ca" layoutX="118.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Δημιουργία εκδρομής" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="296.0" layoutY="168.0" prefHeight="566.0" prefWidth="637.0" style="-fx-background-color: #dddddd;">
+      <AnchorPane layoutX="407.0" layoutY="169.0" prefHeight="566.0" prefWidth="637.0" style="-fx-background-color: #dddddd;">
          <children>
             <Label layoutX="17.0" layoutY="8.0" text="Δημιουργία εκδρομής">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Button layoutX="427.0" layoutY="509.0" mnemonicParsing="false" onAction="#create" prefHeight="30.0" prefWidth="109.0" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Δημιουργία">
+            <Button layoutX="459.0" layoutY="509.0" mnemonicParsing="false" onAction="#create" prefHeight="30.0" prefWidth="109.0" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Δημιουργία">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -193,7 +196,7 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Text>
-            <Button layoutX="344.0" layoutY="509.0" mnemonicParsing="false" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Άκυρο">
+            <Button layoutX="379.0" layoutY="509.0" mnemonicParsing="false" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Άκυρο">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

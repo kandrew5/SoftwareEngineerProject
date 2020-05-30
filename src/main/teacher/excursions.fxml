@@ -92,7 +92,7 @@
                   <FontAwesomeIconView caretBias="false" fill="WHITE" glyphName="TROPHY" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="24.0" layoutY="374.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="184.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Εκδρομές" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="24.0" layoutY="374.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="190.0" style="-fx-background-color: #96e072; -fx-cursor: hand;" text="Εκδρομές" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -128,14 +128,14 @@
 
          </columns>
       </TableView>
-      <Label layoutX="300.0" layoutY="256.0" text="Επερχόμενες εκδρομές">
+      <Label layoutX="300.0" layoutY="249.0" text="Επερχόμενες εκδρομές">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
       <Button layoutX="731.0" layoutY="247.0" mnemonicParsing="false" onAction="#click_Excursion" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Νέα εκδρομή">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="13.0" />
          </font>
          <graphic>
             <FontAwesomeIconView glyphName="PLUS" />

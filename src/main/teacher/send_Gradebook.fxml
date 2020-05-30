@@ -9,6 +9,7 @@
 <?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
@@ -105,12 +106,12 @@
                         <FontAwesomeIconView caretBias="false" fill="WHITE" glyphName="TROPHY" />
                      </graphic>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="24.0" layoutY="374.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="184.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Εκδρομές" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="24.0" layoutY="374.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="190.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Εκδρομές" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                      <font>
                         <Font size="15.0" />
                      </font>
                      <graphic>
-                        <FontAwesomeIconView caretBias="false" fill="WHITE" glyphName="PLUS_CIRCLE" />
+                        <FontAwesomeIconView caretBias="false" fill="WHITE" glyphName="BUS" />
                      </graphic>
                   </Button>
                   <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="14.0" layoutY="776.0" style="-glyph-size: 24; -fx-cursor: hand;" text="" wrappingWidth="23.4000244140625" />
@@ -127,22 +128,42 @@
                   <FontAwesomeIconView glyphName="TROPHY" layoutX="32.0" layoutY="62.0" style="-glyph-size: 24;" />
                </children>
             </AnchorPane>
-            <TableView layoutX="300.0" layoutY="232.0" prefHeight="200.0" prefWidth="445.0">
-              <columns>
-                <TableColumn prefWidth="318.4000244140625" style="-fx-color: #5aafff;" text="Όνομα Βαθμολογίου" />
-                <TableColumn prefWidth="123.199951171875" style="-fx-color: #5aafff;" text="Επιλογή όλων">
-                     <graphic>
-                        <CheckBox mnemonicParsing="false" style="-fx-color: transparent;" />
-                     </graphic>
-                  </TableColumn>
-              </columns>
-            </TableView>
-            <Label layoutX="300.0" layoutY="180.0" text="Επιλέξτε ένα ή περισσότερα βαθμολόγια για υποβολή:">
+      <AnchorPane layoutX="300.0" layoutY="232.0" prefHeight="374.0" prefWidth="694.0" style="-fx-background-color: #dddddd;">
+         <children>
+                  <TableView fx:id="sndGradebooks" layoutX="39.0" layoutY="65.0" prefHeight="200.0" prefWidth="572.0">
+                    <columns>
+                      <TableColumn fx:id="grName" prefWidth="234.0" style="-fx-color: #5aafff;" text="Όνομα Βαθμολογίου" />
+                      <TableColumn prefWidth="109.0" style="-fx-color: #5aafff;" text="Επιλογή όλων">
+                           <graphic>
+                              <CheckBox mnemonicParsing="false" style="-fx-color: transparent;" />
+                           </graphic>
+                        </TableColumn>
+                  <TableColumn fx:id="classCol" prefWidth="101.0" style="-fx-color: #5aafff;" text="Τμήμα" />
+                  <TableColumn fx:id="courseCol" prefWidth="126.0" style="-fx-color: #5aafff;" text="Μάθημα" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="329.0" layoutY="322.0" mnemonicParsing="false" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Άκυρο">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+                  <Button layoutX="401.0" layoutY="322.0" mnemonicParsing="false" onAction="#sendGrades" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Αποστολή">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <TextField fx:id="search" layoutX="99.0" layoutY="26.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="300.0" layoutY="159.0" prefHeight="48.0" prefWidth="533.0" style="-fx-background-color: #dddddd;">
+         <children>
+            <FontAwesomeIconView glyphName="MAP_PIN" layoutX="8.0" layoutY="27.0" style="-glyph-size: 20;" />
+            <Text layoutX="27.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επιλέξτε ένα βαθμολόγιο και πατήστε &quot;Αποστολή&quot; για αποστολή στη Διεύθυνση." wrappingWidth="544.0000000000002">
                <font>
                   <Font size="14.0" />
                </font>
-            </Label>
-            <Button layoutX="640.0" layoutY="560.0" mnemonicParsing="false" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Άκυρο" />
-            <Button layoutX="710.0" layoutY="560.0" mnemonicParsing="false" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Αποστολή" />
+            </Text>
+         </children>
+      </AnchorPane>
          </children>
       </AnchorPane>

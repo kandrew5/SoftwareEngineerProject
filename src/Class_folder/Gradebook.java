@@ -11,16 +11,8 @@ public class Gradebook {
         private String gr_course;
         private String gr_type; //final, semester or test grades
         private SimpleStringProperty gr_title;
-        Map<String, Integer> myMap = new HashMap<String, Integer>();
-        private int gr_id;
+        protected int gr_id;
 
-        public Map<String, Integer> getMyMap() {
-            return myMap;
-        }
-
-        public void setMyMap(Map<String, Integer> myMap) {
-            this.myMap = myMap;
-        }
 
         public int getGr_id() {
             return gr_id;
@@ -76,21 +68,21 @@ public class Gradebook {
             //αναζήτηση στη βάση δεδομένων
             //εδώ έχουμε dummy data
            // Class_folder.Grade grade1 = new Class_folder.Grade(gr_id);
-            Map<String, Integer>  class_grades = new HashMap<String, Integer>();
-            class_grades.put("Αμπατζίδου Ζουμπουλία", 6);
-            class_grades.put("Αντωνοπούλου Αμαλία", 19);
-            class_grades.put("Βουλινός Φώτιος", 16);
-            class_grades.put("Δελόγλου Σπυρίδων", 18);
-            class_grades.put("Ιωακειμίδου Αγγελική", 9);
-            class_grades.put("Κάλλιστρος Ανδρέας", 17);
-            class_grades.put("Καψάλης Ρωμανός", 14);
-            class_grades.put("Παυρινός Αριστομένης", 15);
-            class_grades.put("Πολίτης Δημοσθένης", 15);
-            class_grades.put("Στεργίου Αλέξιος", 20);
-            class_grades.put("Τζίνη Θεοπούλα", 13);
-            class_grades.put("Τριανταφυλλόπουλος Παναγιώτης",19);
-            class_grades.put("Χατζηαλεξάνδρου Ντάλια", 10);
-            class_grades.put("Χατζοπουλος Θωμάς", 12);
+              Map<String, Integer>  class_grades = new HashMap<String, Integer>();
+//            class_grades.put("Αμπατζίδου Ζουμπουλία", 6);
+//            class_grades.put("Αντωνοπούλου Αμαλία", 19);
+//            class_grades.put("Βουλινός Φώτιος", 16);
+//            class_grades.put("Δελόγλου Σπυρίδων", 18);
+//            class_grades.put("Ιωακειμίδου Αγγελική", 9);
+//            class_grades.put("Κάλλιστρος Ανδρέας", 17);
+//            class_grades.put("Καψάλης Ρωμανός", 14);
+//            class_grades.put("Παυρινός Αριστομένης", 15);
+//            class_grades.put("Πολίτης Δημοσθένης", 15);
+//            class_grades.put("Στεργίου Αλέξιος", 20);
+//            class_grades.put("Τζίνη Θεοπούλα", 13);
+//            class_grades.put("Τριανταφυλλόπουλος Παναγιώτης",19);
+//            class_grades.put("Χατζηαλεξάνδρου Ντάλια", 10);
+//            class_grades.put("Χατζοπουλος Θωμάς", 12);
             return class_grades;
         }
         public void editGrade(){

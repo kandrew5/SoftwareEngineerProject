@@ -1,6 +1,7 @@
 package main.teacher;
 
 import Class_folder.Decisions_repo;
+import Class_folder.Message;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -44,8 +45,12 @@ public class teacher_Controller implements Initializable {
    private TableColumn dec_date;
    @FXML
    private TableColumn dec_title;
-
-
+   @FXML
+   private TableView recent_messages;
+   @FXML
+   private TableColumn message;
+   @FXML
+   private TableColumn sender;
 
     @FXML
     public void click_Excursion(javafx.event.ActionEvent actionEvent) throws IOException { //create excursion button listener
@@ -63,7 +68,7 @@ public class teacher_Controller implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("gradebooks.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("grades_main.fxml"));
         Parent root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
@@ -85,14 +90,23 @@ public class teacher_Controller implements Initializable {
               new Decisions_repo("61","Λογαριασμοί στο webex","webex.pdf", 1, 0,1023478, date4),
               new Decisions_repo("62","Απόφαση συλλόγου διδασκόντων 1/3/20","τετραμήνου", 1, 2, 123456, date5)
     );
-
+    private final ObservableList<Message> message_list = FXCollections.observableArrayList(
+             new Message("Ρωμανός Καψάλης", "Γιωργάκης", "Απορία σε άσκηση"),
+             new Message("Ρωμανός Καψάλης", "κ.Χατζόπουλος", "Σχετικά με βαθμούς"),
+             new Message("Ρωμανός Καψάλης", "Κωστάκης", "Αυριανός περίπατος"),
+             new Message("Ρωμανός Καψάλης", "Ελενίτσα", "Ο Θανάσης με πειράζει"),
+             new Message("Ρωμανός Καψάλης", "Θανασάκης", "Η Ελένη λέει ψέμματα")
+    );
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         dec_title.setCellValueFactory(new PropertyValueFactory<Decisions_repo,String>("dec_title"));
         dec_date.setCellValueFactory(new PropertyValueFactory<>("dec_Date"));
-
         forwarded.setItems(dec_list);
+
+        sender.setCellValueFactory(new PropertyValueFactory<Message, String>("mess_sender"));
+        message.setCellValueFactory(new PropertyValueFactory<Message, String>("mess_content"));
+        recent_messages.setItems(message_list);
     }
 
 

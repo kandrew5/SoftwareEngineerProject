@@ -99,7 +99,7 @@
                   <FontAwesomeIconView fill="WHITE" glyphName="COMMENT" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="22.0" layoutY="316.0" mnemonicParsing="false" onAction="#click_Grades" prefHeight="31.0" prefWidth="129.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Βαθμολογίες" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="22.0" layoutY="316.0" mnemonicParsing="false" onAction="#click_Grades" prefHeight="31.0" prefWidth="129.0" style="-fx-background-color: #96e072; -fx-cursor: hand;" text="Βαθμολογίες" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -107,7 +107,7 @@
                   <FontAwesomeIconView caretBias="false" fill="WHITE" glyphName="TROPHY" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="24.0" layoutY="374.0" mnemonicParsing="false" onAction="#click_Excursion" prefHeight="38.0" prefWidth="184.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Εκδρομές" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="30.0" layoutY="375.0" mnemonicParsing="false" onAction="#click_Excursion" prefHeight="31.0" prefWidth="190.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Εκδρομές" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -140,7 +140,7 @@
       <AnchorPane layoutX="320.0" layoutY="160.0" prefHeight="48.0" prefWidth="765.0" style="-fx-background-color: #dddddd;">
          <children>
             <FontAwesomeIconView glyphName="MAP_PIN" layoutX="8.0" layoutY="27.0" style="-glyph-size: 20;" />
-            <Text layoutX="30.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επιλέξτε &quot;Δημιουργία&quot; για να δημιουργήσετε ένα βαθμολόγιο ή &quot;Επεξεργασία&quot; για να επεξεργαστείτε ένα (ή και περισσότερα) από τα βαθμολόγια που έχετε δημιουργήσει ή &quot;Αποστολή&quot; προκειμένου να στείλετε ένα βαθμολόγιο στη διεύθυνση." textAlignment="JUSTIFY" wrappingWidth="750.0000000000002">
+            <Text layoutX="30.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επιλέξτε &quot;Δημιουργία&quot; για να δημιουργήσετε ένα βαθμολόγιο ή &quot;Επεξεργασία&quot; για να επεξεργαστείτε ένα (ή και περισσότερα) από τα βαθμολόγια που έχετε δημιουργήσει ή &quot;Αποστολή&quot; προκειμένου να στείλετε ένα βαθμολόγιο στη Διεύθυνση." textAlignment="JUSTIFY" wrappingWidth="750.0000000000002">
                <font>
                   <Font size="14.0" />
                </font>

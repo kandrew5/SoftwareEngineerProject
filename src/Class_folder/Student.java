@@ -21,6 +21,11 @@ public class Student extends User{
         this.tel = tel;
         this.AMKA = AMKA;
     }
+    public Student(String am, String last_name, String first_name ) {
+        this.am = am;
+        this.first_name = first_name;
+        this.last_name = last_name;
+    }
 
     public static Array getStudentData() {
         return null;

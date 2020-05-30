@@ -15,6 +15,28 @@ public class Message {
 
     }
 
+    public Message(String mess_receiver, String mess_sender, String mess_content) {
+        this.mess_receiver = mess_receiver;
+        this.mess_sender = mess_sender;
+        this.mess_content = mess_content;
+    }
+
+    public String getMess_sender() {
+        return mess_sender;
+    }
+
+    public void setMess_sender(String mess_sender) {
+        this.mess_sender = mess_sender;
+    }
+
+    public String getMess_content() {
+        return mess_content;
+    }
+
+    public void setMess_content(String mess_content) {
+        this.mess_content = mess_content;
+    }
+
     public Array getMessage(){
         return null;
     }
