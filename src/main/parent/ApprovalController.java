@@ -34,6 +34,8 @@ public class ApprovalController implements Initializable {
     private Text approvaltitle;
     @FXML
     private Text approvaltitleblue;
+    @FXML
+    private SplitMenuButton pg_menu;
 
     private boolean canvasclear = true;
 
@@ -57,6 +59,19 @@ public class ApprovalController implements Initializable {
 
             if (canvasclear) canvasclear=false;
         });
+    }
+
+    @FXML
+    private void click_PG_Work(ActionEvent actionEvent) throws IOException{
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("parent_PG_Work.fxml"));
+        Stage stage = (Stage) pg_menu.getScene().getWindow();;
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.show();
+
     }
 
     public void clearCanvas(ActionEvent actionEvent) {

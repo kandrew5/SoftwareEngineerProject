@@ -83,9 +83,9 @@
                   <FontAwesomeIconView glyphName="QUESTION_CIRCLE" style="-glyph-size: 16;" />
                </graphic>
             </Button>
-            <SplitMenuButton alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="30.0" layoutY="498.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="37.0" prefWidth="220.0" style="-fx-color: #3380ca; -fx-background-color: #3380ca; -fx-cursor: hand;" text="Εγκρίσεις" textAlignment="CENTER" textFill="WHITE">
+            <SplitMenuButton fx:id="approvalsmenu" alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="30.0" layoutY="498.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="37.0" prefWidth="220.0" style="-fx-color: #3380ca; -fx-background-color: #3380ca; -fx-cursor: hand;" text="Εγκρίσεις" textAlignment="CENTER" textFill="WHITE">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Eκκρεμείς εγκρίσεις" />
+                  <MenuItem fx:id="pend" mnemonicParsing="false" onAction="#click_PendingApprovals" text="Eκκρεμείς εγκρίσεις" />
                   <MenuItem mnemonicParsing="false" text="Συμπληρωμένες εγκρίσεις" />
                </items>
                <graphic>
@@ -128,5 +128,6 @@
          </font>
       </Text>
       <Text layoutX="949.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Προβολή Εγγραφής" />
+      <Text layoutX="899.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Κριτήριο Εμφάνισης:" />
     </children>
 </AnchorPane>

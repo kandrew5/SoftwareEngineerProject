@@ -60,11 +60,11 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="BELL" selectionEnd="0" text="" />
                     </graphic>
                 </Button>
-                <SplitMenuButton alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="8.0" layoutY="369.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="37.0" prefWidth="238.0" style="-fx-color: #3380ca; -fx-background-color: #3380ca; -fx-cursor: hand;" text="Σύλλογος ΓΚ" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="430.0">
+                <SplitMenuButton fx:id="pg_menu" alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="8.0" layoutY="369.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="37.0" prefWidth="238.0" style="-fx-color: #3380ca; -fx-background-color: #3380ca; -fx-cursor: hand;" text="Σύλλογος ΓΚ" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="430.0">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Μέλη" />
                         <MenuItem mnemonicParsing="false" text="Πρακτικά συνεδριάσεων" />
-                          <MenuItem mnemonicParsing="false" text="Έργο" />
+                          <MenuItem fx:id="pg_work" mnemonicParsing="false" onAction="#click_PG_Work" text="Έργο" />
                     </items>
                     <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="USERS" />

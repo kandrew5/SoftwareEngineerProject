@@ -109,12 +109,12 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Agenda layoutX="365.0" layoutY="461.0" prefHeight="300.0" prefWidth="759.0" />
+      <Agenda fx:id="pt_calendar" layoutX="365.0" layoutY="461.0" prefHeight="300.0" prefWidth="759.0" />
       <Text layoutX="670.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ημερολόγιο">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <ListView layoutX="361.0" layoutY="182.0" prefHeight="200.0" prefWidth="759.0" />
+      <ListView fx:id="parent_announcements" layoutX="361.0" layoutY="182.0" prefHeight="200.0" prefWidth="759.0" />
     </children>
 </AnchorPane>

@@ -3,12 +3,14 @@ package main.parent;
 import Class_folder.Approval;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -38,6 +40,8 @@ public class PendingApprovalsController implements Initializable {
     private TableColumn pa_title_col;
     @FXML
     private TableColumn pa_date_col;
+    @FXML
+    private SplitMenuButton pg_menu;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -47,13 +51,26 @@ public class PendingApprovalsController implements Initializable {
         pendingapprovalstable.setItems(pendapprovals);
     }
 
+    @FXML
+    private void click_PG_Work(ActionEvent actionEvent) throws IOException{
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("parent_PG_Work.fxml"));
+        Stage stage = (Stage) pg_menu.getScene().getWindow();;
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
     public void click_FileToApprove(MouseEvent click) throws IOException{
 
 
         if(click.getClickCount()==2){
 
             Approval temp = (Approval) pendingapprovalstable.getSelectionModel().getSelectedItem();
-            String appTitle = (String) temp.getAp_title();
+            String appTitle = temp.getAp_title();
             Stage stage = (Stage) pendingapprovalstable.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("parent_approval.fxml"));
 

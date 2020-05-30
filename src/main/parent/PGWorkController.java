@@ -1,14 +1,21 @@
 package main.parent;
 
 import Class_folder.PG_Work;
+
+import java.io.IOException;
 import java.time.LocalDate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.time.Month;
@@ -29,6 +36,8 @@ public class PGWorkController implements Initializable {
     private TableColumn wdate_col;
     @FXML
     private TableColumn wauthor_col;
+    @FXML
+    private SplitMenuButton approvalsmenu;
 
     ObservableList<String> filtersList = FXCollections.observableArrayList("Πρόσφατα", "Δημοφιλή", "Σχολικά");
 
@@ -106,5 +115,19 @@ public class PGWorkController implements Initializable {
                 entryshown.setText(selectedentry.getWork_content());
             }
         }
+    }
+
+    @FXML
+    public void click_PendingApprovals(ActionEvent actionEvent) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader((getClass().getResource("parent_pending_approvals.fxml")));
+        Stage stage = (Stage) approvalsmenu.getScene().getWindow();
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+
+        PendingApprovalsController pendappController = loader.getController();
+        stage.show();
     }
 }
