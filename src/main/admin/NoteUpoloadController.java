@@ -10,8 +10,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class NoteUpoloadController {
-    public void click_communication(MouseEvent mouseEvent) throws IOException {
-        Node node = (Node) mouseEvent.getSource();
+    public void click_communication(javafx.event.ActionEvent actionEvent) throws IOException {
+        Node node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
@@ -21,8 +21,8 @@ public class NoteUpoloadController {
         scene.setRoot(root);
     }
 
-    public void click_calendar(MouseEvent mouseEvent) throws IOException {
-        Node node = (Node) mouseEvent.getSource();
+    public void click_calendar(javafx.event.ActionEvent actionEvent) throws IOException {
+        Node node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
@@ -32,8 +32,8 @@ public class NoteUpoloadController {
         scene.setRoot(root);
     }
 
-    public void click_Timetable(MouseEvent mouseEvent) throws IOException {
-        Node node = (Node) mouseEvent.getSource();
+    public void click_Timetable(javafx.event.ActionEvent actionEvent) throws IOException {
+        Node node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
@@ -43,8 +43,8 @@ public class NoteUpoloadController {
         scene.setRoot(root);
     }
 
-    public void click_decisions(MouseEvent mouseEvent) throws IOException {
-        Node node = (Node) mouseEvent.getSource();
+    public void click_decisions(javafx.event.ActionEvent actionEvent) throws IOException {
+        Node node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
@@ -53,9 +53,8 @@ public class NoteUpoloadController {
 
         scene.setRoot(root);
     }
-
-    public void click_Votings(MouseEvent mouseEvent) throws IOException {
-        Node node = (Node) mouseEvent.getSource();
+    public void click_Votings(javafx.event.ActionEvent actionEvent) throws IOException {
+        Node node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--<?import com.calendarfx.view.CalendarHeaderView?>-->
-<!--<?import com.calendarfx.view.page.WeekPage?>-->
-
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
@@ -13,6 +10,7 @@
 <?import javafx.scene.text.Text?>
 <?import jfxtras.scene.control.agenda.Agenda?>
 
+<?import javafx.scene.web.WebView?>
 <AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.admin.AdminHomeController">
     <children>
         <AnchorPane layoutX="280.0" prefHeight="120.0" prefWidth="911.0" style="-fx-background-color: #dddddd;" AnchorPane.bottomAnchor="680.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -110,7 +108,7 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="CHECK" />
                     </graphic>
                 </Button>
-                <SplitMenuButton alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="86.0" layoutY="214.0" mnemonicParsing="false" popupSide="RIGHT" style="-fx-color: #3380ca; -fx-background-color: #3380ca; -fx-cursor: hand;" text="Τμήματα" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="220.0">
+                <SplitMenuButton fx:id="menuB_id" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="86.0" layoutY="214.0" mnemonicParsing="false" popupSide="RIGHT" style="-fx-color: #3380ca; -fx-background-color: #3380ca; -fx-cursor: hand;" text="Τμήματα" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="220.0">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -118,7 +116,7 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="BARS" text="" />
                     </graphic>
                     <items>
-                        <MenuItem mnemonicParsing="false" style="-fx-background-color: #3380ca;" text="Όλα τα τμήματα" />
+                        <MenuItem fx:id="menu_id" mnemonicParsing="false" onAction="#click_allClasses" style="-fx-background-color: #3380ca;" text="Όλα τα τμήματα" />
                         <Menu mnemonicParsing="false" text="Τα τμήματά μου">
                             <items>
                                 <Menu mnemonicParsing="false" text="Α">
