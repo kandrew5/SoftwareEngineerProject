@@ -31,7 +31,7 @@ public class Approval {
     public boolean removeApproval(String approval_id){
         return true;
     }
-    public Array getApprovals(){
+    public String[] getApprovals(){
         return null;
     }
 

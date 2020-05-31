@@ -9,11 +9,13 @@ public class Decisions_repo {
     private String dec_file_name;   // name of decision file
     private int priority;           // 0: for normal & 1: for high priority
     private int dec_type;           // 0: ministry decision, 1: municipal decision, 2: teachers decision
-    private long dec_file_size;      // file size of decision
+    private long dec_file_size;     // file size of decision
     private LocalDate dec_Date;     // date of publication
-    private String teachers;       // if teachers are receivers
-    private String students;       // if students are receivers
-    private String parents;        // if parents are receivers
+    private int receivers;          //receivers
+
+    private String teachers;        // if teachers are receivers
+    private String students;        // if students are receivers
+    private String parents;         // if parents are receivers
 
     public Decisions_repo() {
     }
@@ -40,6 +42,34 @@ public class Decisions_repo {
         this.dec_Date = dec_Date;
     }
 
+    public Decisions_repo(String dec_title) {
+        this.dec_title=dec_title;
+    }
+
+    public boolean createDecision() {
+        return true;
+    }
+
+    public boolean saveDecision(String dec_id) {
+        return true;
+    }
+
+    public boolean forwardDecision(String dec_id) {
+        return true;
+    }
+
+    public String[] getForwardedDecisions() {
+        return null;
+    }
+
+    public boolean removeDecision(String dec_id) {
+        return true;
+    }
+
+    public boolean editDecision(String dec_id) {
+        return true;
+    }
+
     public LocalDate getDec_Date() {
         return dec_Date;
     }
@@ -54,26 +84,6 @@ public class Decisions_repo {
 
     public void setDec_title(String dec_title) {
         this.dec_title = dec_title;
-    }
-
-    public boolean createDecision(String dec_id) {
-        return true;
-    }
-
-    public boolean saveDecision(String dec_id) {
-        return true;
-    }
-
-    public boolean forwardDecision(String dec_id) {
-        return true;
-    }
-
-    public Array getForwardedDecisions() {
-        return null;
-    }
-
-    public boolean removeDecision(String dec_id) {
-        return true;
     }
 
     public String getDec_id() {
@@ -114,10 +124,6 @@ public class Decisions_repo {
 
     public void setDec_file_size(long dec_file_size) {
         this.dec_file_size = dec_file_size;
-    }
-
-    public boolean editDecision(String dec_id) {
-        return true;
     }
 
     public String getTeachers() {

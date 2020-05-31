@@ -11,6 +11,13 @@ public class User {
     protected String first_name;
     protected String last_name;
     protected String address;
+    protected String tel;
+    protected String email;
+    protected int u_type;      //type of user 1 -> Teacher 2 -> Administrator
+
+    public String[] getUserData(String user_id){
+        return null;
+    }
 
     public String getUser_id() {
         return user_id;
@@ -84,17 +91,5 @@ public class User {
         this.u_type = u_type;
     }
 
-    protected String tel;
-    protected String email;
-    protected int u_type;      //type of user 1 -> Teacher 2 -> Administrator
-
-    public User(){
-
-    }
-
-    public Array getUserData(){
-        return null;
-    }
-
-
+    public User(){    }
 }

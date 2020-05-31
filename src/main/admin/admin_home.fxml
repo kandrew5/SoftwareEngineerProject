@@ -5,12 +5,13 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <?import jfxtras.scene.control.agenda.Agenda?>
 
-<?import javafx.scene.web.WebView?>
 <AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.admin.AdminHomeController">
     <children>
         <AnchorPane layoutX="280.0" prefHeight="120.0" prefWidth="911.0" style="-fx-background-color: #dddddd;" AnchorPane.bottomAnchor="680.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -335,12 +336,7 @@
             <Font size="16.0" />
          </font>
       </Text>
-<!--      <AnchorPane layoutX="472.0" layoutY="263.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="380.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="180.0">-->
-<!--         <children>-->
-<!--            <WebView fx:id="ministryPage" layoutX="52.0" prefHeight="200.0" prefWidth="684.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
-<!--         </children>-->
-<!--      </AnchorPane>-->
-      <Text layoutX="651.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ανακοινώσεις Υπουργείου" AnchorPane.topAnchor="140.0">
+      <Text layoutX="866.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ανακοινώσεις Υπουργείου" AnchorPane.topAnchor="140.0">
          <font>
             <Font size="16.0" />
          </font>
@@ -350,5 +346,21 @@
             <Agenda layoutX="-117.0" layoutY="-312.0" prefHeight="270.0" prefWidth="780.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children>
       </AnchorPane>
+      <Text layoutX="436.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Εισερχόμενα μηνύματα" AnchorPane.topAnchor="140.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TableView fx:id="messageTable" layoutX="350.0" layoutY="165.0" prefHeight="259.0" prefWidth="339.0">
+         <columns>
+            <TableColumn fx:id="mess_content" prefWidth="222.0" text="Θέμα" />
+            <TableColumn fx:id="mess_sender" prefWidth="116.0" text="Αποστολέας" />
+         </columns>
+      </TableView>
+      <TableView fx:id="decisionsTable" layoutX="791.0" layoutY="165.0" prefHeight="259.0" prefWidth="339.0">
+         <columns>
+            <TableColumn fx:id="dec_title" prefWidth="338.0" resizable="false" style="-fx-color: #5aafff;" text="Τίτλος" />
+         </columns>
+      </TableView>
     </children>
 </AnchorPane>

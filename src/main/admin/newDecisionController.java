@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class newDecisionController implements Initializable {
@@ -73,65 +74,76 @@ public class newDecisionController implements Initializable {
             alert.showAndWait();
         }
         else{
-            String decisionTitle = decTitle.getText();
-            String fileName = textFile.getText();
-            String priority = cmbPrior.getSelectionModel().getSelectedItem().toString();
-            boolean teachersb = cbT.isSelected();
-            boolean studentsb = cbS.isSelected();
-            boolean parentsb = cbP.isSelected();
-            String teachers;
-            String students;
-            String parents;
-            LocalDate date = LocalDate.now();
+            Alert alertQ = new Alert(Alert.AlertType.WARNING);
+            alertQ.setTitle("Warning Dialog");
+            alertQ.setHeaderText("Ερώτηση");
+            alertQ.setContentText("Θέλετε σίγουρα να προωθήσετε τη νέα απόφαση;");
 
-            if(priority.equals("Υψηλή")){
-                pr = 1;
-            }else{
-                pr = 0;
-            }
+            ButtonType cancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+            alertQ.getDialogPane().getButtonTypes().add(cancel);
 
-            if(teachersb){
-                teachers = "ΝΑΙ";
-            }else{
-                teachers = "OXI";
-            }
+            Optional<ButtonType> result = alertQ.showAndWait();
+            if(result.isPresent() && result.get() == ButtonType.OK){
+                String decisionTitle = decTitle.getText();
+                String fileName = textFile.getText();
+                String priority = cmbPrior.getSelectionModel().getSelectedItem().toString();
+                boolean teachersb = cbT.isSelected();
+                boolean studentsb = cbS.isSelected();
+                boolean parentsb = cbP.isSelected();
+                String teachers;
+                String students;
+                String parents;
+                LocalDate date = LocalDate.now();
 
-            if(studentsb){
-                students = "ΝΑΙ";
-            }else{
-                students = "OXI";
-            }
+                if (priority.equals("Υψηλή")) {
+                    pr = 1;
+                } else {
+                    pr = 0;
+                }
 
-            if(parentsb){
-                parents = "ΝΑΙ";
-            }else{
-                parents = "OXI";
-            }
+                if (teachersb) {
+                    teachers = "ΝΑΙ";
+                } else {
+                    teachers = "OXI";
+                }
 
-            new_dec = new Decisions_repo("newdec", decisionTitle, fileName,fileSize, pr, teachers, students, parents, date);
+                if (studentsb) {
+                    students = "ΝΑΙ";
+                } else {
+                    students = "OXI";
+                }
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Επιτυχία");
-            alert.setHeaderText("Επιτυχής προώθηση");
-            alert.setContentText("Η απόφαση προωθήθηκε με επιτυχία.");
+                if (parentsb) {
+                    parents = "ΝΑΙ";
+                } else {
+                    parents = "OXI";
+                }
 
-            alert.showAndWait();
+                new_dec = new Decisions_repo("newdec", decisionTitle, fileName, fileSize, pr, teachers, students, parents, date);
 
-            Node node = (Node) actionEvent.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-            Scene scene = stage.getScene();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Επιτυχία");
+                alert.setHeaderText("Επιτυχής προώθηση");
+                alert.setContentText("Η απόφαση προωθήθηκε με επιτυχία.");
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("all_decisions.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
+                alert.showAndWait();
 
-            AllDecisionsController pd = fxmlLoader.getController();
+                Node node = (Node) actionEvent.getSource();
+                Stage stage = (Stage) node.getScene().getWindow();
+                Scene scene = stage.getScene();
 
-            pd.refreshList(new_dec);
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("all_decisions.fxml"));
+                Parent root = (Parent) fxmlLoader.load();
+
+                AllDecisionsController pd = fxmlLoader.getController();
+
+                pd.refreshList(new_dec);
 //            added_Dec=pd.getDec();
 //            dec_list.add(getDec());
 //            decisionsTable.refresh();
 //
-            scene.setRoot(root);
+                scene.setRoot(root);
+            }
         }
     }
 

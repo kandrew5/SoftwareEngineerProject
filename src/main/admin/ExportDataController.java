@@ -1,9 +1,16 @@
 package main.admin;
 
+import Class_folder.Decisions_repo;
 import Class_folder.Student;
+import com.gembox.spreadsheet.ExcelFile;
+import com.gembox.spreadsheet.ExcelWorksheet;
+import com.gembox.spreadsheet.SpreadsheetInfo;
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,19 +18,17 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.Parent;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.xssf.usermodel.XSSFFont;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import javafx.stage.Window;
 
+import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class ExportDataController implements Initializable {
@@ -42,20 +47,25 @@ public class ExportDataController implements Initializable {
     @FXML
     public TableColumn<Student, String> mother_name;
     @FXML
-    public TableColumn<Student, Long> tel;
+    public TableColumn<Student, String> tel;
     @FXML
     public TableColumn<Student, String> AMKA;
-    @FXML
-    public ComboBox<String> cmbClass;
 
-    ObservableList<String> classList = FXCollections.observableArrayList("A","B","Γ","Δ","Ε","ΣΤ");
+    @FXML
+    private ChoiceBox<String> filter;
+
+    public Button exportButton;
+
+    private Stage savedStage;
+
+
     private static String[] columns = {"Αριθμός Μητρώου", "Επίθετο", "Όνομα", "Τάξη", "Όνομα πατέρα", "Όνομα μητέρας", "Τηλέφωνο", "ΑΜΚΑ"};
 
     private final ObservableList<Student> list = FXCollections.observableArrayList(
-            new Student("st01","Βαϊόπουλος","Θεοφάνης","A","Κωνσταντίνος","Μαρκέλα","6912345678","02151412345"),
-            new Student("st02","Χατζηαποστόλου","Έλενα ","A","Ευάγγελος","Φωτεινή","6912345678","14041412345"),
-            new Student("st03","Παναγιώτου","Χρήστος","B","Χάρης","Σοφία","6912345678","01121312345"),
-            new Student("st04","Βαλαζιώτης","Αυγουστίνος","B","Εμμανουήλ","Σταυρούλα","6912345678","22121312345"),
+            new Student("st01","Βαϊόπουλος","Θεοφάνης","Α","Κωνσταντίνος","Μαρκέλα","6912345678","02151412345"),
+            new Student("st02","Χατζηαποστόλου","Έλενα ","Α","Ευάγγελος","Φωτεινή","6912345678","14041412345"),
+            new Student("st03","Παναγιώτου","Χρήστος","Β","Χάρης","Σοφία","6912345678","01121312345"),
+            new Student("st04","Βαλαζιώτης","Αυγουστίνος","Β","Εμμανουήλ","Σταυρούλα","6912345678","22121312345"),
             new Student("st05","Παπαδοπούλου","Μαρία","Γ","Ανδρέας","Γλυκερία","6912345678","26071112345"),
             new Student("st06","Γεωργάκης","Βασίλειος","Γ","Φώτιος","Εμμανουέλα","6912345678","09111212345"),
             new Student("st07","Τριποδάκη","Έλλη","Δ","Αθανάσιος","Αικατερίνη","6912345678","30091112345"),
@@ -66,114 +76,67 @@ public class ExportDataController implements Initializable {
             new Student("st12","Τζανακάκη","Ευσταθία","ΣΤ","Νικόλαος","Ελένη","6912345678","05050912345")
     );
 
+    private final FilteredList<Student> filteredData = new FilteredList<>(list);
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        filter.getItems().addAll("Α","Β","Γ","Δ","Ε","ΣΤ");
+        am.setCellValueFactory(new PropertyValueFactory<Student, String>("am"));
         last_name.setCellValueFactory(new PropertyValueFactory<Student, String>("last_name"));
         first_name.setCellValueFactory(new PropertyValueFactory<Student, String>("first_name"));
         class_id.setCellValueFactory(new PropertyValueFactory<Student, String>("class_id"));
         father_name.setCellValueFactory(new PropertyValueFactory<Student, String>("father_name"));
         mother_name.setCellValueFactory(new PropertyValueFactory<Student, String>("mother_name"));
-        tel.setCellValueFactory(new PropertyValueFactory<Student, Long>("tel"));
+        tel.setCellValueFactory(new PropertyValueFactory<Student, String>("tel"));
         AMKA.setCellValueFactory(new PropertyValueFactory<Student, String>("AMKA"));
-        studentDatatable.setItems(list);
 
-        cmbClass.setItems(classList);
+         filter.valueProperty().addListener(new ChangeListener<String>(){
+
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue){
+                filteredData.setPredicate(newValue == null ? null : (Student e) -> newValue.equals(e.getClass_id())); //βαζεις την αντιστοιχη get για το τμημα
+            }
+        });
+
+        studentDatatable.setItems(filteredData);
     }
-
+    String s;
+    Student tmp;
     public void export_Button() throws IOException {
-
-        TableColumn<Student,String> nameCol_1 = new TableColumn<Student,String>("Αριθμός Μητρώου");
-        nameCol_1.setCellValueFactory(new PropertyValueFactory<Student, String>("am"));
-        TableColumn<Student,String> nameCol_2 = new TableColumn<Student,String>("Όνομα");
-        nameCol_2.setCellValueFactory(new PropertyValueFactory<Student, String>("first_name"));
-//        TableColumn<Student,String> nameCol_3 = new TableColumn<Student,String>("Όνομα");
-//        nameCol_3.setCellValueFactory(new PropertyValueFactory<Student, String>("first_name"));
-//        TableColumn<Student,String> nameCol_4 = new TableColumn<Student,String>("Όνομα");
-//        nameCol_4.setCellValueFactory(new PropertyValueFactory<Student, String>("first_name"));
-//        TableColumn<Student,String> nameCol_5 = new TableColumn<Student,String>("Όνομα");
-//        nameCol_5.setCellValueFactory(new PropertyValueFactory<Student, String>("first_name"));
-//        TableColumn<Student,String> nameCol_6 = new TableColumn<Student,String>("Όνομα");
-//        nameCol_6.setCellValueFactory(new PropertyValueFactory<Student, String>("first_name"));
-
-        ObservableList<TableColumn<Student, ?>> columns = studentDatatable.getColumns();
-        columns.add(nameCol_1);
-        columns.add(nameCol_2);
-
-        Workbook workbook = new HSSFWorkbook();
-        Sheet spreadsheet = workbook.createSheet("sample");
-
-        Row row = spreadsheet.createRow(0);
-
-        for (int j = 0; j < studentDatatable.getColumns().size(); j++) {
-            row.createCell(j).setCellValue(studentDatatable.getColumns().get(j).getText());
-        }
-
-        for (int i = 0; i < studentDatatable.getItems().size(); i++) {
-            row = spreadsheet.createRow(i + 1);
-            for (int j = 0; j < studentDatatable.getColumns().size(); j++) {
-                if(studentDatatable.getColumns().get(j).getCellData(i) != null) {
-                    row.createCell(j).setCellValue(studentDatatable.getColumns().get(j).getCellData(i).toString());
-                }
-                else {
-                    row.createCell(j).setCellValue("");
-                }
+        SpreadsheetInfo.setLicense("FREE-LIMITED-KEY");
+        ExcelFile file = new ExcelFile();
+        ExcelWorksheet worksheet = file.addWorksheet("sheet");
+        for (int row = 0; row < studentDatatable.getItems().size(); row++) {
+//            ObservableList cells =FXCollections.observableArrayList(list);
+            studentDatatable.getItems().get(row);
+            for (int column = 0; column < list.size(); column++) {
+                if (list.get(column) != null)
+//                    s= String.valueOf(list.get(column));
+//                    worksheet.getCell(row, column).setValue(s);
+                    tmp = list.get(column);
+                worksheet.getCell(row, column).setValue(tmp);
             }
         }
 
-        FileOutputStream fileOut = new FileOutputStream("workbook.xls");
-        workbook.write(fileOut);
-        fileOut.close();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("XLSX files (*.xlsx)", "*.xlsx"),
+                new FileChooser.ExtensionFilter("XLS files (*.xls)", "*.xls"),
+                new FileChooser.ExtensionFilter("ODS files (*.ods)", "*.ods"),
+                new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.csv"),
+                new FileChooser.ExtensionFilter("HTML files (*.html)", "*.html")
+        );
+        File saveFile = fileChooser.showSaveDialog(studentDatatable.getScene().getWindow());
 
-        Platform.exit();
+        file.save(saveFile.getAbsolutePath());
 
-
-
-//        XSSFWorkbook wb = new XSSFWorkbook();
-//        XSSFSheet sheet = wb.createSheet("userData");
-//        XSSFFont headerFont = wb.createFont();
-//        headerFont.setBold(true);
-//        CellStyle hcStyle = wb.createCellStyle();
-//        hcStyle.setFont(headerFont);
-//
-//        Row headerRow = sheet.createRow(0);
-//        for(int i=0; i<columns.length;i++){
-//            Cell cell = headerRow.createCell(i);
-//            cell.setCellValue(columns[i]);
-//            cell.setCellStyle(hcStyle);
-//        }
-//
-//        int rowNum = 1;
-//
-//        for(Student student: list){
-//            Row row = sheet.createRow(rowNum++);
-//            row.createCell(0).setCellValue(student.getAm());
-//            row.createCell(1).setCellValue(student.getFirst_name());
-//            row.createCell(2).setCellValue(student.getLast_name());
-//            row.createCell(3).setCellValue(student.getClass_id());
-//            row.createCell(4).setCellValue(student.getFather_name());
-//            row.createCell(5).setCellValue(student.getMother_name());
-//            row.createCell(6).setCellValue(student.getTel());
-//            row.createCell(7).setCellValue(student.getAMKA());
-//        }
-//
-//        for (int i=0; i<columns.length; i++){
-//            sheet.autoSizeColumn(i);
-//        }
-//
-//        FileOutputStream fileOut = new FileOutputStream("studentData.xlsx");
-//        wb.write(fileOut);
-//        fileOut.close();
-
-//        XSSFRow header = sheet.createRow(0);
-//        header.createCell(0).setCellValue("Αριθμός Μητρώου");
-//        header.createCell(1).setCellValue("Επίθετο");
-//        header.createCell(2).setCellValue("Όνομα");
-//        header.createCell(3).setCellValue("Τάξη");
-//        header.createCell(4).setCellValue("Όνομα πατέρα");
-//        header.createCell(5).setCellValue("Όνομα μητέρας");
-//        header.createCell(6).setCellValue("Τηλέφωνο");
-//        header.createCell(7).setCellValue("ΑΜΚΑ");
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Επιτυχία");
+        alert.setHeaderText("Επιτυχής εξαγωγή");
+        alert.setContentText("Το αρχείο αποθηκεύτηκε στον φάκελο: "+ saveFile.getAbsolutePath());
+        alert.showAndWait();
     }
+
 
     public void click_communication(javafx.event.ActionEvent actionEvent) throws IOException {
         Node node = (Node) actionEvent.getSource();

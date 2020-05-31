@@ -3,6 +3,7 @@ import java.lang.reflect.Array;
 import java.util.Date;
 
 public class Voting {
+    private String voting_id;
     private String vote_title;          // vote title
     private String vote_description;    // vote description
     private Date vote_expire_date;      //
@@ -18,16 +19,14 @@ public class Voting {
     public boolean createVoting(){
         return true;
     }
-    public int newVotingFile(){
-        return 0;
-    }
-    public boolean saveVoting(){
+    public boolean newVotingFile(String voting_id){
         return true;
     }
-    public Array getVotings(){
-        return null;
+    public boolean saveVoting(String voting_id){
+        return true;
     }
-    public boolean removeVoting(){
+    public String[] getVotings(String voting_id){return null;}
+    public boolean removeVoting(String voting_id){
         return true;
     }
 
