@@ -166,6 +166,7 @@
             <Text fill="#3380ca" layoutX="128.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επεξεργασία" />
             <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="205.0" layoutY="99.0" />
             <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="335.0" layoutY="100.0" />
+            <Text fill="#3380ca" layoutX="355.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επεξεργασία βαθμολογίου" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="427.0" layoutY="168.0" prefHeight="597.0" prefWidth="597.0" style="-fx-background-color: #dddddd;">
@@ -203,11 +204,11 @@
                </font>
             </Button>
             <TextField fx:id="grade_course" layoutX="83.0" layoutY="98.0" prefHeight="25.0" prefWidth="126.0" />
-            <TableView fx:id="gradesTable" layoutX="87.0" layoutY="152.0" prefHeight="381.0" prefWidth="423.0">
+            <TableView fx:id="gradesTable" layoutX="87.0" layoutY="152.0" prefHeight="381.0" prefWidth="414.0">
               <columns>
                 <TableColumn fx:id="name" prefWidth="137.0" resizable="false" style="-fx-color: #5aafff;" text="Όνομα" />
                   <TableColumn fx:id="surname" prefWidth="154.0" style="-fx-color: #5aafff;" text="Επώνυμο" />
-                <TableColumn fx:id="grade" minWidth="0.0" prefWidth="132.0" resizable="false" style="-fx-color: #5aafff;" text="Βαθμολογία" />
+                <TableColumn fx:id="grade" minWidth="0.0" prefWidth="122.0" resizable="false" style="-fx-color: #5aafff;" text="Βαθμολογία" />
               </columns>
             </TableView>
             <TextField fx:id="grade_type" layoutX="325.0" layoutY="98.0" prefHeight="25.0" prefWidth="137.0" />

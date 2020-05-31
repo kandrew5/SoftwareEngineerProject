@@ -6,21 +6,20 @@ import java.util.Map;
 public class Grade extends Gradebook{
     private String gr_class_id;
 
-    private String gr_course;//!!!!!!!!!
-    private int grade_no;//!!!!!!!!!!!!!
-    private int grade_no2;//!!!!!!!!!!!!!
-    private int grade_mean;//!!!!!!!!!!!!!
-    private String grade_title; //!!!!!!!!!!!!
+    private String gr_course;
+    private int grade_no;
+    private int grade_no2;
+    private int grade_mean;
+    private String grade_title;
     private int gr_id = super.gr_id;
-    private String student_am; //!!!!!!!
+    private String student_am;
     private String name;
     private String surname;
-    //=--------------------------------------------------------=
+
     public Grade(int grade_no, String grade_title) {
         this.grade_title = grade_title;
         this.grade_no = grade_no;
     }
-
 
     public String getName() {
         return name;
@@ -67,9 +66,6 @@ public class Grade extends Gradebook{
         return grade_mean;
     }
 
-    //=------------------------------------------------------------------=
-
-
     public int getGr_id() {
         return gr_id;
     }
@@ -78,7 +74,7 @@ public class Grade extends Gradebook{
         return gr_course;
     }
 
-    public Map getStGrades(int gr_id){ //εδω θα κανει αναζήτηση στη βάση και θα παίρνει τους μαθητές του βαθμολογίου και τους βαθμούς
+    public Map getStGrades(int gr_id){ //ΞµΞ΄Ο‰ ΞΈΞ± ΞΊΞ±Ξ½ΞµΞΉ Ξ±Ξ½Ξ±Ξ¶Ξ®Ο„Ξ·ΟƒΞ· ΟƒΟ„Ξ· Ξ²Ξ¬ΟƒΞ· ΞΊΞ±ΞΉ ΞΈΞ± Ο€Ξ±Ξ―ΟΞ½ΞµΞΉ Ο„ΞΏΟ…Ο‚ ΞΌΞ±ΞΈΞ·Ο„Ξ­Ο‚ Ο„ΞΏΟ… Ξ²Ξ±ΞΈΞΌΞΏΞ»ΞΏΞ³Ξ―ΞΏΟ… ΞΊΞ±ΞΉ Ο„ΞΏΟ…Ο‚ Ξ²Ξ±ΞΈΞΌΞΏΟΟ‚
         Map<String, Integer>  st_grades = new HashMap<String, Integer>();
         return st_grades;
     }

@@ -64,37 +64,25 @@ public class Gradebook {
             this.gr_type = gr_type;
         }
 
-        public Map getGrades(int gr_id){
+        public String[] getGradebook(int gr_id){
             //αναζήτηση στη βάση δεδομένων
             //εδώ έχουμε dummy data
            // Class_folder.Grade grade1 = new Class_folder.Grade(gr_id);
               Map<String, Integer>  class_grades = new HashMap<String, Integer>();
 //            class_grades.put("Αμπατζίδου Ζουμπουλία", 6);
-//            class_grades.put("Αντωνοπούλου Αμαλία", 19);
-//            class_grades.put("Βουλινός Φώτιος", 16);
-//            class_grades.put("Δελόγλου Σπυρίδων", 18);
-//            class_grades.put("Ιωακειμίδου Αγγελική", 9);
-//            class_grades.put("Κάλλιστρος Ανδρέας", 17);
-//            class_grades.put("Καψάλης Ρωμανός", 14);
-//            class_grades.put("Παυρινός Αριστομένης", 15);
-//            class_grades.put("Πολίτης Δημοσθένης", 15);
-//            class_grades.put("Στεργίου Αλέξιος", 20);
-//            class_grades.put("Τζίνη Θεοπούλα", 13);
-//            class_grades.put("Τριανταφυλλόπουλος Παναγιώτης",19);
-//            class_grades.put("Χατζηαλεξάνδρου Ντάλια", 10);
-//            class_grades.put("Χατζοπουλος Θωμάς", 12);
-            return class_grades;
-        }
-        public void editGrade(){
 
+            return null;
         }
-        public boolean createGrade(){
+        public boolean editGradebook(int gr_id){
+           return true;
+        }
+        public boolean createGradebook(int gr_id){
             return true;
         }
-        public boolean saveGrade(){
+        public boolean saveGradebook(int gr_id){
             return true;
         }
-        public boolean sendGrade(){
+        public boolean sendGradebook (int gr_id){
             return true;
         }
 

@@ -2,14 +2,13 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
@@ -98,7 +97,7 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="COMMENT" />
                      </graphic>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="22.0" layoutY="316.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="129.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Βαθμολογίες" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="22.0" layoutY="316.0" mnemonicParsing="false" onAction="#click_Grades" prefHeight="31.0" prefWidth="129.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Βαθμολογίες" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                       <font>
                           <Font size="15.0" />
                       </font>
@@ -106,7 +105,7 @@
                         <FontAwesomeIconView caretBias="false" fill="WHITE" glyphName="TROPHY" />
                      </graphic>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="24.0" layoutY="374.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="190.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Εκδρομές" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="24.0" layoutY="374.0" mnemonicParsing="false" onAction="#click_Excursion" prefHeight="32.0" prefWidth="190.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Εκδρομές" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -126,36 +125,39 @@
                      </font>
                   </Text>
                   <FontAwesomeIconView glyphName="TROPHY" layoutX="32.0" layoutY="62.0" style="-glyph-size: 24;" />
+            <Text fill="#3380ca" layoutX="32.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Βαθμολογίες" />
+            <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="108.0" layoutY="99.0" />
+            <Text fill="#3380ca" layoutX="126.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Αποστολή" />
                </children>
             </AnchorPane>
-      <AnchorPane layoutX="300.0" layoutY="232.0" prefHeight="374.0" prefWidth="694.0" style="-fx-background-color: #dddddd;">
+      <AnchorPane layoutX="439.0" layoutY="231.0" prefHeight="374.0" prefWidth="572.0" style="-fx-background-color: #dddddd;">
          <children>
-                  <TableView fx:id="sndGradebooks" layoutX="39.0" layoutY="65.0" prefHeight="200.0" prefWidth="572.0">
+                  <TableView fx:id="sndGradebooks" layoutX="39.0" layoutY="65.0" prefHeight="214.0" prefWidth="462.0">
                     <columns>
                       <TableColumn fx:id="grName" prefWidth="234.0" style="-fx-color: #5aafff;" text="Όνομα Βαθμολογίου" />
-                      <TableColumn prefWidth="109.0" style="-fx-color: #5aafff;" text="Επιλογή όλων">
-                           <graphic>
-                              <CheckBox mnemonicParsing="false" style="-fx-color: transparent;" />
-                           </graphic>
-                        </TableColumn>
                   <TableColumn fx:id="classCol" prefWidth="101.0" style="-fx-color: #5aafff;" text="Τμήμα" />
                   <TableColumn fx:id="courseCol" prefWidth="126.0" style="-fx-color: #5aafff;" text="Μάθημα" />
                     </columns>
                   </TableView>
-                  <Button layoutX="329.0" layoutY="322.0" mnemonicParsing="false" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Άκυρο">
+                  <Button layoutX="339.0" layoutY="322.0" mnemonicParsing="false" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Άκυρο">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Button>
-                  <Button layoutX="401.0" layoutY="322.0" mnemonicParsing="false" onAction="#sendGrades" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Αποστολή">
+                  <Button layoutX="418.0" layoutY="322.0" mnemonicParsing="false" onAction="#sendGrades" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Αποστολή">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Button>
-            <TextField fx:id="search" layoutX="99.0" layoutY="26.0" />
+            <ChoiceBox fx:id="filter" layoutX="137.0" layoutY="26.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #5aafff;" />
+            <Text layoutX="39.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επιλέξτε τμήμα:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="300.0" layoutY="159.0" prefHeight="48.0" prefWidth="533.0" style="-fx-background-color: #dddddd;">
+      <AnchorPane layoutX="439.0" layoutY="159.0" prefHeight="48.0" prefWidth="533.0" style="-fx-background-color: #dddddd;">
          <children>
             <FontAwesomeIconView glyphName="MAP_PIN" layoutX="8.0" layoutY="27.0" style="-glyph-size: 20;" />
             <Text layoutX="27.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επιλέξτε ένα βαθμολόγιο και πατήστε &quot;Αποστολή&quot; για αποστολή στη Διεύθυνση." wrappingWidth="544.0000000000002">

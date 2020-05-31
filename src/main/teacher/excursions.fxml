@@ -84,7 +84,7 @@
                   <FontAwesomeIconView fill="WHITE" glyphName="COMMENT" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="22.0" layoutY="316.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="129.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Βαθμολογίες" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="22.0" layoutY="316.0" mnemonicParsing="false" onAction="#click_Grades" prefHeight="31.0" prefWidth="129.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Βαθμολογίες" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -133,7 +133,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="731.0" layoutY="247.0" mnemonicParsing="false" onAction="#click_Excursion" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Νέα εκδρομή">
+      <Button layoutX="731.0" layoutY="247.0" mnemonicParsing="false" onAction="#select_newExcursion" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Νέα εκδρομή">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

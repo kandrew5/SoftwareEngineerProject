@@ -40,26 +40,34 @@ public class excursion_create_Controller implements Initializable {
     CheckBox select;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle) { //select multi_DayEx =>showExtendExForm
+        //date.setVisible(true);
         //show multi day excursion options if checkbox is selected
+        date.visibleProperty().bind(select.selectedProperty().not());
         dp2.visibleProperty().bind(select.selectedProperty());
         dp3.visibleProperty().bind(select.selectedProperty());
         start_date.visibleProperty().bind(select.selectedProperty());
         end_date.visibleProperty().bind(select.selectedProperty());
         days_l.visibleProperty().bind(select.selectedProperty());
         num_days.visibleProperty().bind(select.selectedProperty());
+
     }
+
+    //εδω θα γινόταν και αναζήτηση σε βάση δεδομένων για τις ημερομηνίες (selectDays() => getExcursion() )
+
     @FXML
-    public void create(javafx.event.ActionEvent actionEvent) throws IOException {
+    public void send_Excursion(javafx.event.ActionEvent actionEvent) throws IOException {
+        //αποθήκευση στη ΒΔ
+        //saveExcursion()
         if(loc.getText().equals("") || cost.getText().equals("") || clas.getText().equals("") || desc.getText().equals("") || date == null){ //check for empty fields
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Warning Dialog");
-            alert.setHeaderText("Μη συμπληρωμένα πεδία");
+            alert.setHeaderText("Μη συμπληρωμένα πεδία"); //μήνυμα αποτυχίας
             alert.setContentText("Παρακαλώ συμπληρώστε όλα τα πεδία.");
 
             alert.showAndWait();
         }
-        else{
+        else{ //μήμυμα επιτυχίας
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Επιτυχία");
             alert.setHeaderText("Επιτυχής δημιουργία");
@@ -70,13 +78,13 @@ public class excursion_create_Controller implements Initializable {
 
     }
     @FXML
-    public void click_Excursion(javafx.event.ActionEvent actionEvent) throws IOException { //create excursion button listener
+    public void click_Excursion(javafx.event.ActionEvent actionEvent) throws IOException { //excursion button listener
         Node node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("excursions.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        var root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
     }
@@ -86,7 +94,7 @@ public class excursion_create_Controller implements Initializable {
         Scene scene = stage.getScene();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("grades_main.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        var root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
     }

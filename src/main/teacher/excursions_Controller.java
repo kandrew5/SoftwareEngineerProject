@@ -31,7 +31,7 @@ public class excursions_Controller implements Initializable {
     private TableColumn<Excursion, Boolean> select;
 
     @FXML
-    public void click_Excursion(javafx.event.ActionEvent actionEvent) throws IOException { //create excursion button listener
+    public void select_newExcursion(javafx.event.ActionEvent actionEvent) throws IOException { //create excursion button listener
         Node node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
@@ -57,8 +57,10 @@ public class excursions_Controller implements Initializable {
     LocalDate date4 = LocalDate.of(2020, Month.APRIL, 27);
     LocalDate date5 = LocalDate.of(2020, Month.MARCH, 4);
 
+    //getExcursion() αναζήτηση στη βάση δεδομένων
+    //dummy data εδώ
     private final ObservableList<Excursion> list = FXCollections.observableArrayList(
-            //αναζήτηση στη βάση δεδομένων
+
             new Excursion("Τριήμερη εκδρομή στην Αρχαία Ολυμπία", "Επίσκεψη στον αρχαιολογικό χώρο της Αρχαίας Ολυμπίας"," Αρχαία Ολυμπία",date1,70),
             new Excursion("Μονοήμερη εκδρομή στην Αθήνα", "Επίσκεψη στο μουσειο της Ακρόπολης και στη Βουλή", "Αθήνα", date2, 30),
             new Excursion("Τριήμερη εκδρομή στο Βόλο", "Επίσκεψη στο Βόλο και στο Πήλιο", "Βόλος", date3, 60),
@@ -66,7 +68,7 @@ public class excursions_Controller implements Initializable {
             new Excursion("Τριήμερη εκδρομή στη Θεσσαλονίκη","Επίσκεψη στο μετρό της Θεσαλονίκης", "Θεσσαλονίκη", date5, 64)
     );
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources) { //show excursions
         ex_name.setCellValueFactory(new PropertyValueFactory<Excursion, String>("title"));
         ex_date.setCellValueFactory(new PropertyValueFactory<>("date"));
         select.setCellValueFactory(new PropertyValueFactory<>("check"));

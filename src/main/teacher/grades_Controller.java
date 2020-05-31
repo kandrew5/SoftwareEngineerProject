@@ -22,7 +22,7 @@ public class grades_Controller {
         scene.setRoot(root);
     }
     @FXML
-    public void click_sendGrades(javafx.event.ActionEvent actionEvent) throws IOException { //sendGrades excursion button listener
+    public void click_sendGrades(javafx.event.ActionEvent actionEvent) throws IOException { //sendGrades button listener
         Node node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();

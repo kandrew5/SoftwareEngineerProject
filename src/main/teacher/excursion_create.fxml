@@ -121,7 +121,7 @@
                   <FontAwesomeIconView fill="WHITE" glyphName="COMMENT" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="22.0" layoutY="316.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="129.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Βαθμολογίες" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="22.0" layoutY="316.0" mnemonicParsing="false" onAction="#click_Grades" prefHeight="31.0" prefWidth="129.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Βαθμολογίες" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -129,7 +129,7 @@
                   <FontAwesomeIconView caretBias="false" fill="WHITE" glyphName="TROPHY" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="24.0" layoutY="374.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="184.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Εκδρομές" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="24.0" layoutY="374.0" mnemonicParsing="false" onAction="#click_Excursion" prefHeight="31.0" prefWidth="184.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Εκδρομές" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -161,14 +161,14 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Button layoutX="459.0" layoutY="509.0" mnemonicParsing="false" onAction="#create" prefHeight="30.0" prefWidth="109.0" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Δημιουργία">
+            <Button layoutX="459.0" layoutY="509.0" mnemonicParsing="false" onAction="#send_Excursion" prefHeight="30.0" prefWidth="109.0" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Δημιουργία">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
             <TextField fx:id="loc" layoutX="170.0" layoutY="59.0" />
             <TextArea fx:id="desc" layoutX="170.0" layoutY="111.0" prefHeight="104.0" prefWidth="250.0" />
-            <DatePicker fx:id="date" layoutX="170.0" layoutY="237.0" />
+            <DatePicker fx:id="date" layoutX="170.0" layoutY="237.0" visible="true" />
             <TextField fx:id="cost" layoutX="170.0" layoutY="285.0" />
             <TextField fx:id="clas" layoutX="170.0" layoutY="334.0" />
             <Text layoutX="75.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Τοποθεσία :">

@@ -12,7 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseButton;
+
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -32,8 +32,8 @@ public class gradebooks_Controller<gradeList> implements Initializable {
     @FXML
     public void select_Gradebook(MouseEvent arg0) throws IOException {
         Gradebook grade = (Gradebook) gradeList.getSelectionModel().getSelectedItem();
-        //System.out.println("clicked on " + grade.getGr_title());
-        System.out.println("clicked on " + grade.getGr_id());
+
+       //System.out.println("clicked on " + grade.getGr_id());
         Stage stage;
         Parent root;
         stage = (Stage) gradeList.getScene().getWindow();
@@ -58,7 +58,7 @@ public class gradebooks_Controller<gradeList> implements Initializable {
         Scene scene = stage.getScene();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("excursions.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        var root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
     }
@@ -68,34 +68,24 @@ public class gradebooks_Controller<gradeList> implements Initializable {
         Scene scene = stage.getScene();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("grades_main.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        var root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
     }
+    //getGradebook() αναζήτηση στη βάση
+    //dummy data εδώ
     private final ObservableList<Gradebook> list = FXCollections.observableArrayList(
             new Gradebook("A3","Μαθηματικά","τετραμήνου","Α3: Άλγεβρα Α'τετράμηνο",1),
             new Gradebook("A3","Μαθηματικά","τετραμήνου","Α3: Άλγεβρα Β'τετράμηνο",2),
             new Gradebook("A3","Μαθηματικά","τελικός","Α3: Άλγεβρα Τελικός",3),
-            new Gradebook("Β3","Μαθηματικά","τετραμήνου", "Β3.Γεωμετρία Α'τετράμηνο",4)
+            new Gradebook("Β3","Μαθηματικά","τετραμήνου", "Β3: Γεωμετρία Α'τετράμηνο",4)
     );
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources) { //showGradebooks()
         title_col.setCellValueFactory(new PropertyValueFactory<Gradebook,String>("gr_title"));
         id_col.setCellValueFactory(new PropertyValueFactory<>("gr_id"));
-//        gradeList.setRowFactory(tv -> {
-////            TableRow<Object> row = new TableRow<>();
-////            row.setOnMouseClicked(event -> {
-////                if (! row.isEmpty() && event.getButton()== MouseButton.PRIMARY
-////                        && event.getClickCount() == 2) {
-////
-////                    Object clickedRow = row.getItem();
-////                   // String convertedToString = String.valueOf(clickedRow);
-////                    System.out.println(clickedRow);
-////                }
-////            });
-////            return 1 ;
-////        });
+
         gradeList.setItems(list);
 
     }

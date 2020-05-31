@@ -40,19 +40,18 @@ public class edit_Gradebook_Controller implements Initializable {
     @FXML
     private TextField grade_type;
     protected int gradebook_id;
-    Map<String, Integer> stGrades = new HashMap<String, Integer>();
     private String id;
     private String course;
 
     public void setClassID(int gradebook_id) {
         String title;
         String type;
-        System.out.println("mpoumpis");
+
         this.gradebook_id = gradebook_id;
         //αναζήτηση στη βάση δεδομένων
         //dummy data εδώ
         if(this.gradebook_id == 1){
-            //System.out.println(this.gradebook_id);
+
             Gradebook grade1 = new Gradebook("A3","Μαθηματικά","τετραμήνου","Α3: Άλγεβρα Α'τετράμηνο",1);
             this.id = grade1.getGr_class_id();
             title = grade1.getGr_title();
@@ -85,7 +84,7 @@ public class edit_Gradebook_Controller implements Initializable {
         grade_class.setText(id);
         grade_type.setText(type);
 
-
+        //dummy data
         final ObservableList<Student> stlist = FXCollections.observableArrayList(
               new Student("st15","Αμπατζίδου" ,"Ζουμπουλία"),
               new Student("st16", "Αντωνοπούλου","Αμαλία"),
@@ -102,13 +101,13 @@ public class edit_Gradebook_Controller implements Initializable {
               new Student("st27","Χατζηαλεξάνδρου","Ντάλια"),
               new Student("st28","Χατζόπουλος", "Θωμάς")
         );
-        int ar[] = { 6,19,16,18,9,17,14,15,15,20,13,19,10,12 };
+        int []ar = { 6,19,16,18,9,17,14,15,15,20,13,19,10,12 };
         ObservableList<Grade> gradelist = FXCollections.observableArrayList();
         int i = 0;
         for(Student student: stlist){
             String a = student.getFirst_name();
             String b = student.getLast_name();
-            String c = a + " " + b;
+            //String c = a + " " + b;
             String d = student.getAm();
             gradelist.add(new Grade(d,b,a,ar[i]));
             i++;
@@ -123,18 +122,17 @@ public class edit_Gradebook_Controller implements Initializable {
 
 
 
-    private final ObservableList<Grade> grade_list = FXCollections.observableArrayList(
-
-
-    );
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("patates");
+
 
     }
+
+    //αποθήκευση στη ΒΔ saveGradebook
+
     @FXML
     public void selection(javafx.event.ActionEvent actionEvent) throws IOException {
+        //μήνυμα επιτυχίας
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Επιτυχία");
         alert.setHeaderText("Επιτυχής αποθήκευση");
@@ -148,8 +146,8 @@ public class edit_Gradebook_Controller implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("excursion_create.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("excursions.fxml"));
+        var root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
     }
@@ -159,7 +157,7 @@ public class edit_Gradebook_Controller implements Initializable {
         Scene scene = stage.getScene();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("grades_main.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        var root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
     }
@@ -169,7 +167,7 @@ public class edit_Gradebook_Controller implements Initializable {
         Scene scene = stage.getScene();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("gradebooks.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        var root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
     }

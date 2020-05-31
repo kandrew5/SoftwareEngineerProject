@@ -1,7 +1,7 @@
 package Class_folder;
 
 import java.lang.reflect.Array;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Message {
 
@@ -9,7 +9,8 @@ public class Message {
     private String mess_sender;
     private String mess_content;
     private String mess_file_name;
-    private Date mess_date;
+    private LocalDate mess_date;
+    private String mess_id;
 
     public Message(){
 
@@ -37,25 +38,25 @@ public class Message {
         this.mess_content = mess_content;
     }
 
-    public Array getMessage(){
+    public String[] getMessage(String mess_id){
         return null;
     }
 
-    public boolean send_Message(){
+    public boolean send_Message(String mess_id){
         return true;
     }
 
-    public boolean replyMessage(){
+    public boolean replyMessage(String mess_id){
         return true;
     }
 
-    public boolean save_Message(){
+    public boolean save_Message(String mess_id){
         return true;
     }
 
     public void filter_message(){}
 
-    public boolean deleteMessage(){
+    public boolean deleteMessage(String mess_id){
         return true;
     }
 }

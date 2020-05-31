@@ -10,6 +10,7 @@ public class Announcement {
     private LocalDate an_date;
     private String an_receiver;
     private String an_sender;
+    private String an_id;
 
     public Announcement( String an_title, String an_content, LocalDate an_date, String an_receiver, String an_sender){
         this.an_title = an_title;
@@ -23,18 +24,17 @@ public class Announcement {
         return true;
     }
 
-    public boolean publish_Announc(){
+    public boolean publish_Announc(String an_id){
         return true;
     }
 
-    public boolean saveAnnounc(){
+    public boolean saveAnnounc(String an_id){
         return true;
     }
 
-    public Array getAnnouncement(){
+    public String[] getAnnouncement(String an_id){
         return null;
     }
-
 
     public String get_an_title(){
         return this.an_title;

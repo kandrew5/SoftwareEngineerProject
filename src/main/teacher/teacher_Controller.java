@@ -21,23 +21,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.ResourceBundle;
 
-//public class AgendaApplication extends Application {
-//    @FXML
-//    private Agenda myAgenda;
-//    public AgendaApplication() {
-//        Agenda.Appointment appointment = new Agenda.AppointmentImpl();
-//
-//        appointment.setDescription("patates");
-//        appointment.setLocation(event.getLocation());
-//        appointment.setStartTime(DateHelper.convertTimestampToCalendar(event.getStartTime()));
-//        appointment.setEndTime(DateHelper.convertTimestampToCalendar(event.getEndTime()));
-//    }
-//
-//    @Override
-//    public void start(Stage stage) throws Exception {
-//
-//    }
-//}
+
 public class teacher_Controller implements Initializable {
    @FXML
    private TableView forwarded;
@@ -84,6 +68,7 @@ public class teacher_Controller implements Initializable {
     LocalDate date5 = LocalDate.of(2020, Month.MARCH, 4);
 
     private final ObservableList<Decisions_repo> dec_list = FXCollections.observableArrayList(
+              //dummy data
               new Decisions_repo("58","Οδηγίες από ΕΟΔΥ","eody.pdf",1,0,123856,date1),
               new Decisions_repo("59","Επαναλειτουργία σχολείου","fek25May2020",1,0, 234567, date2),
               new Decisions_repo("60","Νέο διαδικτυακό σεμινάριο","seminar2020May.pdf",0,0, 456781, date3),
@@ -91,6 +76,7 @@ public class teacher_Controller implements Initializable {
               new Decisions_repo("62","Απόφαση συλλόγου διδασκόντων 1/3/20","τετραμήνου", 1, 2, 123456, date5)
     );
     private final ObservableList<Message> message_list = FXCollections.observableArrayList(
+            //dummy data
              new Message("Ρωμανός Καψάλης", "Γιωργάκης", "Απορία σε άσκηση"),
              new Message("Ρωμανός Καψάλης", "κ.Χατζόπουλος", "Σχετικά με βαθμούς"),
              new Message("Ρωμανός Καψάλης", "Κωστάκης", "Αυριανός περίπατος"),
