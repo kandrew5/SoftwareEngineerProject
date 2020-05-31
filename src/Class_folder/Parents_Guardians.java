@@ -1,22 +1,20 @@
 package Class_folder;
 
-import java.lang.reflect.Array;
-
 public class Parents_Guardians {
 
     public Parents_Guardians(){
 
     }
 
-    public Array getPG(){
+    public String[] getPG(){
         return null;
     }
 
-    public Array getMembers(){
+    public String[] getMembers(){
         return null;
     }
 
-    public Array getMeetingLog(){
+    public String[] getMeetingLog(){
         return null;
     }
 

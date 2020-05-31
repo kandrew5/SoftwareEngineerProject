@@ -117,9 +117,9 @@
       <ChoiceBox fx:id="filters" layoutX="1036.0" layoutY="135.0" onAction="#click_Filter" prefWidth="150.0" />
       <TableView fx:id="entriestable" layoutX="288.0" layoutY="212.0" onMouseClicked="#clickPG_Entry" prefHeight="500.0" prefWidth="537.0">
         <columns>
-          <TableColumn fx:id="wtitle_col" prefWidth="330.0" resizable="false" style="-fx-color: #5aafff;" text="Τίτλος" />
-          <TableColumn fx:id="wauthor_col" prefWidth="118.0" resizable="false" style="-fx-color: #5aafff;" text="Συντάκτης" />
-            <TableColumn fx:id="wdate_col" minWidth="0.0" prefWidth="90.0" resizable="false" style="-fx-color: #5aafff;" text="Ημερομηνία" />
+          <TableColumn fx:id="wtitle_col" editable="false" prefWidth="330.0" resizable="false" sortable="false" style="-fx-color: #5aafff;" text="Τίτλος" />
+          <TableColumn fx:id="wauthor_col" editable="false" prefWidth="118.0" resizable="false" sortable="false" style="-fx-color: #5aafff;" text="Συντάκτης" />
+            <TableColumn fx:id="wdate_col" editable="false" minWidth="0.0" prefWidth="90.0" resizable="false" sortable="false" style="-fx-color: #5aafff;" text="Ημερομηνία" />
         </columns>
       </TableView>
       <Text layoutX="329.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επιλέξτε μία εγγραφή">

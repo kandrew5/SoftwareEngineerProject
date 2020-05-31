@@ -26,16 +26,9 @@ public class PHomeController implements Initializable {
     @FXML
     private SplitMenuButton pg_menu;
     @FXML
-    private MenuItem pg_work;
-
-    @FXML
     private SplitMenuButton approvalmenu;
     @FXML
-    private MenuItem pendingapprovals;
-    @FXML
     private ListView parent_announcements;
-    @FXML
-    private Agenda pt_calendar;
 
 
     @FXML
@@ -48,7 +41,6 @@ public class PHomeController implements Initializable {
 
         stage.setScene(scene);
 
-        PGWorkController pgWorkController = loader.getController();
         stage.show();
 
     }
@@ -63,7 +55,6 @@ public class PHomeController implements Initializable {
 
         stage.setScene(scene);
 
-        PendingApprovalsController pendappController = loader.getController();
         stage.show();
     }
 

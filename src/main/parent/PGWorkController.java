@@ -4,8 +4,12 @@ import Class_folder.PG_Work;
 
 import java.io.IOException;
 import java.time.LocalDate;
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -39,7 +43,7 @@ public class PGWorkController implements Initializable {
     @FXML
     private SplitMenuButton approvalsmenu;
 
-    ObservableList<String> filtersList = FXCollections.observableArrayList("Πρόσφατα", "Δημοφιλή", "Σχολικά");
+    ObservableList<String> filtersList = FXCollections.observableArrayList("Πρόσφατα", "Πάνος", "Ρωμανός", "Ανδρέας", "Θωμάς");
 
     private String cont1 = "Ο Σύλλογος γονέων και κηδεμόνων στα πλαίσια του\n" +
             "νέου κορωνοϊού COVID-19 παρέχει ενημέρωση όσον \n" +
@@ -73,13 +77,22 @@ public class PGWorkController implements Initializable {
             "στον υπεύθυνο καθηγητή του τμήματος του.";
     private LocalDate wdate4 = LocalDate.of(2019, Month.DECEMBER, 12);
 
+    private String cont5 = "Εν όψει της εθνικής εοτρής για την 28η Οκτωβρίου \n" +
+            "Θα πραγματοποιηθεί σχολική εοτρή η οποία διοργανώθηκε\n" +
+            "από τους μαθητές του τμήματος Γ2 με τη βοήθεια μελών\n" +
+            "του συλλόγου γονέων και κηδεμόνων καθώς και του \n" +
+            "υπεύθυνου καθηγητή του τμήματος.";
+    private LocalDate wdate5 = LocalDate.of(2019 , Month.OCTOBER, 28);
+
     private final ObservableList<PG_Work> entries = FXCollections.observableArrayList(
             new PG_Work("Ενημέρωση για το νέο κορωνοϊό COVID-19", cont1, wdate1, "Πάνος"),
             new PG_Work("Κοπή βασιλόπιτας για το σχολικό έτος 2019-2020", cont2, wdate2, "Ανδρέας"),
             new PG_Work("Γενική συνέλευση του Συλλόγου Γονέων και Κηδεμόνων", cont3, wdate3, "Ρωμανός"),
-            new PG_Work("Πανελλήνιος διαγωνισμός μαθηματικών", cont4, wdate4, "Θωμάς")
+            new PG_Work("Πανελλήνιος διαγωνισμός μαθηματικών", cont4, wdate4, "Θωμάς"),
+            new PG_Work("Σχολική Εοτρή 28ης Οκτωβρίου", cont4, wdate4, "Πάνος")
     );
 
+    private final FilteredList<PG_Work> filteredData = new FilteredList<>(entries);
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         filters.setValue("Πρόσφατα");
@@ -89,15 +102,25 @@ public class PGWorkController implements Initializable {
         wauthor_col.setCellValueFactory(new PropertyValueFactory<PG_Work, String>("work_author"));
         wdate_col.setCellValueFactory(new PropertyValueFactory<PG_Work, LocalDate>("work_date"));
 
-        entriestable.setItems(entries);
+        filters.valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+
+                if(newValue.equals("Πρόσφατα")){
+                    filteredData.setPredicate(null);
+                }else if(newValue.equals("Πάνος") || newValue.equals("Ρωμανός") || newValue.equals("Θωμάς") || newValue.equals("Ανδρέας")){
+                    filteredData.setPredicate(newValue == null ? null : (PG_Work e) -> newValue.equals(e.getWork_author()));
+                }
+
+            }
+        });
+
+        entriestable.setItems(filteredData);
 
     }
 
     @FXML
     private void click_Filter(){
-        String value = filters.getValue().toString();
-
-        System.out.println(value);
 
     }
 

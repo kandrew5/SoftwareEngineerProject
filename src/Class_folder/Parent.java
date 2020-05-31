@@ -1,7 +1,5 @@
 package Class_folder;
 
-import java.lang.reflect.Array;
-
 public class Parent extends User {
 
     private boolean pg_member;  //true -> is a member of PG, false -> is not a member of PG
@@ -14,14 +12,12 @@ public class Parent extends User {
         this.nu_kids = nu_kids;
     }
 
-    public Array getChild(){
+    public Student getChild(String user_id){
         return null;
     }
 
-    public Array getParentData(){
+    public String[] getParentData(String user_id){
         return null;
     }
-
-    public void setParentData(){}
 
 }

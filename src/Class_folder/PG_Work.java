@@ -17,19 +17,28 @@ public class PG_Work {
     }
 
 
-    public boolean newPG_Entry(){
+    public boolean newPG_Entry(String work_title){
         return true;
     }
 
-    public boolean removePG_Entry(){
+    public boolean removePG_Entry(String work_title){
         return true;
     }
 
-    public boolean editPG_Entry(){
+    public boolean editPG_Entry(String work_title){
         return true;
     }
 
+    public void filterPG_Work() { }
 
+    public String getPG_Work(String work_title) { return null; }
+
+    public boolean savePG_Work() { return true; }
+
+    public boolean sharePG_Work() { return true; }
+
+    public void commentPG_Work() { }
+    //------------------------------------------------------------------
 
     public String getWork_title(){
         return this.work_title;
