@@ -21,11 +21,11 @@ Project στα πλαίσια του μαθήματος "Τεχνολογία Λ
 
 ### Καθηγητής
 * Αποστολή βαθμολογίου στην διεύθυνση (Use case 15):
-
+![](GIFS/sendGradebook.gif)
 * Οργάνωση εκδρομής (Use case 17):
-
+![](GIFS/create_Excursion.gif)
 * Επεξεργασία βαθμολογίου (Use case 18):
-
+![](GIFS/edit_Gradebook.gif)
 ### Μαθητής
 * Προβολή Βιβλίου Ύλης ενός μαθήματος (Use case 1):
 ![](GIFS/curriculum.gif)
