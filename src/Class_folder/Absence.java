@@ -1,30 +1,28 @@
 package Class_folder;
 
-import java.lang.reflect.Array;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Absence {
     private String student_id;
     private int period; // 1-7 timetable hour
-    private Date dates;
+    private LocalDate dates;
+    int status;
 
     public static boolean createAbsence() {
         return true;
     }
 
-    public static void editAbsence() {
+    public static boolean editAbsence(String student_id) { return true;}
 
-    }
-
-    public static boolean sendAbsence() {
+    public static boolean sendAbsence(String student_id) {
         return true;
     }
 
-    public static boolean saveAbsence() {
+    public static boolean saveAbsence(String student_id) {
         return true;
     }
 
-    public static Array getAbsence() {
+    public static String[] getAbsence(String student_id) {
         return null;
     }
 }

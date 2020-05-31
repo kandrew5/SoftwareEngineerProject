@@ -41,6 +41,8 @@ public class Controller {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("student/student_home.fxml"));
                 Parent root = (Parent) fxmlLoader.load();
                 stage.setScene(new Scene(root, 1200, 800));
+                stage.setX(360);
+                stage.setY(50);
                 stage.show();
             }
             else if(username.equals("tc12") && password.equals("12345")) {

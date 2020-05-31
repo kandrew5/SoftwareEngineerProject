@@ -1,14 +1,14 @@
 package Class_folder;
 
-import java.lang.reflect.Array;
+import java.time.LocalDate;
 
 public class Curriculum {
     private String cur_id;
     private String cur_course; //maybe of type Course
-    private String cur_date;
+    private LocalDate cur_date;
     private String cur_content;
 
-    public Curriculum(String cur_id, String cur_course, String cur_date, String cur_content) {
+    public Curriculum(String cur_id, String cur_course, LocalDate cur_date, String cur_content) {
         this.cur_id = cur_id;
         this.cur_course = cur_course;
         this.cur_date = cur_date;
@@ -19,14 +19,14 @@ public class Curriculum {
         return true;
     }
 
-    public static void editCurriculum() {
-
+    public static boolean editCurriculum(String cur_id) {
+        return true;
     }
-    public static Array getCurriculum() {
+    public static String[] getCurriculum(String cur_id) {
         return null;
     }
 
-    public static boolean saveCurriculum() {
+    public static boolean saveCurriculum(String cur_id) {
         return true;
     }
 
@@ -35,7 +35,7 @@ public class Curriculum {
         return cur_content;
     }
 
-    public String getCur_date()
+    public LocalDate getCur_date()
     {
         return cur_date;
     }

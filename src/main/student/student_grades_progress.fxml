@@ -117,7 +117,7 @@
                 <Font size="16.0" />
             </font>
         </Button>
-        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="378.0" layoutY="133.0" mnemonicParsing="false" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Τελικός Έλεγχος" AnchorPane.rightAnchor="600.0">
+        <Button fx:id="final_id" onMouseClicked="#click_FinalGrades" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="378.0" layoutY="133.0" mnemonicParsing="false" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Τελικός Έλεγχος" AnchorPane.rightAnchor="600.0">
             <font>
                 <Font size="16.0" />
             </font>

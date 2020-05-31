@@ -1,12 +1,11 @@
 package Class_folder;
 
-import java.lang.reflect.Array;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Homework {
 
     private String hw_id;
-    private Date hw_date;
+    private LocalDate hw_date;
     private String hw_course;
     private String hw_content;
 
@@ -14,19 +13,19 @@ public class Homework {
         return true;
     }
 
-    public static void editHw() {
-
-    }
-
-    public static Array getHw() {
-        return null;
-    }
-
-    public static boolean removeHw() {
+    public static boolean editHw(String hw_id) {
         return true;
     }
 
-    public static boolean saveHw() {
+    public static String[] getHw(String hw_id) {
+        return null;
+    }
+
+    public static boolean removeHw(String hw_id) {
+        return true;
+    }
+
+    public static boolean saveHw(String hw_id) {
         return true;
     }
 }

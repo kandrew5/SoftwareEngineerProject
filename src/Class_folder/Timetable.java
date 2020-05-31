@@ -15,9 +15,7 @@ public class Timetable {
 
         return null;
     }
-    public void editTimetable(){
-
-    }
+    public boolean editTimetable(){ return true;}
     public boolean saveTimetable(){
        return true;
     }

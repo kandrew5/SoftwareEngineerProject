@@ -111,7 +111,7 @@
                 <Text fill="#3380ca" layoutX="65.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Βαθμολογία" />
             </children>
         </AnchorPane>
-        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="732.0" layoutY="133.0" mnemonicParsing="false" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Πρόοδος" AnchorPane.rightAnchor="300.0">
+        <Button fx:id="progress_id" onMouseClicked="#click_Progress" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="732.0" layoutY="133.0" mnemonicParsing="false" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Πρόοδος" AnchorPane.rightAnchor="300.0">
             <font>
                 <Font size="16.0" />
             </font>

@@ -5,16 +5,24 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ProgressController implements Initializable {
+    public Button final_id;
     @FXML
     private TableColumn grade_no_id;
     @FXML
@@ -49,5 +57,16 @@ public class ProgressController implements Initializable {
         grade_no_id.setCellValueFactory(new PropertyValueFactory<Grade, Integer>("grade_no"));
 
         grade_table_id.setItems(list);
+    }
+
+    public void click_FinalGrades(MouseEvent mouseEvent) throws IOException {
+        Stage stage;
+        Parent root;
+        stage = (Stage) final_id.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("student_grades_final.fxml"));
+        root = loader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

@@ -1,13 +1,12 @@
 package Class_folder;
 
-import java.lang.reflect.Array;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Note {
     private String note_id;
     private String note_course_id;
     private String note_name;
-    private Date note_date;
+    private LocalDate note_date;
     private int note_type; //remember
 
     public static boolean createNote() {
@@ -18,22 +17,21 @@ public class Note {
         return true;
     }
 
-    public static void select_Nfolder() {
+    public static void select_Nfolder() {}
 
-    }
     public static boolean uploadFile() {
         return true;
     }
 
-    public static boolean saveNote() {
+    public static boolean saveNote(String note_id) {
         return true;
     }
 
-    public static Array getNote() {
+    public static String[] getNote(String note_id) {
         return null;
     }
 
-    public static boolean removeNote() {
+    public static boolean removeNote(String note_id) {
         return true;
     }
 }

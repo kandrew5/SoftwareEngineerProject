@@ -27,6 +27,7 @@ public class DiscussionController implements Initializable {
     public TableColumn dtitle_id;
     public TableColumn dcreator_id;
     public Button new_disc;
+    public Button curric_id;
     String course_title;
     private Discussion added_Disc = new Discussion();
 
@@ -38,9 +39,9 @@ public class DiscussionController implements Initializable {
     LocalDate tDate = LocalDate.of(2019, Month.NOVEMBER, 10);
 
     private final ObservableList<Discussion> list = FXCollections.observableArrayList(
-            new Discussion("d1", "Δεν καταλαβαίνω", "Λίγο κείμενο", fDate, "Πάνος"),
-            new Discussion("d2", "Πονάει το αυτί μου", "Λίγο κείμενο", sDate, "Ρωμανός"),
-            new Discussion("d3", "Τι είναι αυτά ρε", "Λίγο κείμενο", tDate, "Θωμάς")
+            new Discussion("d1", "Δεν καταλαβαίνω τίποτα", "Λίγο κείμενο", fDate, "Πάνος"),
+            new Discussion("d2", "Απορία στην επίλυση της άσκησης 3", "Λίγο κείμενο", sDate, "Ρωμανός"),
+            new Discussion("d3", "Ερώτηση σχετικά με την επίλυση εξίσσωσης", "Λίγο κείμενο", tDate, "Θωμάς")
     );
 
     @Override
@@ -72,5 +73,19 @@ public class DiscussionController implements Initializable {
         list.add(getDisc());
         disc_table_id.refresh();
 
+    }
+
+    public void click_Curriculum(MouseEvent mouseEvent) throws IOException {
+        Stage stage;
+        Parent root;
+        stage = (Stage) curric_id.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("student_curriculum.fxml"));
+        root = loader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        CurriculumController currControl = loader.getController();
+        currControl.setCourse(course_title);
+        stage.show();
     }
 }

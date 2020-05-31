@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -15,9 +16,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CoursesController implements Initializable {
+
+    @FXML
+    private Button grade_id;
     String user;
     @FXML
     private ListView list_id;
+    String user_id = "45";
 
     public String getUser(){
         return user;
@@ -50,6 +55,20 @@ public class CoursesController implements Initializable {
         HCourseController hcourseController = loader.getController();
         hcourseController.setCoursetitle(course_title);
         hcourseController.setcText(course_title);
+        stage.show();
+    }
+
+    public void click_Grades(MouseEvent mouseEvent) throws IOException {
+        Stage stage;
+        Parent root;
+        stage = (Stage) grade_id.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("student_grades.fxml"));
+        root = loader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        HGradeController gradeControl = loader.getController();
+        gradeControl.setUser(user_id);
         stage.show();
     }
 }

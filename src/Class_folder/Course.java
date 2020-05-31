@@ -1,7 +1,5 @@
 package Class_folder;
 
-import java.lang.reflect.Array;
-
 public class Course {
     private String course_id;
     private String c_title;
@@ -11,10 +9,10 @@ public class Course {
     public static boolean createCourse() {
         return true;
     }
-    public static Array getCourse() {
+    public static String[] getCourse(String course_id) {
         return null;
     }
-    public static boolean deleteCourse() {
+    public static boolean deleteCourse(String course_id) {
         return true;
     }
 }

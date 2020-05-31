@@ -29,7 +29,7 @@
                         </Button>
                     </children>
                 </AnchorPane>
-                <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="19.0" layoutY="182.0" mnemonicParsing="false" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Βιβλίο Ύλης" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="150.0">
+                <Button fx:id="curric_id" onMouseClicked="#click_Curriculum" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="19.0" layoutY="182.0" mnemonicParsing="false" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Βιβλίο Ύλης" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="150.0">
                     <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="BOOK" style="-glyph-size: 20;" />
                     </graphic>

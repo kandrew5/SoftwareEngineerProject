@@ -4,17 +4,26 @@ import Class_folder.Grade;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
 public class FinalgController implements Initializable {
 
+    @FXML
+    private Button progress_id;
     @FXML
     private TableColumn gr_course_title;
     @FXML
@@ -46,5 +55,16 @@ public class FinalgController implements Initializable {
         gr_grade_mean.setCellValueFactory(new PropertyValueFactory<Grade, Integer>("grade_mean"));
 
         table_gr_id.setItems(list);
+    }
+
+    public void click_Progress(MouseEvent mouseEvent) throws IOException {
+        Stage stage;
+        Parent root;
+        stage = (Stage) progress_id.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("student_grades_progress.fxml"));
+        root = loader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

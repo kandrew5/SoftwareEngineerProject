@@ -1,6 +1,5 @@
 package Class_folder;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Class {
@@ -37,8 +36,7 @@ public class Class {
         this.students = students;
     }
 
-    public Array getStudents(){
-
+    public String[] getStudents(){
         return null;
     }
 
@@ -46,13 +44,13 @@ public class Class {
         return true;
     }
 
-    public boolean deleteClass(){
+    public boolean deleteClass(String class_id){
        return true;
     }
 
     public String[] getClasses() { //loads Class courses
         //search DB
-        String[] c_courses = {"Μαθηματικά", "Ιστορία", "Πατάτες", "Γλώσσα", "Γυμναστική", "Γεωμετρία", "Κοινωνιολογία"};
+        String[] c_courses = {"Μαθηματικά", "Ιστορία", "Φυσική", "Γλώσσα", "Γυμναστική", "Γεωμετρία", "Κοινωνιολογία"};
         return c_courses;
     }
 }

@@ -1,6 +1,5 @@
 package Class_folder;
 
-import java.lang.reflect.Array;
 import java.time.LocalDate;
 
 public class Discussion {
@@ -22,23 +21,19 @@ public class Discussion {
         
     }
 
-    public static void newTopic() {
+    public static boolean newTopic() {return true;}
 
-    }
+    public static boolean replyDiscussion(String disc_id) {return true;}
 
-    public static void replyDiscussion() {
-
-    }
-
-    public static boolean saveDiscussion() {
+    public static boolean saveDiscussion(String disc_id) {
         return true;
     }
 
-    public static Array getDiscussion() {
+    public static String[] getDiscussion(String disc_id) {
         return null;
     }
 
-    public static boolean removeDiscussion() {
+    public static boolean removeDiscussion(String disc_id) {
         return true;
     }
 
