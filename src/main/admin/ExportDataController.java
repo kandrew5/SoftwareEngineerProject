@@ -99,22 +99,19 @@ public class ExportDataController implements Initializable {
         });
 
         studentDatatable.setItems(filteredData);
+
+//        cmbClass.setItems(classList);
     }
     String s;
-    Student tmp;
     public void export_Button() throws IOException {
         SpreadsheetInfo.setLicense("FREE-LIMITED-KEY");
         ExcelFile file = new ExcelFile();
         ExcelWorksheet worksheet = file.addWorksheet("sheet");
         for (int row = 0; row < studentDatatable.getItems().size(); row++) {
-//            ObservableList cells =FXCollections.observableArrayList(list);
             studentDatatable.getItems().get(row);
             for (int column = 0; column < list.size(); column++) {
                 if (list.get(column) != null)
-//                    s= String.valueOf(list.get(column));
-//                    worksheet.getCell(row, column).setValue(s);
-                    tmp = list.get(column);
-                worksheet.getCell(row, column).setValue(tmp);
+                    worksheet.getCell(row, column).setValue(list.get(column).toString());
             }
         }
 

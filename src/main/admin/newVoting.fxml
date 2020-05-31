@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -368,7 +367,6 @@
         </Text>
         <TextField layoutX="600.0" layoutY="208.0" prefHeight="25.0" prefWidth="470.0" AnchorPane.topAnchor="200.0" />
         <TextArea layoutX="600.0" layoutY="269.0" prefHeight="184.0" prefWidth="470.0" AnchorPane.topAnchor="260.0" />
-        <Slider layoutX="1060.0" layoutY="256.0" orientation="VERTICAL" prefHeight="190.0" prefWidth="14.0" />
         <DatePicker layoutX="599.0" layoutY="650.0" />
         <Button layoutX="598.0" layoutY="485.0" mnemonicParsing="false" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Προσθήκη επιλογής" AnchorPane.topAnchor="480.0">
          <font>
