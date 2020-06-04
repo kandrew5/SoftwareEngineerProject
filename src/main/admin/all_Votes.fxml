@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.admin.AllDecisionsController">
+<AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.admin.AllVotesController">
     <children>
         <AnchorPane layoutX="280.0" prefHeight="120.0" prefWidth="911.0" style="-fx-background-color: #dddddd;" AnchorPane.bottomAnchor="680.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -333,17 +333,17 @@
                 <FontAwesomeIconView glyphName="QUESTION_CIRCLE" layoutX="253.0" layoutY="786.0" selectionFill="BLACK" style="-glyph-size: 24; -fx-cursor: hand;" />
             </children>
         </AnchorPane>
-        <Button fx:id="new_dec" layoutX="675.0" layoutY="159.0" mnemonicParsing="false" onAction="#click_newDecision" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Νέα Ψηφοφορία" AnchorPane.rightAnchor="395.0" AnchorPane.topAnchor="160.0">
+        <Button fx:id="new_dec" layoutX="675.0" layoutY="159.0" mnemonicParsing="false" onAction="#click_newVoting" style="-fx-background-color: #5aafff; -fx-cursor: hand;" text="Νέα Ψηφοφορία" AnchorPane.rightAnchor="395.0" AnchorPane.topAnchor="160.0">
             <font>
                 <Font name="System Bold" size="16.0" />
             </font></Button>
-        <TableView fx:id="decisionsTable" layoutX="332.0" layoutY="300.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="235.0">
+        <TableView fx:id="VotingsTable" layoutX="332.0" layoutY="300.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="235.0">
             <columns>
-                <TableColumn prefWidth="378.0" resizable="false" text="Τίτλος" />
-                <TableColumn fx:id="dec_title" prefWidth="149.0" resizable="false" text="Απόφαση" />
-                <TableColumn fx:id="dec_date" maxWidth="623.0" minWidth="63.0" prefWidth="72.0" resizable="false" text="Ποσοστό" />
-                <TableColumn fx:id="teachers" prefWidth="82.0" resizable="false" text="Ημερομηνία" />
-                <TableColumn fx:id="students" prefWidth="158.0" resizable="false" text="Καταληκτική Ημεομηνία" />
+                <TableColumn fx:id="vote_title" prefWidth="378.0" resizable="false" text="Τίτλος" />
+                <TableColumn fx:id="result" prefWidth="149.0" resizable="false" text="Απόφαση" />
+                <TableColumn fx:id="percentage" maxWidth="623.0" minWidth="63.0" prefWidth="72.0" resizable="false" text="Ποσοστό" />
+                <TableColumn fx:id="vote_creation_date" prefWidth="82.0" resizable="false" text="Ημερομηνία" />
+                <TableColumn fx:id="vote_expire_date" prefWidth="158.0" resizable="false" text="Καταληκτική Ημεομηνία" />
             </columns>
         </TableView>
     </children>

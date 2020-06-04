@@ -1,11 +1,9 @@
 package main.admin;
 
-import Class_folder.Decisions_repo;
 import Class_folder.Student;
 import com.gembox.spreadsheet.ExcelFile;
 import com.gembox.spreadsheet.ExcelWorksheet;
 import com.gembox.spreadsheet.SpreadsheetInfo;
-import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -21,14 +19,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.Parent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class ExportDataController implements Initializable {
