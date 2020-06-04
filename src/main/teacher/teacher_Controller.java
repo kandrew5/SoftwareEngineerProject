@@ -43,7 +43,7 @@ public class teacher_Controller implements Initializable {
         Scene scene = stage.getScene();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("excursions.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        var root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
     }
@@ -53,7 +53,18 @@ public class teacher_Controller implements Initializable {
         Scene scene = stage.getScene();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("grades_main.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        var root = (Parent) fxmlLoader.load();
+
+        scene.setRoot(root);
+    }
+    @FXML
+    public void click_showAnnounc(javafx.event.ActionEvent actionEvent) throws IOException {
+        Node node = (Node) actionEvent.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Scene scene = stage.getScene();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("teacher_announcement.fxml"));
+        var root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
     }

@@ -42,22 +42,58 @@
                <items>
                   <Menu mnemonicParsing="false" text="A1">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Στοιχεία μαθητών" />
-                        <MenuItem mnemonicParsing="false" text="Βιβλίο ύλης" />
-                        <MenuItem mnemonicParsing="false" text="Ανακοινώσεις" />
-                        <MenuItem mnemonicParsing="false" text="Εργασίες" />
-                        <MenuItem mnemonicParsing="false" text="Σημειώσεις" />
-                        <MenuItem mnemonicParsing="false" text="Απουσίες" />
+                        <MenuItem mnemonicParsing="false" text="Στοιχεία μαθητών">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="ADDRESS_BOOK" />
+                           </graphic></MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Βιβλίο ύλης">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="BOOK" />
+                           </graphic></MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Ανακοινώσεις">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="BELL" />
+                           </graphic></MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Εργασίες">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="TASKS" />
+                           </graphic></MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Σημειώσεις">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="PASTE" />
+                           </graphic></MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Απουσίες">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="THERMOMETER_FULL" />
+                           </graphic></MenuItem>
                      </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="B2">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Στοιχεία μαθητών" />
-                        <MenuItem mnemonicParsing="false" text="Βιβλίο ύλης" />
-                        <MenuItem mnemonicParsing="false" text="Ανακοινώσεις" />
-                        <MenuItem mnemonicParsing="false" text="Εργασίες" />
-                        <MenuItem mnemonicParsing="false" text="Σημειώσεις" />
-                        <MenuItem mnemonicParsing="false" text="Απουσίες" />
+                        <MenuItem mnemonicParsing="false" text="Στοιχεία μαθητών">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="ADDRESS_BOOK" />
+                           </graphic></MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Βιβλίο ύλης">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="BOOK" />
+                           </graphic></MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Ανακοινώσεις">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="BELL" />
+                           </graphic></MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Εργασίες">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="TASKS" />
+                           </graphic></MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Σημειώσεις">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="PASTE" />
+                           </graphic></MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Απουσίες">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="THERMOMETER_FULL" />
+                           </graphic></MenuItem>
                      </items>
                   </Menu>
                </items>
