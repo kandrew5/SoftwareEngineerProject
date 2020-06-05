@@ -38,7 +38,7 @@
                   <FontAwesomeIconView glyphName="GEAR" layoutX="226.0" layoutY="24.0" style="-glyph-size: 24; -fx-cursor: hand;" text="" />
                </children>
             </AnchorPane>
-            <SplitMenuButton graphicTextGap="10.0" layoutX="27.0" layoutY="193.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="38.0" prefWidth="168.0" style="-fx-color: #3380ca; -fx-background-color: transparent;" text="Τα τμήματά μου" textFill="#ffffff" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+            <SplitMenuButton fx:id="menu2" graphicTextGap="10.0" layoutX="27.0" layoutY="193.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="38.0" prefWidth="168.0" style="-fx-color: #3380ca; -fx-background-color: transparent;" text="Τα τμήματά μου" textFill="#ffffff" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                <items>
                   <Menu mnemonicParsing="false" text="A1">
                      <items>
@@ -69,9 +69,9 @@
                            </graphic></MenuItem>
                      </items>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="B2">
+                  <Menu fx:id="menu1" mnemonicParsing="false" text="B2">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Στοιχεία μαθητών">
+                        <MenuItem fx:id="st_data" onAction="#click_StudentData" mnemonicParsing="false" text="Στοιχεία μαθητών">
                            <graphic>
                               <FontAwesomeIconView glyphName="ADDRESS_CARD" />
                            </graphic></MenuItem>

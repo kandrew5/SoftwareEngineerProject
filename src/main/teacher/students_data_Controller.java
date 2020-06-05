@@ -9,6 +9,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,10 +20,18 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class students_data_Controller implements Initializable {
+   @FXML
+   private TableView stData;
+   @FXML
+   private TableColumn<Student,String> st_name;
+   @FXML
+   private TableColumn<Student,String> st_surname;
+   @FXML
+   private TableColumn<Student,String> st_am;
 
-    @FXML
-    public void click_Excursion(javafx.event.ActionEvent actionEvent) throws IOException { //create excursion button listener
-        Node node = (Node) actionEvent.getSource();
+   @FXML
+   public void click_Excursion(javafx.event.ActionEvent actionEvent) throws IOException { //create excursion button listener
+        var node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
@@ -28,8 +40,9 @@ public class students_data_Controller implements Initializable {
 
         scene.setRoot(root);
     }
+
     public void click_Grades(javafx.event.ActionEvent actionEvent) throws IOException {
-        Node node = (Node) actionEvent.getSource();
+        var node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
@@ -38,26 +51,66 @@ public class students_data_Controller implements Initializable {
 
         scene.setRoot(root);
     }
-    final ObservableList<Student> stlist = FXCollections.observableArrayList(
-            new Student("st15","Αμπατζίδου" ,"Ζουμπουλία"),
-            new Student("st16", "Αντωνοπούλου","Αμαλία"),
-            new Student("st17","Βουλινός", "Φώτιος"),
-            new Student("st18","Δελόγλου", "Σπυρίδων"),
-            new Student("st19","Ιωακειμίδου", "Αγγελική"),
-            new Student("st20","Κάλλιστρος","Ανδρέας"),
-            new Student("st21","Καψάλης","Ρωμανός"),
-            new Student("st22","Παυρινός", "Αριστομένης"),
-            new Student("st23","Πολίτης", "Δημοσθένης"),
-            new Student("st24","Στεργίου","Αλέξιος"),
-            new Student("st25","Τζίνη", "Θεοπούλα" ),
-            new Student("st26","Τριανταφυλλόπουλος","Παναγιώτης"),
-            new Student("st27","Χατζηαλεξάνδρου","Ντάλια"),
-            new Student("st28","Χατζόπουλος", "Θωμάς")
-    );
 
+
+    public void click_showAnnounc(javafx.event.ActionEvent actionEvent) throws IOException {
+        var node = (Node) actionEvent.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Scene scene = stage.getScene();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("teacher_announcement.fxml"));
+        var root = (Parent) fxmlLoader.load();
+
+        scene.setRoot(root);
+    }
+    final ObservableList<Student> stlist = FXCollections.observableArrayList(
+            new Student("st15","Ξ–ΞΏΟ…ΞΌΟ€ΞΏΟ…Ξ»Ξ―Ξ±","Ξ‘ΞΌΟ€Ξ±Ο„Ξ¶Ξ―Ξ΄ΞΏΟ…","Ξ’2","Ξ“ΞµΟΟΞ³ΞΉΞΏΟ‚","Ξ§ΟΟ…ΟƒΞΏΟΞ»Ξ±","123456","1234567"),
+            new Student("st16", "Ξ‘ΞΌΞ±Ξ»Ξ―Ξ±","Ξ‘Ξ½Ο„Ο‰Ξ½ΞΏΟ€ΞΏΟΞ»ΞΏΟ…","Ξ’2","Ξ”Ξ·ΞΌΞ®Ο„ΟΞΉΞΏΟ‚","ΞΞ±Ξ»Ξ»ΞΉΟΟ€Ξ·","123456","123456"),
+            new Student("st17", "Ξ¦ΟΟ„ΞΉΞΏΟ‚","Ξ’ΞΏΟ…Ξ»ΞΉΞ½ΟΟ‚","Ξ’2","ΞΟ‰ΞΌΞ¬Ο‚","Ξ•Ξ»Ξ­Ξ½Ξ·","123456","123456"),
+            new Student("st18", "Ξ£Ο€Ο…ΟΞ―Ξ΄Ο‰Ξ½","Ξ”ΞµΞ»ΟΞ³Ξ»ΞΏΟ…","Ξ’2","Ξ‘Ξ½Ο„ΟΞ½ΞΉΞΏΟ‚","Ξ™Ο‰Ξ¬Ξ½Ξ½Ξ±","123456","123456"),
+            new Student("st19","Ξ‘Ξ³Ξ³ΞµΞ»ΞΉΞΊΞ®","Ξ™Ο‰Ξ±ΞΊΞµΞΉΞΌΞ―Ξ΄ΞΏΟ…","Ξ’2","Ξ“ΞµΟΞ¬ΟƒΞΉΞΌΞΏΟ‚","Ξ“ΞµΟ‰ΟΞ³Ξ―Ξ±","123456","123456"),
+            new Student("st20","Ξ‘Ξ½Ξ΄ΟΞ­Ξ±Ο‚","ΞΞ¬Ξ»Ξ»ΞΉΟƒΟ„ΟΞΏΟ‚","Ξ’2","Ξ™ΞΏΟΞ΄Ξ¬Ξ½Ξ·Ο‚","ΞΞ±ΟΞ―Ξ±","123456","123456"),
+            new Student("st21","Ξ΅Ο‰ΞΌΞ±Ξ½ΟΟ‚","ΞΞ±ΟΞ¬Ξ»Ξ·Ο‚","B2","ΞΞΉΞ»Ο„ΞΉΞ¬Ξ΄Ξ·Ο‚","Ξ§ΟΟ…ΟƒΞΏΟΞ»Ξ±","123456","1234567"),
+            new Student("st22", "Ξ‘ΟΞΉΟƒΟ„ΞΏΞΌΞ­Ξ½Ξ·Ο‚","Ξ Ξ±Ο…ΟΞΉΞ½ΟΟ‚","Ξ’2","Ξ‘ΞΈΞ±Ξ½Ξ¬ΟƒΞΉΞΏΟ‚","Ξ•Ο…Ο„Ξ­ΟΟ€Ξ·","123456","123456"),
+            new Student("st23", "Ξ”Ξ·ΞΌΞΏΟƒΞΈΞ­Ξ½Ξ·Ο‚","Ξ ΞΏΞ»Ξ―Ο„Ξ·Ο‚","Ξ’2","Ξ“ΞµΟΟΞ³ΞΉΞΏΟ‚","Ξ‘ΞΈΞ±Ξ½Ξ±ΟƒΞ―Ξ±","12345","123456"),
+            new Student("st24","Ξ‘Ξ»Ξ­ΞΎΞΉΞΏΟ‚","Ξ£Ο„ΞµΟΞ³Ξ―ΞΏΟ…","Ξ’2","ΞΟ…ΟΞΉΞ¬ΞΊΞΏΟ‚","Ξ†Ξ½Ξ½Ξ±","12345","123456"),
+            new Student("st25", "ΞΞµΞΏΟ€ΞΏΟΞ»Ξ±","Ξ¤Ξ¶Ξ―Ξ½Ξ·","Ξ’2","Ξ Ξ±Ξ½Ξ±Ξ³ΞΉΟΟ„Ξ·Ο‚","Ξ‘ΟΞΉΟƒΟ„Ξ­Ξ±","123456","123456" ),
+            new Student("st26","Ξ Ξ±Ξ½Ξ±Ξ³ΞΉΟΟ„Ξ·Ο‚","Ξ¤ΟΞΉΞ±Ξ½Ο„Ξ±Ο†Ο…Ξ»Ξ»ΟΟ€ΞΏΟ…Ξ»ΞΏΟ‚","Ξ’2","Ξ‘Ξ½Ξ΄ΟΞ­Ξ±Ο‚","Ξ Ξ±Ξ½Ξ±Ξ³ΞΉΟΟ„Ξ±","123456","12345"),
+            new Student("st27","ΞΟ„Ξ¬Ξ»ΞΉΞ±","Ξ§Ξ±Ο„Ξ¶Ξ·Ξ±Ξ»ΞµΞΎΞ¬Ξ½Ξ΄ΟΞΏΟ…","Ξ’2","Ξ£Ο„Ξ­Ο†Ξ±Ξ½ΞΏΟ‚","Ξ‘ΞΉΞΊΞ±Ο„ΞµΟΞ―Ξ½Ξ·","12345","123456"),
+            new Student("st28", "ΞΟ‰ΞΌΞ¬Ο‚","Ξ§Ξ±Ο„Ξ¶ΟΟ€ΞΏΟ…Ξ»ΞΏΟ‚","Ξ’2","Ξ Ξ±Ξ½Ο„ΞµΞ»Ξ®Ο‚", "Ξ¦Ο‰Ο„ΞµΞΉΞ½Ξ®","123456","123456")
+    );
+    public void select_Student(MouseEvent arg0) throws IOException {
+        Student st = (Student) stData.getSelectionModel().getSelectedItem();
+
+        System.out.println("clicked on " + st.getAm());
+        Stage stage;
+        Parent root;
+        stage = (Stage) stData.getScene().getWindow();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("student_details.fxml"));
+        root = loader.load();
+
+
+        String id = st.getAm();
+        String fn = st.getFather_name();
+        String mn = st.getMother_name();
+        String cid = st.getClass_id();
+        String tel = st.getTel();
+        String AMKA = st.getAMKA();
+        String first = st.getFirst_name();
+        String last = st.getLast_name();
+        student_details_Controller editController = loader.getController();
+        editController.setStudentData(id,fn,mn,cid,tel,AMKA,first,last);
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        st_name.setCellValueFactory(new PropertyValueFactory<>("first_name"));
+        st_surname.setCellValueFactory(new PropertyValueFactory<>("last_name"));
+        st_am.setCellValueFactory(new PropertyValueFactory<>("am"));
+        stData.setItems(stlist);
     }
 
 }

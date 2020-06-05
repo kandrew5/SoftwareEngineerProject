@@ -7,6 +7,29 @@ public class Student extends User{
     private String father_name;
     private String mother_name;
 
+    private String first_name;
+    private String last_name;
+
+    @Override
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    @Override
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    @Override
+    public String getLast_name() {
+        return last_name;
+    }
+
+    @Override
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
     public Student(String am, String first_name, String last_name, String class_id, String father_name, String mother_name, String tel, String AMKA) {
         this.am = am;
         this.first_name = first_name;

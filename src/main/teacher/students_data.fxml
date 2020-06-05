@@ -161,9 +161,9 @@
             <FontAwesomeIconView glyphName="ADDRESS_CARD" layoutX="27.0" layoutY="79.0" style="-glyph-size: 24;" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="316.0" layoutY="218.0" prefHeight="259.0" prefWidth="479.0" style="-fx-background-color: #dddddd;">
+      <AnchorPane layoutX="316.0" layoutY="218.0" prefHeight="464.0" prefWidth="479.0" style="-fx-background-color: #dddddd;">
          <children>
-            <TableView fx:id="stData" layoutX="59.0" layoutY="30.0"  prefHeight="259.0" prefWidth="339.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TableView fx:id="stData" onMouseClicked="#select_Student" layoutX="59.0" layoutY="30.0" prefHeight="259.0" prefWidth="339.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <columns>
                   <TableColumn fx:id="st_name" prefWidth="188.0" resizable="false" style="-fx-color: #5aafff;" text="Όνομα" />
                   <TableColumn fx:id="st_surname" prefWidth="169.0" resizable="false" style="-fx-color: #5aafff;" text="Επώνυμο" />

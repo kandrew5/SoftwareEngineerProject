@@ -17,7 +17,7 @@ public class grades_Controller {
         Scene scene = stage.getScene();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("gradebooks.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        var root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
     }
@@ -28,7 +28,7 @@ public class grades_Controller {
         Scene scene = stage.getScene();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("send_Gradebook.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        var root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
     }
@@ -39,7 +39,7 @@ public class grades_Controller {
         Scene scene = stage.getScene();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("excursions.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        var root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
     }
@@ -49,7 +49,18 @@ public class grades_Controller {
         Scene scene = stage.getScene();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("grades_main.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        var root = (Parent) fxmlLoader.load();
+
+        scene.setRoot(root);
+    }
+    @FXML
+    public void click_showAnnounc(javafx.event.ActionEvent actionEvent) throws IOException {
+        var node = (Node) actionEvent.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Scene scene = stage.getScene();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("teacher_announcement.fxml"));
+        var root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
     }

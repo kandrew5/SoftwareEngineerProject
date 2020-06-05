@@ -158,7 +158,7 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Text>
-            <FontAwesomeIconView glyphName="BELL" layoutX="32.0" layoutY="62.0" style="-glyph-size: 24;" text="" />
+            <FontAwesomeIconView glyphName="BELL" layoutX="32.0" layoutY="62.0" style="-glyph-size: 24;"  />
             <Text fill="#3380ca" layoutX="43.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ανακοινώσεις" />
             <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="119.0" layoutY="97.0" />
             <Text fill="#3380ca" layoutX="129.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Νέα ανακοίνωση" />

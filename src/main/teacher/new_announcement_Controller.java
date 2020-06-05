@@ -34,6 +34,18 @@ public class new_announcement_Controller {
         scene.setRoot(root);
     }
 
+    @FXML
+    public void click_showAnnounc(javafx.event.ActionEvent actionEvent) throws IOException {
+        var node = (Node) actionEvent.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Scene scene = stage.getScene();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("teacher_announcement.fxml"));
+        var root = (Parent) fxmlLoader.load();
+
+        scene.setRoot(root);
+    }
+
     public void click_Grades(javafx.event.ActionEvent actionEvent) throws IOException {
         Node node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();

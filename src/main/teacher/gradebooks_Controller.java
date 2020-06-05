@@ -25,7 +25,7 @@ public class gradebooks_Controller<gradeList> implements Initializable {
     @FXML
     private TableView<Gradebook> gradeList;
     @FXML
-    private TableColumn title_col;
+    private TableColumn<Gradebook,String> title_col;
     @FXML
     private TableColumn id_col;
 
@@ -44,7 +44,6 @@ public class gradebooks_Controller<gradeList> implements Initializable {
 
         int id = grade.getGr_id();
         edit_Gradebook_Controller editController = loader.getController();
-        // editController.setCoursetitle(grade.getGr_title());
         editController.setClassID(id);
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -83,10 +82,21 @@ public class gradebooks_Controller<gradeList> implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) { //showGradebooks()
-        title_col.setCellValueFactory(new PropertyValueFactory<Gradebook,String>("gr_title"));
+        title_col.setCellValueFactory(new PropertyValueFactory<>("gr_title"));
         id_col.setCellValueFactory(new PropertyValueFactory<>("gr_id"));
 
         gradeList.setItems(list);
 
+    }
+    @FXML
+    public void click_showAnnounc(javafx.event.ActionEvent actionEvent) throws IOException {
+        var node = (Node) actionEvent.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Scene scene = stage.getScene();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("teacher_announcement.fxml"));
+        var root = (Parent) fxmlLoader.load();
+
+        scene.setRoot(root);
     }
 }

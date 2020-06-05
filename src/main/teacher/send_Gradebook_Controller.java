@@ -25,11 +25,11 @@ public class send_Gradebook_Controller implements Initializable {
     @FXML
     private TableView sndGradebooks;
     @FXML
-    private TableColumn grName;
+    private TableColumn<Gradebook,String> grName;
     @FXML
-    private TableColumn classCol;
+    private TableColumn<Gradebook,String> classCol;
     @FXML
-    private TableColumn courseCol;
+    private TableColumn<Gradebook,String> courseCol;
     @FXML
     private ChoiceBox<String> filter;
 
@@ -65,7 +65,7 @@ public class send_Gradebook_Controller implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
         //returnConfirmation
         if (result.get() == ButtonType.OK){ //displaysuccess
-            Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+            //Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Επιτυχία");
             alert.setHeaderText("Επιτυχής αποστολή");
             alert.setContentText("Το βαθμολόγιο απεστάλη επιτυχώς.");
@@ -76,6 +76,17 @@ public class send_Gradebook_Controller implements Initializable {
             // ... user chose CANCEL or closed the dialog
         }
 
+    }
+    @FXML
+    public void click_showAnnounc(javafx.event.ActionEvent actionEvent) throws IOException {
+        var node = (Node) actionEvent.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Scene scene = stage.getScene();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("teacher_announcement.fxml"));
+        var root = (Parent) fxmlLoader.load();
+
+        scene.setRoot(root);
     }
     private final ObservableList<Gradebook> Sendlist = FXCollections.observableArrayList(
             //dummy data again
@@ -92,9 +103,9 @@ public class send_Gradebook_Controller implements Initializable {
         //αναζήτηση στη βάση δεδομένων
         filter.getItems().addAll("A3","Β3","Γ3");
         //filter.setValue("A3");
-        classCol.setCellValueFactory(new PropertyValueFactory<Gradebook,String>("gr_class_id"));
-        courseCol.setCellValueFactory(new PropertyValueFactory<Gradebook,String>("gr_course"));
-        grName.setCellValueFactory(new PropertyValueFactory<Gradebook,String>("gr_title"));
+        classCol.setCellValueFactory(new PropertyValueFactory<>("gr_class_id"));
+        courseCol.setCellValueFactory(new PropertyValueFactory<>("gr_course"));
+        grName.setCellValueFactory(new PropertyValueFactory<>("gr_title"));
 
         filter.valueProperty().addListener(new ChangeListener<String>(){ //selectClass
 

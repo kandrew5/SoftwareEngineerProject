@@ -65,11 +65,11 @@ public class Gradebook {
         }
 
         public String[] getGradebook(int gr_id){
-            //αναζήτηση στη βάση δεδομένων
-            //εδώ έχουμε dummy data
+            //Ξ±Ξ½Ξ±Ξ¶Ξ®Ο„Ξ·ΟƒΞ· ΟƒΟ„Ξ· Ξ²Ξ¬ΟƒΞ· Ξ΄ΞµΞ΄ΞΏΞΌΞ­Ξ½Ο‰Ξ½
+            //ΞµΞ΄Ο Ξ­Ο‡ΞΏΟ…ΞΌΞµ dummy data
            // Class_folder.Grade grade1 = new Class_folder.Grade(gr_id);
               Map<String, Integer>  class_grades = new HashMap<String, Integer>();
-//            class_grades.put("Αμπατζίδου Ζουμπουλία", 6);
+
 
             return null;
         }

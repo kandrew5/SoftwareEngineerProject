@@ -26,11 +26,11 @@ public class edit_Gradebook_Controller implements Initializable {
     @FXML
     private TableView gradesTable;
     @FXML
-    private TableColumn name;
+    private TableColumn <Grade,String> name;
     @FXML
     private TableColumn grade;
     @FXML
-    private TableColumn surname;
+    private TableColumn <Grade,String> surname;
     @FXML
     private TextField grade_title;
     @FXML
@@ -113,8 +113,8 @@ public class edit_Gradebook_Controller implements Initializable {
             i++;
         }
 
-        name.setCellValueFactory(new PropertyValueFactory<Grade,String>("name"));
-        surname.setCellValueFactory(new PropertyValueFactory<Grade,String>("surname"));
+        name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        surname.setCellValueFactory(new PropertyValueFactory<>("surname"));
         grade.setCellValueFactory(new PropertyValueFactory<>("grade_no"));
         gradesTable.setItems(gradelist);
 
@@ -167,6 +167,17 @@ public class edit_Gradebook_Controller implements Initializable {
         Scene scene = stage.getScene();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("gradebooks.fxml"));
+        var root = (Parent) fxmlLoader.load();
+
+        scene.setRoot(root);
+    }
+    @FXML
+    public void click_showAnnounc(javafx.event.ActionEvent actionEvent) throws IOException {
+        var node = (Node) actionEvent.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Scene scene = stage.getScene();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("teacher_announcement.fxml"));
         var root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);

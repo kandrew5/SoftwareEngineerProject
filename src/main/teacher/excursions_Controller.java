@@ -37,7 +37,7 @@ public class excursions_Controller implements Initializable {
         Scene scene = stage.getScene();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("excursion_create.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        var root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
     }
@@ -47,7 +47,7 @@ public class excursions_Controller implements Initializable {
         Scene scene = stage.getScene();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("grades_main.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        var root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);
     }
@@ -69,7 +69,7 @@ public class excursions_Controller implements Initializable {
     );
     @Override
     public void initialize(URL location, ResourceBundle resources) { //show excursions
-        ex_name.setCellValueFactory(new PropertyValueFactory<Excursion, String>("title"));
+        ex_name.setCellValueFactory(new PropertyValueFactory<>("title"));
         ex_date.setCellValueFactory(new PropertyValueFactory<>("date"));
         select.setCellValueFactory(new PropertyValueFactory<>("check"));
 
@@ -77,6 +77,16 @@ public class excursions_Controller implements Initializable {
 
 
     }
+    @FXML
+    public void click_showAnnounc(javafx.event.ActionEvent actionEvent) throws IOException {
+        var node = (Node) actionEvent.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Scene scene = stage.getScene();
 
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("teacher_announcement.fxml"));
+        var root = (Parent) fxmlLoader.load();
+
+        scene.setRoot(root);
+    }
 
 }

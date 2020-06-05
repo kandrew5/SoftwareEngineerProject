@@ -28,13 +28,19 @@ public class teacher_Controller implements Initializable {
    @FXML
    private TableColumn dec_date;
    @FXML
-   private TableColumn dec_title;
+   private TableColumn<Decisions_repo,String> dec_title;
    @FXML
    private TableView recent_messages;
    @FXML
-   private TableColumn message;
+   private TableColumn<Message, String> message;
    @FXML
-   private TableColumn sender;
+   private TableColumn<Message, String> sender;
+   @FXML
+   protected MenuItem st_data;
+   @FXML
+   protected Menu menu1;
+   @FXML
+   private SplitMenuButton menu2;
 
     @FXML
     public void click_Excursion(javafx.event.ActionEvent actionEvent) throws IOException { //create excursion button listener
@@ -48,7 +54,7 @@ public class teacher_Controller implements Initializable {
         scene.setRoot(root);
     }
     public void click_Grades(javafx.event.ActionEvent actionEvent) throws IOException {
-        Node node = (Node) actionEvent.getSource();
+        var node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
@@ -59,7 +65,7 @@ public class teacher_Controller implements Initializable {
     }
     @FXML
     public void click_showAnnounc(javafx.event.ActionEvent actionEvent) throws IOException {
-        Node node = (Node) actionEvent.getSource();
+        var node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
@@ -68,6 +74,24 @@ public class teacher_Controller implements Initializable {
 
         scene.setRoot(root);
     }
+
+    @FXML
+    private void click_StudentData(javafx.event.ActionEvent actionEvent) throws IOException {
+        Stage stage;
+        Parent root;
+
+        stage = (Stage) menu2.getScene().getWindow();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("students_data.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+    }
+
+
+
     @FXML
     public void select_Decision(MouseEvent arg0) {
         System.out.println("clicked on " + forwarded.getSelectionModel().getSelectedItem());
@@ -97,12 +121,12 @@ public class teacher_Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        dec_title.setCellValueFactory(new PropertyValueFactory<Decisions_repo,String>("dec_title"));
+        dec_title.setCellValueFactory(new PropertyValueFactory<>("dec_title"));
         dec_date.setCellValueFactory(new PropertyValueFactory<>("dec_Date"));
         forwarded.setItems(dec_list);
 
-        sender.setCellValueFactory(new PropertyValueFactory<Message, String>("mess_sender"));
-        message.setCellValueFactory(new PropertyValueFactory<Message, String>("mess_content"));
+        sender.setCellValueFactory(new PropertyValueFactory<>("mess_sender"));
+        message.setCellValueFactory(new PropertyValueFactory<>("mess_content"));
         recent_messages.setItems(message_list);
     }
 

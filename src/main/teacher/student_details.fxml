@@ -6,14 +6,13 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitMenuButton?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.teacher.gradebooks_Controller">
+<AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #e1eeff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.teacher.student_details_Controller">
    <children>
       <AnchorPane layoutY="-7.0" maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #5aafff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="950.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -26,12 +25,12 @@
                   </Text>
                   <StackPane layoutX="11.0" layoutY="185.0" prefHeight="32.0" prefWidth="65.0" />
                   <Label layoutX="26.0" layoutY="14.0" prefHeight="70.0" prefWidth="26.0" textFill="#eae6e6">
-                     <graphic>
-                        <FontAwesomeIconView fill="#0e0e0e" glyphName="USER_CIRCLE" />
-                     </graphic>
                      <font>
                         <Font size="48.0" />
                      </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#0e0e0e" glyphName="USER_CIRCLE" />
+                     </graphic>
                   </Label>
                   <Button layoutX="156.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="52.0" style="-fx-background-color: #3380ca;" />
                   <FontAwesomeIconView glyphName="GEAR" layoutX="226.0" layoutY="24.0" style="-glyph-size: 24; -fx-cursor: hand;" text="" />
@@ -43,56 +42,68 @@
                      <items>
                         <MenuItem mnemonicParsing="false" text="Στοιχεία μαθητών">
                            <graphic>
-                              <FontAwesomeIconView glyphName="ADDRESS_BOOK" />
-                           </graphic></MenuItem>
+                              <FontAwesomeIconView glyphName="ADDRESS_CARD" />
+                           </graphic>
+                        </MenuItem>
                         <MenuItem mnemonicParsing="false" text="Βιβλίο ύλης">
                            <graphic>
                               <FontAwesomeIconView glyphName="BOOK" />
-                           </graphic></MenuItem>
+                           </graphic>
+                        </MenuItem>
                         <MenuItem mnemonicParsing="false" text="Ανακοινώσεις">
                            <graphic>
                               <FontAwesomeIconView glyphName="BELL" />
-                           </graphic></MenuItem>
+                           </graphic>
+                        </MenuItem>
                         <MenuItem mnemonicParsing="false" text="Εργασίες">
                            <graphic>
                               <FontAwesomeIconView glyphName="TASKS" />
-                           </graphic></MenuItem>
+                           </graphic>
+                        </MenuItem>
                         <MenuItem mnemonicParsing="false" text="Σημειώσεις">
                            <graphic>
                               <FontAwesomeIconView glyphName="PASTE" />
-                           </graphic></MenuItem>
+                           </graphic>
+                        </MenuItem>
                         <MenuItem mnemonicParsing="false" text="Απουσίες">
                            <graphic>
                               <FontAwesomeIconView glyphName="THERMOMETER_FULL" />
-                           </graphic></MenuItem>
+                           </graphic>
+                        </MenuItem>
                      </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="B2">
                      <items>
                         <MenuItem mnemonicParsing="false" text="Στοιχεία μαθητών">
                            <graphic>
-                              <FontAwesomeIconView glyphName="ADDRESS_BOOK" />
-                           </graphic></MenuItem>
+                              <FontAwesomeIconView glyphName="ADDRESS_CARD" />
+                           </graphic>
+                        </MenuItem>
                         <MenuItem mnemonicParsing="false" text="Βιβλίο ύλης">
                            <graphic>
                               <FontAwesomeIconView glyphName="BOOK" />
-                           </graphic></MenuItem>
+                           </graphic>
+                        </MenuItem>
                         <MenuItem mnemonicParsing="false" text="Ανακοινώσεις">
                            <graphic>
                               <FontAwesomeIconView glyphName="BELL" />
-                           </graphic></MenuItem>
+                           </graphic>
+                        </MenuItem>
                         <MenuItem mnemonicParsing="false" text="Εργασίες">
                            <graphic>
                               <FontAwesomeIconView glyphName="TASKS" />
-                           </graphic></MenuItem>
+                           </graphic>
+                        </MenuItem>
                         <MenuItem mnemonicParsing="false" text="Σημειώσεις">
                            <graphic>
                               <FontAwesomeIconView glyphName="PASTE" />
-                           </graphic></MenuItem>
+                           </graphic>
+                        </MenuItem>
                         <MenuItem mnemonicParsing="false" text="Απουσίες">
                            <graphic>
                               <FontAwesomeIconView glyphName="THERMOMETER_FULL" />
-                           </graphic></MenuItem>
+                           </graphic>
+                        </MenuItem>
                      </items>
                   </Menu>
                </items>
@@ -103,7 +114,7 @@
                   <Font size="14.0" />
                </font>
             </SplitMenuButton>
-            <Button onAction="#click_showAnnounc" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="27.0" layoutY="140.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="136.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Ανακοινώσεις" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="27.0" layoutY="140.0" mnemonicParsing="false" onAction="#click_showAnnounc" prefHeight="31.0" prefWidth="136.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Ανακοινώσεις" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -127,7 +138,7 @@
                   <FontAwesomeIconView caretBias="false" fill="WHITE" glyphName="TROPHY" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="24.0" layoutY="374.0" mnemonicParsing="false" onAction="#click_Excursion" prefHeight="31.0" prefWidth="190.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Εκδρομές" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="24.0" layoutY="374.0" mnemonicParsing="false" onAction="#click_Excursion" prefHeight="31.0" prefWidth="184.0" style="-fx-background-color: #3380ca; -fx-cursor: hand;" text="Εκδρομές" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -141,37 +152,52 @@
       </AnchorPane>
       <AnchorPane layoutX="248.0" layoutY="-5.0" prefHeight="247.0" prefWidth="952.0" style="-fx-background-color: #dddddd;" AnchorPane.bottomAnchor="680.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-5.0">
          <children>
-            <Text layoutX="63.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Βαθμολογίες">
+            <Text layoutX="61.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Στοιχεία μαθητών">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Text>
-            <FontAwesomeIconView glyphName="TROPHY" layoutX="32.0" layoutY="62.0" style="-glyph-size: 24;" />
+            <FontAwesomeIconView glyphName="ADDRESS_CARD" layoutX="27.0" layoutY="79.0" style="-glyph-size: 24;" />
+            <Text fill="#3380ca" layoutX="61.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Τα τμήματά μου" />
+            <Text fill="#3380ca" layoutX="323.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Στοιχεία μαθητή" />
+            <Text fill="#3380ca" layoutX="173.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Β2" />
+            <Text fill="#3380ca" layoutX="206.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Στοιχεία μαθητών" />
+            <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="155.0" layoutY="104.0" />
+            <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="194.0" layoutY="105.0" />
+            <FontAwesomeIconView fill="#3380ca" glyphName="ARROW_RIGHT" layoutX="308.0" layoutY="105.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="329.0" layoutY="239.0" prefHeight="215.0" prefWidth="312.0">
+      <AnchorPane layoutX="316.0" layoutY="218.0" prefHeight="356.0" prefWidth="550.0" style="-fx-background-color: #dddddd;">
          <children>
-            <TableView fx:id="gradeList" onMouseClicked="#select_Gradebook" prefHeight="182.0" prefWidth="312.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <columns>
-                  <TableColumn fx:id="id_col" prefWidth="30.0" visible="false" />
-                  <TableColumn fx:id="title_col" editable="false" prefWidth="310.0" resizable="false" sortable="false" style="-fx-color: #5aafff;" text="Ονομασία" />
-               </columns></TableView>
+            <FontAwesomeIconView fill="#0e0e0e" glyphName="USER_CIRCLE" layoutX="35.0" layoutY="84.0" style="-glyph-size: 60;" wrappingWidth="55.8515625" />
+            <Text layoutX="233.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Όνομα μητέρας" />
+            <Text layoutX="233.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Όνομα πατέρα" />
+            <Text layoutX="233.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ΑΜΚΑ" />
+            <Text layoutX="14.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Αριθμός μητρώου" />
+            <Text layoutX="233.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Τηλέφωνο" />
+            <Text layoutX="233.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Τμήμα" />
+            <TextField fx:id="class_field" editable="false" layoutX="329.0" layoutY="38.0" style="-fx-background-color: #9a9a99; -fx-text-inner-color: white;" />
+            <TextField fx:id="mname_field" editable="false" layoutX="329.0" layoutY="76.0" style="-fx-background-color: #9a9a99; -fx-text-inner-color: white;" />
+            <TextField fx:id="fname_field" editable="false" layoutX="329.0" layoutY="114.0" style="-fx-background-color: #9a9a99; -fx-text-inner-color: white;" />
+            <TextField fx:id="amka_field" editable="false" layoutX="329.0" layoutY="151.0" style="-fx-background-color: #9a9a99; -fx-text-inner-color: white;" />
+            <TextField fx:id="tel_field" editable="false" layoutX="329.0" layoutY="188.0" style="-fx-background-color: #9a9a99; -fx-text-inner-color: white;" />
+            <TextField fx:id="am_field" editable="false" layoutX="120.0" layoutY="188.0" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #9a9a99; -fx-text-inner-color: white;" />
+            <TextField fx:id="fn_field" layoutX="17.0" layoutY="106.0" prefHeight="12.0" prefWidth="134.0" style="-fx-background-color: #dddddd;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="sn_field" layoutX="16.0" layoutY="127.0" prefHeight="25.0" prefWidth="134.0" style="-fx-background-color: #dddddd;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
          </children>
       </AnchorPane>
-      <Label layoutX="329.0" layoutY="208.0" text="Τα βαθμολόγιά μου">
+      <Label layoutX="316.0" layoutY="185.0" text="Στοιχεία μαθητή">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="323.0" layoutY="151.0" prefHeight="48.0" prefWidth="586.0" style="-fx-background-color: #dddddd;">
-         <children>
-            <FontAwesomeIconView glyphName="MAP_PIN" layoutX="8.0" layoutY="27.0" style="-glyph-size: 20;" />
-            <Text layoutX="29.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Επιλέξτε ένα από τα βαθμολόγια που έχετε δημιουργήσει για να το επεξεργαστείτε." wrappingWidth="548.0000000000002">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-         </children>
-      </AnchorPane>
    </children>
 </AnchorPane>

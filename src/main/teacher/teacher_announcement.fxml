@@ -114,7 +114,7 @@
                   <Font size="14.0" />
                </font>
             </SplitMenuButton>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="27.0" layoutY="140.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="136.0" style="-fx-background-color: #96e072; -fx-cursor: hand;" text="Ανακοινώσεις" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+            <Button onAction="#click_showAnnounc" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="27.0" layoutY="140.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="136.0" style="-fx-background-color: #96e072; -fx-cursor: hand;" text="Ανακοινώσεις" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
                <font>
                   <Font size="15.0" />
                </font>
