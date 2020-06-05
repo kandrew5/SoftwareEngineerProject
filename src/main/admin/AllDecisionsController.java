@@ -155,7 +155,7 @@ public class AllDecisionsController implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("newVoting.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("all_Votes.fxml"));
         Parent root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);

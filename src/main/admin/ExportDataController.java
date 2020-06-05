@@ -49,6 +49,8 @@ public class ExportDataController implements Initializable {
     private ChoiceBox<String> filter;
 
     public Button exportButton;
+    public MenuItem menu_id;
+    public SplitMenuButton menuB_id;
 
     private Stage savedStage;
 
@@ -128,6 +130,18 @@ public class ExportDataController implements Initializable {
         alert.showAndWait();
     }
 
+    @FXML
+    private void click_allClasses(javafx.event.ActionEvent actionEvent) throws IOException {
+        Stage stage;
+        Parent root;
+        stage = (Stage) menuB_id.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("export_data.fxml"));
+        root = loader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+    }
 
     public void click_communication(javafx.event.ActionEvent actionEvent) throws IOException {
         Node node = (Node) actionEvent.getSource();
@@ -177,7 +191,7 @@ public class ExportDataController implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("newVoting.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("all_Votes.fxml"));
         Parent root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);

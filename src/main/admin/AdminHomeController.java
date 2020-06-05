@@ -32,7 +32,6 @@ public class AdminHomeController implements Initializable {
     private TableColumn<Message, String> mess_sender;
     @FXML
     private TableColumn<Message, String> mess_content;
-
     public MenuItem menu_id;
     public SplitMenuButton menuB_id;
 

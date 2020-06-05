@@ -111,7 +111,7 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="CHECK" />
                     </graphic>
                 </Button>
-                <SplitMenuButton alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="86.0" layoutY="214.0" mnemonicParsing="false" popupSide="RIGHT" style="-fx-color: #3380ca; -fx-background-color: #3380ca; -fx-cursor: hand;" text="Τμήματα" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="220.0">
+                <SplitMenuButton fx:id="menuB_id" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="86.0" layoutY="214.0" mnemonicParsing="false" popupSide="RIGHT" style="-fx-color: #3380ca; -fx-background-color: #3380ca; -fx-cursor: hand;" text="Τμήματα" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="220.0">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -119,7 +119,7 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="BARS" text="" />
                     </graphic>
                     <items>
-                        <MenuItem mnemonicParsing="false" style="-fx-background-color: #3380ca;" text="Όλα τα τμήματα" />
+                        <MenuItem fx:id="menu_id" mnemonicParsing="false" style="-fx-background-color: #3380ca;" text="Όλα τα τμήματα" />
                         <Menu mnemonicParsing="false" text="Τα τμήματά μου">
                             <items>
                                 <Menu mnemonicParsing="false" text="Α">

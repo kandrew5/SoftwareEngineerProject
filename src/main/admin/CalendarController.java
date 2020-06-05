@@ -4,12 +4,28 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.SplitMenuButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class CalendarController {
+    public MenuItem menu_id;
+    public SplitMenuButton menuB_id;
+    private void click_allClasses(javafx.event.ActionEvent actionEvent) throws IOException {
+        Stage stage;
+        Parent root;
+        stage = (Stage) menuB_id.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("export_data.fxml"));
+        root = loader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+    }
+
     public void click_communication(javafx.event.ActionEvent actionEvent) throws IOException {
         Node node = (Node) actionEvent.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
@@ -58,7 +74,7 @@ public class CalendarController {
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("newVoting.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("all_Votes.fxml"));
         Parent root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);

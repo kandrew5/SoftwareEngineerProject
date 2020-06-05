@@ -43,6 +43,8 @@ public class newDecisionController implements Initializable {
     private ComboBox<String> cmbPrior;
 
     boolean newFileName = false;
+    public MenuItem menu_id;
+    public SplitMenuButton menuB_id;
     int pr; //priority
     Decisions_repo new_dec = new Decisions_repo();
 
@@ -138,10 +140,7 @@ public class newDecisionController implements Initializable {
                 AllDecisionsController pd = fxmlLoader.getController();
 
                 pd.refreshList(new_dec);
-//            added_Dec=pd.getDec();
-//            dec_list.add(getDec());
-//            decisionsTable.refresh();
-//
+
                 scene.setRoot(root);
             }
         }
@@ -149,6 +148,19 @@ public class newDecisionController implements Initializable {
 
     public Decisions_repo getDec() {
         return new_dec;
+    }
+
+    @FXML
+    private void click_allClasses(javafx.event.ActionEvent actionEvent) throws IOException {
+        Stage stage;
+        Parent root;
+        stage = (Stage) menuB_id.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("export_data.fxml"));
+        root = loader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
     }
 
     public void click_communication(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -199,7 +211,7 @@ public class newDecisionController implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("newVoting.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("all_Votes.fxml"));
         Parent root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);

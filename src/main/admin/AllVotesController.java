@@ -11,9 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -38,6 +36,8 @@ public class AllVotesController implements Initializable {
     public TableColumn<Voting,LocalDate> vote_creation_date;
     @FXML
     public TableColumn<Voting,LocalDate> vote_expire_date;
+    public MenuItem menu_id;
+    public SplitMenuButton menuB_id;
 
     LocalDate date1s = LocalDate.of(2020, Month.MARCH, 27);
     LocalDate date1e = LocalDate.of(2020, Month.MARCH, 28);
@@ -66,6 +66,19 @@ public class AllVotesController implements Initializable {
         vote_expire_date.setCellValueFactory(new PropertyValueFactory<>("vote_expire_date"));
 
         VotingsTable.setItems(votingsList);
+    }
+
+    @FXML
+    private void click_allClasses(javafx.event.ActionEvent actionEvent) throws IOException {
+        Stage stage;
+        Parent root;
+        stage = (Stage) menuB_id.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("export_data.fxml"));
+        root = loader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
     }
 
     public void click_newVoting(ActionEvent actionEvent) throws IOException {
@@ -127,7 +140,7 @@ public class AllVotesController implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();
         Scene scene = stage.getScene();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("newVoting.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("all_Votes.fxml"));
         Parent root = (Parent) fxmlLoader.load();
 
         scene.setRoot(root);

@@ -119,7 +119,7 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="BARS" text="" />
                     </graphic>
                     <items>
-                        <MenuItem mnemonicParsing="false" style="-fx-background-color: #3380ca;" text="Όλα τα τμήματα" />
+                        <MenuItem onAction="#click_allClasses" mnemonicParsing="false" style="-fx-background-color: #3380ca;" text="Όλα τα τμήματα" />
                         <Menu mnemonicParsing="false" text="Τα τμήματά μου">
                             <items>
                                 <Menu mnemonicParsing="false" text="Α">
