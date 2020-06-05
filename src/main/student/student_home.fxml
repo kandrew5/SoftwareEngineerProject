@@ -40,7 +40,7 @@
                                 <FontAwesomeIconView glyphName="FOLDER_OPEN" />
                             </graphic>
                         </MenuItem>
-                        <MenuItem mnemonicParsing="false" text="Δουλειά για το σπίτι">
+                        <MenuItem fx:id="homework_id" onAction="#click_Homework" mnemonicParsing="false" text="Δουλειά για το σπίτι">
                             <graphic>
                                 <FontAwesomeIconView glyphName="BRIEFCASE" />
                             </graphic>

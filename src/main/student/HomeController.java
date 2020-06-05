@@ -22,6 +22,8 @@ import java.util.ResourceBundle;
 
 public class HomeController  implements Initializable {
     @FXML
+    private MenuItem homework_id;
+    @FXML
     private NumberAxis y_axis_id;
     @FXML
     private NumberAxis x_axis_id;
@@ -103,5 +105,16 @@ public class HomeController  implements Initializable {
         seriesCurrentMonth.getData().add(new XYChart.Data(30, 54));
 
         areachart_id.getData().addAll(seriesCurrentMonth);
+    }
+
+    public void click_Homework(ActionEvent actionEvent) throws IOException {
+        Stage stage;
+        Parent root;
+        stage = (Stage) grade_id.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("student_homework.fxml"));
+        root = loader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }
