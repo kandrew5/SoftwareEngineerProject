@@ -17,6 +17,22 @@ Project στα πλαίσια του μαθήματος "Τεχνολογία Λ
 Παρακάτω παρουσιάζουμε μερικές απο τις βασικές λειτουργίες του Zeuxis ανά module όπως έχουν υλοποιηθεί στην παρούσα έκδοση.
 
 ### Είσοδος στην εφαρμογή
+Για τον μαθητή τα credentials είναι :
+username: st12
+password: 12345
+
+Για τον καθηγητή τα credentials είναι :
+username: tc12
+password: 12345
+
+Για την διεύθυνση τα credentials είναι :
+username: tc13
+password: 12345
+
+Για τον μαθητή τα credentials είναι :
+username: pt12
+password: 12345
+
 ![](GIFS/login.gif)
 
 ### Καθηγητής
