@@ -33,7 +33,6 @@ public class PendingApprovalsController implements Initializable {
             new Approval("a4","st12", "pt12" , true , LocalDate.of(2020, Month.MARCH, 10) , "Συμμετοχή στους σχολικούς αγώνες")
     );
 
-
     @FXML
     private TableView pendingapprovalstable;
     @FXML
@@ -47,7 +46,6 @@ public class PendingApprovalsController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         pa_title_col.setCellValueFactory(new PropertyValueFactory<Approval, String>("ap_title"));
         pa_date_col.setCellValueFactory(new PropertyValueFactory<Approval, LocalDate>("ap_expire_date"));
-
         pendingapprovalstable.setItems(pendapprovals);
     }
 
@@ -61,12 +59,9 @@ public class PendingApprovalsController implements Initializable {
 
         stage.setScene(scene);
         stage.show();
-
     }
 
     public void click_FileToApprove(MouseEvent click) throws IOException{
-
-
         if(click.getClickCount()==2){
 
             Approval temp = (Approval) pendingapprovalstable.getSelectionModel().getSelectedItem();
@@ -80,7 +75,6 @@ public class PendingApprovalsController implements Initializable {
 
             ApprovalController appcont = loader.getController();
 
-
             if(appTitle.equals(pendapprovals.get(0).getAp_title())){
                 appcont.setTitle("Μονοήμερη εκδρομή");
             }else if(appTitle.equals(pendapprovals.get(1).getAp_title())){
@@ -93,10 +87,5 @@ public class PendingApprovalsController implements Initializable {
             scene.setRoot(root);
             stage.show();
         }
-
-
     }
-
-
-
 }

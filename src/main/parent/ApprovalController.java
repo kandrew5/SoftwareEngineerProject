@@ -36,7 +36,6 @@ public class ApprovalController implements Initializable {
     private Text approvaltitleblue;
     @FXML
     private SplitMenuButton pg_menu;
-
     private boolean canvasclear = true;
 
     public void setTitle(String title){
@@ -63,7 +62,6 @@ public class ApprovalController implements Initializable {
 
     @FXML
     private void click_PG_Work(ActionEvent actionEvent) throws IOException{
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("parent_PG_Work.fxml"));
         Stage stage = (Stage) pg_menu.getScene().getWindow();;
         Parent root = loader.load();
@@ -71,7 +69,6 @@ public class ApprovalController implements Initializable {
 
         stage.setScene(scene);
         stage.show();
-
     }
 
     public void clearCanvas(ActionEvent actionEvent) {
@@ -83,7 +80,6 @@ public class ApprovalController implements Initializable {
     }
 
     public void validateFields(TextField tf1, TextField tf2, Canvas cv){
-
         if (tf1.getText().equals("") || tf2.getText().equals("") || canvasclear){
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Warning Dialog");
@@ -98,7 +94,6 @@ public class ApprovalController implements Initializable {
 
             alert.showAndWait();
         }
-
     }
 
     public void approveFile(ActionEvent actionEvent) {
@@ -110,7 +105,6 @@ public class ApprovalController implements Initializable {
         alert.setTitle("Ακύρωση έκγρισης");
         alert.setHeaderText("Ή έγκριση του εγγράφου ακυρώθηκε");
         alert.setContentText("Επιστροφή στις εκκρεμείς εγκρίσεις");
-
         alert.showAndWait();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("parent_pending_approvals.fxml"));
@@ -118,7 +112,6 @@ public class ApprovalController implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();
         Parent root = loader.load();
         Scene scene = stage.getScene();
-
         scene.setRoot(root);
     }
 }

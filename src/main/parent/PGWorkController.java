@@ -105,7 +105,6 @@ public class PGWorkController implements Initializable {
         filters.valueProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-
                 if(newValue.equals("Πρόσφατα")){
                     filteredData.setPredicate(null);
                 }else if(newValue.equals("Πάνος") || newValue.equals("Ρωμανός") || newValue.equals("Θωμάς") || newValue.equals("Ανδρέας")){
@@ -114,14 +113,7 @@ public class PGWorkController implements Initializable {
 
             }
         });
-
         entriestable.setItems(filteredData);
-
-    }
-
-    @FXML
-    private void click_Filter(){
-
     }
 
     public void clickPG_Entry(MouseEvent click) {
@@ -142,15 +134,11 @@ public class PGWorkController implements Initializable {
 
     @FXML
     public void click_PendingApprovals(ActionEvent actionEvent) throws IOException {
-
         FXMLLoader loader = new FXMLLoader((getClass().getResource("parent_pending_approvals.fxml")));
         Stage stage = (Stage) approvalsmenu.getScene().getWindow();
         Parent root = loader.load();
         Scene scene = new Scene(root);
-
         stage.setScene(scene);
-
-        PendingApprovalsController pendappController = loader.getController();
         stage.show();
     }
 }
